@@ -7,4 +7,6 @@ class User < ApplicationRecord
   has_many :categories, through: :services
   has_many :requests
   has_many :reviews
+
+  has_one_attached :photo
 end
