@@ -1,0 +1,14 @@
+class Request < ApplicationRecord
+  belongs_to :user
+  belongs_to :service
+  has_many :reviews
+  has_many :payments
+
+  validates :user, presence: true
+  validates :service, presence: true
+  validates :description, presence: true
+  validates :start_date, presence: true
+  validates :end_date, presence: true
+  validates :status, presence: true
+  validates :budget, numericality: true
+end
