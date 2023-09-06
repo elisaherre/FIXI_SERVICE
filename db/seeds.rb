@@ -1,9 +1,9 @@
 require "open-uri"
 
 if Rails.env.development?
+  Service.destroy_all
   Category.destroy_all
   User.destroy_all
-  Service.destroy_all
 end
 
 puts "creando categoría 1..."
