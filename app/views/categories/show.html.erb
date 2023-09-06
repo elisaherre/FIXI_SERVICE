@@ -6,7 +6,8 @@
           <% if fixer.photo.attached? %>
           <%= image_tag(fixer.photo, height: 50, width: 50, crop: :fill) %>
           <% end %>
-        <%= fixer.name %>
+        <p><%= fixer.name %></p>
+        <p>Fixer desde: <%= fixer.created_at.strftime('%b/%Y') %></p>
         <% end %>
       <% else %>
         <p>No hay fixers en esta categoría</p>
