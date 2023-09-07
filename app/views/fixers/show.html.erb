@@ -29,14 +29,17 @@
 
 <div class="container mt-5">
   <% @reviews.each do |review|  %>
-    <div class="card">
+    <div class="card mt-3">
       <div class="card-header d-flex">
         <h5 class="m-2"><%= review.user.name %></h5>
+        <p class="m-2"><%= review.request.service.category.name.capitalize %></p>
         <p class="m-2"><%= review.created_at %></p>
       </div>
       <div class="card-body">
-        <h5 class="card-title">Rating <%= review.rating %></h5>
-        <p class="card-text"><%= review.content %></p>
+        <h5 class="card-title align-self-center m-0">Rating <%= review.rating %></h5>
+        <% if review.content %>
+          <p class="card-text"><%= review.content %></p>
+        <% end %>
       </div>
     </div>
   <% end %>

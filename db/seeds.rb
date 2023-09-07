@@ -69,3 +69,7 @@ request2.save!
 puts "creando review 1 para fixer"
 review1 = Review.new(user_id: request1.user_id, request_id: request1.id, content: "epetacular", rating: 4)
 review1.save!
+
+puts "creando review 2 para fixer"
+review2 = Review.new(user_id: request1.user_id, request_id: request1.id, rating: 4)
+review2.save!
