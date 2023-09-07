@@ -1,6 +1,8 @@
 require "open-uri"
 
 if Rails.env.development?
+  Review.destroy_all
+  Request.destroy_all
   Service.destroy_all
   Category.destroy_all
   User.destroy_all
@@ -17,6 +19,10 @@ category2.save!
 puts "creando categoría 3..."
 category3 = Category.new(name: "jardinería")
 category3.save!
+
+puts "creando categoría 4..."
+category4 = Category.new(name: "electricidad")
+category4.save!
 
 puts "creando usuario 1..."
 file = URI.open("https://avatars.githubusercontent.com/u/139592608?v=4")
@@ -41,9 +47,21 @@ service1 = Service.new(user_id: user1.id, category_id: category1.id, description
 service1.save!
 
 puts "creando servicio 2..."
-service2 = Service.new(user_id: user2.id, category_id: category2.id, description: "Especialista en fugas")
+service2 = Service.new(user_id: user1.id, category_id: category2.id, description: "Especialista en fugas")
 service2.save!
 
 puts "creando servicio 3..."
 service3 = Service.new(user_id: user1.id, category_id: category3.id, description: "Especialista en plantas de interior")
 service3.save!
+
+puts "creando servicio 4..."
+service4 = Service.new(user_id: user1.id, category_id: category4.id, description: "Especialista en tableros")
+service4.save!
+
+puts "creando request 1..."
+request1 = Request.new(user_id: user2.id, status: "new", service_id: service1.id, description: "se rompieron mis repisas", start_date: Date.new(2023,9,9), end_date: Date.new(2023,10,10), budget: 0)
+request1.save!
+
+puts "creando request 2..."
+request2 = Request.new(user_id: user3.id, status: "new", service_id: service1.id, description: "se rompieron mis ventanas", start_date: Date.new(2023,9,9), end_date: Date.new(2023,10,10), budget: 0)
+request2.save!
