@@ -1,0 +1,8 @@
+<div>
+  <h1>Nueva reseña</h1>
+  <%= simple_form_for [@request, @review] do |f| %>
+    <%= f.input :content, placeholder: '...' %>
+    <%= f.input :rating %>
+    <%= f.submit %>
+  <% end %>
+</div>

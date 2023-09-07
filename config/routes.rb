@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   get "categories/:id", to: "categories#show", as: "category"
+  resources :requests do
+    resources :reviews, only: [:new, :create]
+  end
 end

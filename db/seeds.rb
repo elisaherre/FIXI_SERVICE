@@ -1,6 +1,8 @@
 require "open-uri"
 
 if Rails.env.development?
+  Review.destroy_all
+  Request.destroy_all
   Service.destroy_all
   Category.destroy_all
   User.destroy_all
@@ -47,3 +49,11 @@ service2.save!
 puts "creando servicio 3..."
 service3 = Service.new(user_id: user1.id, category_id: category3.id, description: "Especialista en plantas de interior")
 service3.save!
+
+puts "creando request 1..."
+request1 = Request.new(user_id: user1.id, status: "new", service_id: service1.id, description: "se rompieron mis repisas", start_date: Date.new(2023,9,9), end_date: Date.new(2023,10,10), budget: 0)
+request1.save!
+
+puts "creando request 2..."
+request2 = Request.new(user_id: user1.id, status: "new", service_id: service1.id, description: "se rompieron mis ventanas", start_date: Date.new(2023,9,9), end_date: Date.new(2023,10,10), budget: 0)
+request1.save!
