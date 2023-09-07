@@ -1,0 +1,9 @@
+<% @services.each do |service| %>
+
+    <% service.id %><br>
+    Descripción: <%= service.description %><br>
+    ID de usuario: <%= service.user_id %><br>
+    ID de categoría: <%= service.category_id %><br>
+    Creado en: <%= service.created_at %><br>
+    Actualizado en: <%= service.updated_at %><br>
+    <% end %>
