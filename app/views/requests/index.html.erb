@@ -1,5 +1,5 @@
 <h1>Requests#index</h1>
 <p>Find me in app/views/requests/index.html.erb</p>
 <% @requests.each do |request| %>
-<%= request.description %>
+<p><%= request.description %><%= link_to "review", new_request_review_path(request) if request.status == "finalizado" %></p>
 <% end %>

@@ -11,7 +11,7 @@ class ReviewsController < ApplicationController
     @review.request = @request
     @review.user_id = @request.user_id
     if @review.save
-      redirect_to request_path(@request)
+      redirect_to requests_path
     else
       render :new, status: :unprocessable_entity
     end
