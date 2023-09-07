@@ -1,5 +1,40 @@
-<%= cl_image_tag @fixer.photo.key, height: 300, width: 400, crop: :fill %>
-<h1><%= @fixer.name %></h1>
-<% @services.each do |service| %>
-<p> <%= service.category.name.capitalize %></p>
-<% end %>
+<div class="container mt-5">
+<div class="row">
+  <div class="col-4">
+  <%= image_tag @fixer.photo, height: 300, crop: :fill %>
+  </div>
+  <div class="col-6">
+    <div class="row">
+      <h1><%= @fixer.name %></h1>
+    </div>
+  <div class="row">
+  <% @services.each do |service| %>
+    <div class="col-3">
+      <p> <%= service.category.name.capitalize %></p>
+    </div>
+    <% end %>
+  </div>
+  <div class="row">
+    <p> Fixer desde: <%= @fixer.created_at%></p>
+  </div>
+  <div class="row">
+    <p> Rating: <%= @average %></p>
+  </div>
+  </div>
+</div>
+</div>
+
+<div class="container mt-5">
+  <% @reviews.each do |review|  %>
+    <div class="card">
+      <div class="card-header d-flex">
+        <h5 class="m-2"><%= review.user.name %></h5>
+        <p class="m-2"><%= review.created_at %></p>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Rating <%= review.rating %></h5>
+        <p class="card-text"><%= review.content %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
