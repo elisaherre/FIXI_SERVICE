@@ -25,7 +25,7 @@ category4 = Category.new(name: "electricidad")
 category4.save!
 
 puts "creando usuario 1..."
-file = URI.open("https://avatars.githubusercontent.com/u/139592608?v=4")
+file = URI.open("https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png")
 user1 = User.new(email: "elisa@gmail.com", password: "123456", address: "calle 123", name: "Elisa")
 user1.photo.attach(io: file, filename: "elisa.png", content_type: "image/png")
 user1.save!
@@ -59,9 +59,9 @@ service4 = Service.new(user_id: user1.id, category_id: category4.id, description
 service4.save!
 
 puts "creando request 1..."
-request1 = Request.new(user_id: user2.id, status: "new", service_id: service1.id, description: "se rompieron mis repisas", start_date: Date.new(2023,9,9), end_date: Date.new(2023,10,10), budget: 0)
+request1 = Request.new(user_id: user2.id, status: "enviada", service_id: service1.id, description: "se rompieron mis repisas", start_date: Date.new(2023,9,9), end_date: Date.new(2023,10,10), budget: 0)
 request1.save!
 
 puts "creando request 2..."
-request2 = Request.new(user_id: user3.id, status: "new", service_id: service1.id, description: "se rompieron mis ventanas", start_date: Date.new(2023,9,9), end_date: Date.new(2023,10,10), budget: 0)
+request2 = Request.new(user_id: user3.id, status: "enviada", service_id: service1.id, description: "se rompieron mis ventanas", start_date: Date.new(2023,9,9), end_date: Date.new(2023,10,10), budget: 0)
 request2.save!

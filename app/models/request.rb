@@ -11,4 +11,7 @@ class Request < ApplicationRecord
   validates :end_date, presence: true
   validates :status, presence: true
   validates :budget, numericality: true
+
+  STATUS = ["enviada", "aceptada", "reservada", "pendiente", "por pagar", "cancelada", "finalizada"]
+  validates :status, inclusion: { in: STATUS }
 end
