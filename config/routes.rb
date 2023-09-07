@@ -10,5 +10,8 @@ Rails.application.routes.draw do
   resources :services
 
   get "categories/:id", to: "categories#show", as: "category"
+  resources :requests do
+    resources :reviews, only: [:new, :create]
+  end
 
 end

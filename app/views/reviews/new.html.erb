@@ -1,0 +1,10 @@
+<div>
+  <h1><%= @request.user.id != current_user.id ? "Nueva reseña para cliente #{@request.user.name}" : "Nueva reseña para fixer #{params[:cliente]}" %></h1>
+  <%= simple_form_for [@request, @review] do |f| %>
+    <%= f.input :content, placeholder: '...' unless params[:cliente] %>
+    <%= f.input :rating %>
+    <%= f.input :user_id, as: :hidden, input_html: {value: params[:cliente]} %>
+    <%= f.submit %>
+  <% end %>
+</div>
+<%= console %>
