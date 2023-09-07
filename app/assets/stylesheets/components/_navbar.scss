@@ -1,6 +1,9 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  border: 2px solid rgb(161, 161, 161);
+  border-radius: 35px;
+
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -8,5 +11,42 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 80px;
+}
+
+.link-landing {
+  color: black;
+  font-family: roboto;
+  font-size: 13px;
+  transition: background-color 0.5s, transform 0.5s; /* Transición suave */
+  background-color: transparent; /* Color de fondo inicial definido */
+  border-radius: 20px; /* Bordes redondeados */
+
+  &:hover {
+    background-color: rgba(216, 245, 0, 0.6); /* Ajuste de la opacidad para un fondo más oscuro */
+    transform: scale(1.05);
+    font-weight: bold; /* Hace que la letra sea más negrita al pasar el ratón */
+    stroke: 20px;
+  }
+}
+
+
+.btn-fixi{
+  font-family: roboto 800;
+  font-size: 13px;;
+  margin-left: 8px;
+  background-color: #D8F500;
+  border-radius: 50px;
+  color: #000;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    background-color: darken(#D8F500, 10%);
+    transform: scale(1.05);
+  }
+
+  &:active {
+    background-color: darken(#D8F500, 15%);
+    transform: scale(1);
+  }
 }
