@@ -21,5 +21,13 @@ class FixersController < ApplicationController
       suma += review.rating
     end
     @average = suma / @reviews.size
+
+    # Captura de trabajos realizados
+    @completed = 0
+    @services.each do |service|
+      service.requests.each do |request|
+        @completed += 1 if request.status == "finalizado"
+      end
+    end
   end
 end
