@@ -1,0 +1,16 @@
+<div>
+  <h1><%= @category.name.capitalize %></h1>
+    <div>
+      <% if @fixers.size > 0 %>
+        <% @fixers.each do |fixer| %>
+          <% if fixer.photo.attached? %>
+          <%= image_tag(fixer.photo, height: 50, width: 50, crop: :fill) %>
+          <% end %>
+        <p><%= fixer.name %></p>
+        <p>Fixer desde: <%= fixer.created_at.strftime('%b/%Y') %></p>
+        <% end %>
+      <% else %>
+        <p>No hay fixers en esta categoría</p>
+      <% end %>
+    </div>
+</div>
