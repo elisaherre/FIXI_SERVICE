@@ -1,16 +1,17 @@
 <% @services.each do |service| %>
 
-    <% service.id %><br>
-    Descripción: <%= service.description %><br>
+    <br>
+    <strong><%= service.description %></strong><br>
     ID de usuario: <%= service.user_id %><br>
     ID de categoría: <%= service.category_id %><br>
     Creado en: <%= service.created_at %><br>
     Actualizado en: <%= service.updated_at %><br>
     <hr>
     <% service.requests.each do |request| %>
-    <p><%= request.user.name %> <%= request.description %> <%= request.user.id %></p>
-    <%= link_to "review", new_request_review_path(request, cliente: request.user.id) if request.status == "finalizado" %>
-    <% end %>
+    <p>Request #<%= request.id %></p>
+    <p>Realizada por: <%= request.user.name %></p>
+    <p>Descripción: <%= request.description %></p>
+      <%= link_to "review", new_request_review_path(request, cliente: request.user.id) if request.status == "finalizado" && Review.where(user: current_user, request: request).size == 0 %>
     <hr>
+    <% end %>
 <% end %>
-<%= hola %>

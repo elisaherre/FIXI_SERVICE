@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
   def new
     @review = Review.new
-    @request = Request.first
+    @request = Request.first # actualizar
   end
 
   def create
@@ -12,10 +12,10 @@ class ReviewsController < ApplicationController
 
     @review = Review.new(review_params)
 
-    if @review.user_id
-      @review.user_id = params[:review][:user_id] # el fixer califica al usuario
+    if @fixer == current_user
+      @review.user_id = @fixer.id # el fixer califica al usuario
     else
-      @review.user_id = @fixer.id # el usuario califica al fixer
+      @review.user_id = @request.user_id # el usuario califica al fixer
     end
 
     @review.request = @request
