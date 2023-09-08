@@ -1,36 +1,51 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+<div class="navbar mx-4 mt-4 mb-3 navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container">
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag "logo-fixi-alargado.png" %>
     <% end %>
-
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
+      <li class="nav-item">
+            <%= link_to "HOME", "#", class: "nav-link link-landing" %>
+      </li>
+      <li class="nav-item dropdown">
+        <%= link_to "SERVICIOS", "#", class: "nav-link link-landing dropdown-toggle", id: "navbarDropdown", data: {bs_toggle: "dropdown"}, aria: {haspopup: "true", expanded: "false"} %>
+          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <% Category.all.each do |category|  %>
+            <%= link_to "#{category.name.capitalize}", category_path(category.id), class: "dropdown-item" %>
+            <% end %>
+          </div>
+        </li>
+      <li class="nav-item">
+            <%= link_to "CONTRATAR", "#", class: "nav-link link-landing" %>
+      </li>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+        <%# condicional> %>
         <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
-            <%= current_user.name %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
-          </li>
           <li class="nav-item dropdown">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <% if current_user.photo.attached? %>
+            <%= image_tag current_user.photo , class: "avatar", alt: "dropdown menu" %>
+          <% else %>
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
+          <% end %>
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+              <%= link_to "Mi perfil", profile_path, class: "dropdown-item" %>
+              <%= link_to "Mis solicitudes", requests_path, class: "dropdown-item" %>
             </div>
+          </li>
+          <li class="nav-item">
+              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn btn-fixi"%>
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            <%= link_to "Login", new_user_session_path, class:"btn btn-fixi"%>
           </li>
         <% end %>
       </ul>

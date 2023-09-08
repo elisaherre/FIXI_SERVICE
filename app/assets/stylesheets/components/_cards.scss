@@ -1,0 +1,39 @@
+.card-category {
+  position: relative;
+  padding: 20px;
+  border-radius: 15px;
+  color: white;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-category:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.card-title {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.action-button {
+  padding: 10px 20px;
+  background-color: #ff6347;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.action-button:hover {
+  background-color: #e55343;
+}

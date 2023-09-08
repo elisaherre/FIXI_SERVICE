@@ -1,2 +1,41 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner mx-4 mt-3 mb-3 rounded-5"
+style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)),
+url(<%= asset_path 'banner2.jpg' %>);">
+  <div class="container text-right">
+    <h1> <strong>DEJA EN MANOS DE EXPERTOS</strong></h1>
+    <h1> <strong>EL CUIDADO DE TU HOGAR</strong></h1>
+    <p>Encuentra al tuyo a solo un clic.</p>
+    <a class="btn mt-3 pr-5 btn-fixi" href="#">Contactanos</a>
+  </div>
+</div>
+
+  <%# categorias %>
+  <div class="container mt-5">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="text-center mb-4">Categorias</h2>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-12 col-sm-4">
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg); border-radius: 15px; transition: transform 0.3s, box-shadow 0.3s;">
+              <h3 class="card-title">Breakfast</h3>
+              <button class="btn-fixi">Ver más</button>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-4">
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg); border-radius: 15px; transition: transform 0.3s, box-shadow 0.3s;">
+              <h3 class="card-title">Lunch</h3>
+              <button class="btn-fixi">Ver más</button>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-4">
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg); border-radius: 15px; transition: transform 0.3s, box-shadow 0.3s;">
+              <h3 class="card-title">Dinner</h3>
+              <button class="btn-fixi">Ver más</button>
+            </div>
+          </div>
+      </div>
+  </div>
