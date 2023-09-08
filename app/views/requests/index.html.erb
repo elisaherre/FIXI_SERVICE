@@ -1,5 +1,43 @@
-<h1>Requests#index</h1>
-<p>Find me in app/views/requests/index.html.erb</p>
-<% @requests.each do |request| %>
-<p><%= request.description %><%= link_to "review", new_request_review_path(request) if request.status == "finalizado" %></p>
-<% end %>
+<div class = "container">
+<h1>Mis solicitudes</h1>
+
+<!-- Solicitudes enviadas -->
+  <% if @sent_requests.size > 0 %>
+    <% @sent_requests.each do |request| %>
+      <div class="card">
+        <div class="card-header">
+          Solicitud de servicio de <%= request.service.category.name.capitalize %>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Fixer: <%= request.service.user.name %></h5>
+          <p class="card-title">Status: <%= request.status.capitalize %></p>
+          <p class="card-text">Descripción:</p>
+          <p class="card-text"><%= request.description %></p>
+          <%= link_to "Crear una reseña", new_request_review_path(request), class: "btn btn-primary" if request.status == "finalizada" && Review.where(user: current_user, request: request).size == 0 %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+
+  <!-- Solicitudes recibidas -->
+  <% if @received_requests.size > 0 %>
+    <% @received_requests.each do |request| %>
+      <div class="card">
+        <div class="card-header">
+          Solicitud de servicio de <%= request.service.category.name.capitalize %>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Cliente: <%= request.user.name %></h5>
+          <p class="card-title">Status: <%= request.status.capitalize %></p>
+          <p class="card-text">Descripción:</p>
+          <p class="card-text"><%= request.description %></p>
+          <%= link_to "Crear una reseña", new_request_review_path(request), class: "btn btn-primary" if request.status == "finalizada" && Review.where(user: current_user, request: request).size == 0 %>
+          <!-- Botones de status -->
+          <% if request.status == "enviada" %>
+          <%= button_to "Aceptar solicitud", accept_path(request), method: :patch %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
