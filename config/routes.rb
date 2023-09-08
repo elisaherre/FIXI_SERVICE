@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  get 'profile', to: "profiles#show", as: "profile"
-  get 'fixers/:id', to: "fixers#show", as: "fixer"
+  get 'profile', to: "profiles#show", as: :profile
+  get 'fixers/:id', to: "fixers#show", as: :fixer
+  patch 'requests/accept/:id', to: "requests#accept", as: :accept
+
   devise_for :users, controllers: { registrations: "registrations" }
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -9,7 +11,7 @@ Rails.application.routes.draw do
 
   resources :services
 
-  get "categories/:id", to: "categories#show", as: "category"
+  get "categories/:id", to: "categories#show", as: :category
   resources :requests do
     resources :reviews, only: [:new, :create]
   end
