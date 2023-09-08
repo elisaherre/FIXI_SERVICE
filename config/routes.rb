@@ -15,5 +15,4 @@ Rails.application.routes.draw do
   resources :requests do
     resources :reviews, only: [:new, :create]
   end
-
 end

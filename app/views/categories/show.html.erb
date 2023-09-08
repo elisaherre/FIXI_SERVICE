@@ -1,13 +1,19 @@
-<div>
-  <h1><%= @category.name.capitalize %></h1>
+<div class="container">
+  <h1 class="text-center titulo-category">EXPERTOS EN <span class="fondo-category-name"><%= @category.name.upcase %></span></h1>
     <div>
       <% if @fixers.size > 0 %>
         <% @fixers.each do |fixer| %>
-          <% if fixer.photo.attached? %>
-          <%= image_tag fixer.photo, height: 50, width: 50, crop: :fill %>
+          <%= link_to fixer_path(fixer.id) do %>
+            <div class="card card-fixi p-3" style="width: 15rem;">
+              <h5 class="card-title color-titulo"><%= fixer.name.upcase %></h5>
+              <% if fixer.photo.attached? %>
+                  <%= image_tag fixer.photo, class: "filtro card-imagen", crop: :fill %>
+                <% end %>
+                <p class="card-text">Rating: <%= fixer %></p>
+                <p class="card-text">Fixer desde: <%= fixer.created_at.strftime('%b/%Y') %></p>
+                <p class="card-text">Trabajos realizados: <%= fixer %></p>
+            </div>
           <% end %>
-        <p><%= fixer.name %></p>
-        <p>Fixer desde: <%= fixer.created_at.strftime('%b/%Y') %></p>
         <% end %>
       <% else %>
         <p>No hay fixers en esta categoría</p>

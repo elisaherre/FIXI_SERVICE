@@ -9,16 +9,13 @@
   background-color: #F2F2F2;
 }
 .fondo-categoria{
-  background-color: #D1D700;
+  background-color: #272727;
+  color: white;
 }
 .estilo-titulo{
   text-transform: uppercase;
   font-weight: bold;
   font-size: 3rem;
-}
-.rotacion-texto{
-    -webkit-transform: rotate(-10deg);
-    -moz-transform: rotate(-10deg);
 }
 
 .separador-reviews{
@@ -31,3 +28,8 @@
   background-color: #D1D700;
 }
 
+
+.header-review{
+  background-color: #272727;
+  color: white;
+}
