@@ -20,7 +20,12 @@ class FixersController < ApplicationController
     @reviews.each do |review|
       suma += review.rating
     end
-    @average = suma / @reviews.size
+    if suma > 0
+      @average = suma / @reviews.size
+    else
+      @average = "Aun no tiene reviews"
+    end
+
 
     # Captura de trabajos realizados
     @completed = 0
