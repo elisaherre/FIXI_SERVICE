@@ -34,7 +34,7 @@
           <%= link_to "Crear una reseña", new_request_review_path(request), class: "btn btn-primary" if request.status == "finalizada" && Review.where(user: current_user, request: request).size == 0 %>
           <!-- Botones de status -->
           <% if request.status == "enviada" %>
-          <%= link_to "Aceptar solicitud",  %>
+          <%= button_to "Aceptar solicitud", accept_path(request), method: :patch %>
           <% end %>
         </div>
       </div>

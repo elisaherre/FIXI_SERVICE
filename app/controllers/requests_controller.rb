@@ -13,4 +13,10 @@ class RequestsController < ApplicationController
 
   def edit
   end
+
+  def accept
+    @request = Request.find(params[:id])
+    @request.status = "aceptada"
+    @request.save
+  end
 end
