@@ -99,7 +99,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_06_185031) do
   end
 
   create_table "services", force: :cascade do |t|
-çç      t.datetime "created_at", null: false
+    t.text "description"
+    t.bigint "user_id", null: false
+    t.bigint "category_id", null: false
+    t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_services_on_category_id"
     t.index ["user_id"], name: "index_services_on_user_id"
