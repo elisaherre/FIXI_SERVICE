@@ -1,0 +1,62 @@
+.reviews-section {
+  text-align: center;
+  padding: 20px;
+}
+
+.carousel {
+  position: relative;
+  width: 300px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.carousel-item {
+  min-width: 300px;
+  box-sizing: border-box;
+  padding: 20px;
+  text-align: left;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  margin: 0 10px;
+}
+
+.stars {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.reviewer-info {
+  display: flex;
+  align-items: center;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  border: none;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.carousel-button-left {
+  left: 10px;
+}
+
+.carousel-button-right {
+  right: 10px;
+}
+
+.stars {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: gold;
+}

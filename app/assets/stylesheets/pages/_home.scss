@@ -1,10 +1,70 @@
 .banner {
+  position: relative; /* Esto permite que los elementos hijos posicionados absolutamente se posicionen en relación con este elemento */
   background-size: cover;
   background-position: center;
   padding: 150px 0;
   height: 470px;
- 
 }
+
+
+
+
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+
+.banner-image1 {
+  position: absolute;
+  top: 55px;
+  left: 75px;
+  animation: fadeInUp 2s ease-out forwards;
+  height: 90px;
+  width: auto;
+}
+
+.banner-image2 {
+  position: absolute;
+  top: 250px;
+  right: 570px;
+  animation: fadeInLeft 2s ease-out forwards;
+  height: 100px;
+  width: auto;
+}
+
+.banner-image3 {
+  position: absolute;
+  top: 270px;
+  left: 85px;
+  animation: fadeInLeft 2s ease-out forwards;
+  height: 70px;
+  width: auto;
+}
+
+
+
+
+/* Estilos banner*/
 
 .banner h1 {
   margin: 0;
@@ -22,6 +82,73 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 
 }
+
+
+
+.banner-search {
+  position: absolute;
+  top: 290px;
+  left: 70%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 8px;
+  border-radius: 25px;
+  max-width: 45%;
+  border: 2px solid #ffffff;
+}
+
+.banner-search-category,
+.banner-search-avaluacion,
+.banner-search-input,
+.banner-search-button {
+  padding: 5px;
+  border-radius: 15px;
+  background: none; /* Agregado para quitar el fondo blanco */
+  border: none;     /* Agregado para quitar el borde negro */
+  color: #424242;
+  font-size: 13px;
+  font-family: roboto;
+}
+
+.banner-search-input {
+  flex-grow: 1;
+  max-width: 35%;
+}
+
+.btn-fixi {
+  border: none;
+  font-weight: bold;
+  padding: 8px 12px; /* Añadido padding para aumentar el tamaño del botón */
+  font-size: 13px;    /* Ajustado el tamaño de la fuente para que sea un poco más grande */
+}
+
+
+
+
+.fondo-page{
+  padding-bottom: 40px;
+  padding-top: 40px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .footer {
   border-top: 1px solid #dee2e6;
