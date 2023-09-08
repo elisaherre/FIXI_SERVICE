@@ -14,7 +14,7 @@
       <li class="nav-item dropdown">
         <%= link_to "SERVICIOS", "#", class: "nav-link link-landing dropdown-toggle", id: "navbarDropdown", data: {bs_toggle: "dropdown"}, aria: {haspopup: "true", expanded: "false"} %>
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <% Category.all.each do |category|  %>
+            <% @categories.each do |category|  %>
             <%= link_to "#{category.name.capitalize}", category_path(category.id), class: "dropdown-item" %>
             <% end %>
           </div>
