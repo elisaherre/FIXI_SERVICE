@@ -17,6 +17,11 @@ class RequestsController < ApplicationController
   def accept
     @request = Request.find(params[:id])
     @request.status = "aceptada"
-    @request.save
+
+    if @request.save
+      redirect_to requests_path
+    else
+      render :accept, status: :unprocessable_entity
+    end
   end
 end
