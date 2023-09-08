@@ -1,7 +1,7 @@
 <div class="container mt-5">
 <div class="row">
   <div class="col-4">
-  <%= image_tag @fixer.photo, height: 300, crop: :fill, class: "filtro redondeada" %>
+  <%= cl_image_tag @fixer.photo.key, height: 300, crop: :fill, class: "filtro redondeada" %>
   </div>
   <div class="col fondo-profile redondeada p-4">
     <div class="row mb-2">
