@@ -1,5 +1,57 @@
-<%= cl_image_tag @fixer.photo.key, height: 300, width: 400, crop: :fill %>
-<h1><%= @fixer.name %></h1>
-<% @services.each do |service| %>
-<p> <%= service.category.name.capitalize %></p>
-<% end %>
+<div class="container mt-5">
+<div class="row">
+  <div class="col-4">
+  <%= image_tag @fixer.photo, height: 300, crop: :fill, class: "filtro redondeada" %>
+  </div>
+  <div class="col fondo-profile redondeada p-4">
+    <div class="row mb-2">
+      <h1 class="estilo-titulo"><%= @fixer.name %></h1>
+    </div>
+  <div class="row">
+  <% @services.each do |service| %>
+    <div class="col-2 mx-1 p-0">
+      <p class="p-0 fondo-categoria text-center rotacion-texto"> <%= service.category.name.capitalize %></p>
+    </div>
+    <% end %>
+  </div>
+  <div class="row mt-2">
+    <p class="m-0"> Fixer desde: <%= @fixer.created_at%></p>
+  </div>
+  <div class="row">
+    <p class="m-0"> Rating: <%= @average %></p>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <p class="m-0"> Trabajos realizados: <%= @completed %></p>
+    </div>
+    <div class="row ">
+      <div class= "col-12 d-flex justify-content-end">
+      <%= link_to "Solicitar",  new_request_path, class: "btn color-boton" %>
+    </div>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+
+<div class="separador-reviews">
+  REVIEWS
+</div>
+
+<div class="container mt-5">
+  <% @reviews.each do |review|  %>
+    <div class="card mt-3">
+      <div class="card-header d-flex">
+        <h5 class="m-2"><%= review.user.name %></h5>
+        <p class="m-2"><%= review.request.service.category.name.capitalize %></p>
+        <p class="m-2"><%= review.created_at %></p>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title align-self-center m-0">Rating <%= review.rating %></h5>
+        <% if review.content %>
+          <p class="card-text"><%= review.content %></p>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

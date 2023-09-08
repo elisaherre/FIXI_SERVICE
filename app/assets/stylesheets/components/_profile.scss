@@ -1,0 +1,33 @@
+.filtro{
+  filter: grayscale(100%);
+}
+.redondeada{
+  border-radius: 1rem;
+}
+
+.fondo-profile{
+  background-color: #F2F2F2;
+}
+.fondo-categoria{
+  background-color: #D1D700;
+}
+.estilo-titulo{
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 3rem;
+}
+.rotacion-texto{
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+}
+
+.separador-reviews{
+  background-color: #D1D700;
+  margin: 2rem 0;
+  padding: 1rem;
+  box-shadow: 0px 5px 5px rgb(180, 180, 180);
+}
+.color-boton{
+  background-color: #D1D700;
+}
+

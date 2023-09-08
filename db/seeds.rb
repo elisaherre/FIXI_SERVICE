@@ -59,9 +59,18 @@ service4 = Service.new(user_id: user1.id, category_id: category4.id, description
 service4.save!
 
 puts "creando request 1..."
-request1 = Request.new(user_id: user2.id, status: "enviada", service_id: service1.id, description: "se rompieron mis repisas", start_date: Date.new(2023,9,9), end_date: Date.new(2023,10,10), budget: 0)
+request1 = Request.new(user_id: user2.id, status: "finalizado", service_id: service1.id, description: "se rompieron mis repisas", start_date: Date.new(2023,9,9), end_date: Date.new(2023,10,10), budget: 0)
+
 request1.save!
 
 puts "creando request 2..."
 request2 = Request.new(user_id: user3.id, status: "enviada", service_id: service1.id, description: "se rompieron mis ventanas", start_date: Date.new(2023,9,9), end_date: Date.new(2023,10,10), budget: 0)
 request2.save!
+
+puts "creando review 1 para fixer"
+review1 = Review.new(user_id: request1.user_id, request_id: request1.id, content: "epetacular", rating: 4)
+review1.save!
+
+puts "creando review 2 para fixer"
+review2 = Review.new(user_id: request1.user_id, request_id: request1.id, rating: 4)
+review2.save!
