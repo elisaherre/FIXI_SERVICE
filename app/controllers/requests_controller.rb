@@ -21,7 +21,51 @@ class RequestsController < ApplicationController
     if @request.save
       redirect_to requests_path
     else
-      render :accept, status: :unprocessable_entity
+      render :requests, status: :unprocessable_entity
+    end
+  end
+
+  def cancel
+    @request = Request.find(params[:id])
+    @request.status = "cancelada"
+
+    if @request.save
+      redirect_to requests_path
+    else
+      render :requests, status: :unprocessable_entity
+    end
+  end
+
+  def book
+    @request = Request.find(params[:id])
+    @request.status = "reservada"
+
+    if @request.save
+      redirect_to requests_path
+    else
+      render :requests, status: :unprocessable_entity
+    end
+  end
+
+  def budget
+    @request = Request.find(params[:id])
+    @request.status = "por pagar"
+
+    if @request.save
+      redirect_to requests_path
+    else
+      render :requests, status: :unprocessable_entity
+    end
+  end
+
+  def pay
+    @request = Request.find(params[:id])
+    @request.status = "finalizada"
+
+    if @request.save
+      redirect_to requests_path
+    else
+      render :requests, status: :unprocessable_entity
     end
   end
 end

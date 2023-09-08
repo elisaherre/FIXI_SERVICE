@@ -13,7 +13,16 @@
           <p class="card-title">Status: <%= request.status.capitalize %></p>
           <p class="card-text">Descripción:</p>
           <p class="card-text"><%= request.description %></p>
+          <!-- Botones de reseña (se muestra al finalizarse la request) -->
           <%= link_to "Crear una reseña", new_request_review_path(request), class: "btn btn-primary" if request.status == "finalizada" && Review.where(user: current_user, request: request).size == 0 %>
+          <!-- Botones de status -->
+          <% if request.status == "enviada" %>
+          <%= button_to "Cancelar solicitud", cancel_path(request), method: :patch %>
+          <% elsif request.status == "aceptada" %>
+          <%= button_to "Reservar visita", book_path(request), method: :patch %>
+          <% elsif request.status == "por pagar" %>
+          <%= button_to "Pagar", pay_path(request), method: :patch %>
+          <% end %>
         </div>
       </div>
     <% end %>
@@ -31,10 +40,14 @@
           <p class="card-title">Status: <%= request.status.capitalize %></p>
           <p class="card-text">Descripción:</p>
           <p class="card-text"><%= request.description %></p>
+          <!-- Botones de reseña (se muestra al finalizarse la request) -->
           <%= link_to "Crear una reseña", new_request_review_path(request), class: "btn btn-primary" if request.status == "finalizada" && Review.where(user: current_user, request: request).size == 0 %>
           <!-- Botones de status -->
           <% if request.status == "enviada" %>
           <%= button_to "Aceptar solicitud", accept_path(request), method: :patch %>
+          <%= button_to "Declinar solicitud", cancel_path(request), method: :patch %>
+          <% elsif request.status == "reservada" %>
+          <%= button_to "Presupuestar servicio", budget_path(request), method: :patch %>
           <% end %>
         </div>
       </div>
