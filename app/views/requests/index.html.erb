@@ -54,7 +54,7 @@
               <p class="card-text"><%= request.description %></p>
               <div class="d-flex justify-content-start mt-3">
                 <!-- Botones de reseña (se muestra al finalizarse la request) -->
-                <%= link_to "review", new_request_review_path(request, cliente: request.user.id) if request.status == "finalizada" && Review.where(user: current_user, request: request).size == 0 %>
+                <%= link_to "Crear una reseña", new_request_review_path(request, cliente: request.user.id), class: "btn btn-fixi" if request.status == "finalizada" && Review.where(user: current_user, request: request).size == 0 %>
                 <!-- Botones de status -->
                 <% if request.status == "enviada" %>
                 <%= button_to "Aceptar solicitud", accept_path(request), method: :patch, class: "btn btn-fixi" %>

@@ -3,6 +3,7 @@
     <div>
       <% if @fixers.size > 0 %>
         <% @fixers.each do |fixer| %>
+          <%= link_to "Ver más", fixer_path(fixer.id) %>
           <% if fixer.photo.attached? %>
           <%= image_tag fixer.photo, height: 50, width: 50, crop: :fill %>
           <% end %>

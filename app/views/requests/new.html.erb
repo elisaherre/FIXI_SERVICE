@@ -1,2 +1,12 @@
-<h1>Requests#new</h1>
-<p>Find me in app/views/requests/new.html.erb</p>
+<div class = "container mt-5 mb-3">
+  <div class="d-flex justify-content-center mb-3">
+  <h1>NUEVA RESEÑA</h1>
+  </div>
+  <%= simple_form_for @request do |f| %>
+    <%= f.input :description, placeholder: '...'%>
+    <%= f.input :start_date, html5: true %>
+    <%= f.input :end_date, html5: true %>
+    <%= f.association :service %>
+    <%= f.submit %>
+  <% end %>
+</div>

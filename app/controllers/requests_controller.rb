@@ -13,7 +13,18 @@ class RequestsController < ApplicationController
     @request = Request.new
   end
 
-  def edit
+  def create
+    @request = Request.new(params[:id])
+    @request.budget = 0
+    @request.user_id = current_user
+    @request.status = "enviada"
+
+    if @request.save
+      redirect_to requests_path
+    else
+      render :new, status: :unprocessable_entity
+    end
+
   end
 
   def accept
@@ -65,6 +76,7 @@ class RequestsController < ApplicationController
       render :requests, status: :unprocessable_entity
     end
   end
+
   private
 
   def set_request
