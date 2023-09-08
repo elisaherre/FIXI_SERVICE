@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   get 'profile', to: "profiles#show", as: :profile
   get 'fixers/:id', to: "fixers#show", as: :fixer
   patch 'requests/accept/:id', to: "requests#accept", as: :accept
+  patch 'requests/cancel/:id', to: "requests#cancel", as: :cancel
+  patch 'requests/book/:id', to: "requests#book", as: :book
+  patch 'requests/budget/:id', to: "requests#budget", as: :budget
+  patch 'requests/pay/:id', to: "requests#pay", as: :pay
 
   devise_for :users, controllers: { registrations: "registrations" }
   root to: "pages#home"
