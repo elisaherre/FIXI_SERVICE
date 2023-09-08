@@ -1,7 +1,7 @@
 <div class="container mt-5">
 <div class="row">
-  <div class="col-4">
-  <%= image_tag @fixer.photo, height: 300, crop: :fill, class: "filtro redondeada" %>
+  <div class="col-5">
+  <%= image_tag @fixer.photo, crop: :fill, class: "filtro redondeada imagen-fixer" %>
   </div>
   <div class="col fondo-profile redondeada p-4">
     <div class="row mb-2">
@@ -9,24 +9,24 @@
     </div>
   <div class="row">
   <% @services.each do |service| %>
-    <div class="col-2 mx-1 p-0">
-      <p class="p-0 fondo-categoria text-center rotacion-texto"> <%= service.category.name.capitalize %></p>
+    <div class="col-2 mx-2 p-0">
+      <p class="categoria-texto text-center"> <%= service.category.name.capitalize %></p>
     </div>
     <% end %>
   </div>
   <div class="row mt-2">
-    <p class="m-0"> Fixer desde: <%= @fixer.created_at.strftime('%d/%m/%Y')%></p>
+    <p class="m-0 textito-card"> Fixer desde: <%= @fixer.created_at.strftime('%d/%m/%Y')%></p>
   </div>
   <div class="row">
-    <p class="m-0"> Rating: <%= @average %></p>
+    <p class="m-0 textito-card"> Rating: <%= @average %></p>
   </div>
   <div class="row">
     <div class="col-12">
-      <p class="m-0"> Trabajos realizados: <%= @completed %></p>
+      <p class="m-0 textito-card"> Trabajos realizados: <%= @completed %></p>
     </div>
-    <div class="row ">
+    <div class="row">
       <div class= "col-12 d-flex justify-content-end">
-      <%= link_to "Solicitar",  new_request_path, class: "btn color-boton" %>
+      <%= link_to "Solicitar",  new_request_path, class: "btn btn-fixi" %>
     </div>
     </div>
   </div>
@@ -39,11 +39,12 @@
 </div>
 
 <div class="container mt-5">
+  <% if @reviews.size > 0 %>
   <% @reviews.each do |review|  %>
-    <div class="card card-review mt-3">
+    <div class="card card-review mt-4">
       <div class="card-header header-review d-flex">
         <h5 class="m-2"><%= review.user.name %></h5>
-        <p class="m-2"><%= review.request.service.category.name.capitalize %></p>
+        <p class="m-2 "><%= review.request.service.category.name.capitalize %></p>
         <p class="m-2"><%= review.created_at.strftime('%d/%m/%Y') %></p>
       </div>
       <div class="card-body">
@@ -53,5 +54,8 @@
         <% end %>
       </div>
     </div>
+    <% end %>
+    <% else %>
+    <h3>Sin reviews</h3>
   <% end %>
 </div>
