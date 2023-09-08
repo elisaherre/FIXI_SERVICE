@@ -1,0 +1,89 @@
+.container.datos-numeros {
+  max-width: 900px; /* Ajusta el ancho máximo a un valor menor */
+  margin-top: 80px;
+  margin-bottom: 100px;
+  position: relative;
+  z-index: 2;
+  padding: 0 20px; /* Añade un poco de relleno a los lados */
+}
+
+.text-center {
+  text-align: center;
+  z-index: 2;
+}
+
+.text-center h2 {
+  padding: 20px;
+  z-index: 2;
+}
+
+.text-center hr {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  width: 90%; /* Ajusta el ancho a un valor menor */
+  border-width: 1.8px;
+  color: rgb(39, 39, 39);
+  z-index: 2;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  max-width: 90%; /* Ajusta el ancho máximo a un valor menor */
+  margin: 0 auto; /* Centra el contenido */
+}
+
+.left-col {
+  flex: 1;
+  max-width: 40%; /* Ajusta el ancho máximo a un valor menor */
+  text-align: right;
+  margin-right: 20px;
+  z-index: 2;
+}
+
+.right-col {
+  flex: 2;
+  max-width: 60%; /* Ajusta el ancho máximo a un valor menor */
+  text-align: left;
+  z-index: 2;
+}
+
+.numeros-reales{
+  font-size: 80px;
+  font-weight: 800;
+  color: #2d2d2d;
+  z-index: 2;
+}
+
+.banner-image55{
+  position: absolute;
+  top: 180px;
+  left: 50px;
+  height: 90px;
+  width: auto;
+  z-index: 1;
+}
+
+.banner-image66{
+  position: absolute;
+  top: 365px;
+  left: 50px;
+  height: 90px;
+  width: auto;
+  z-index: 1;
+}
+
+.info-numero{
+  margin: 0;
+}
+
+.titulo-informacion{
+  font-size: 36px;
+  font-weight: 800;
+}
+
+.descripcion-info{
+  margin-right: 40px;
+}
