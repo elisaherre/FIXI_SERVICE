@@ -8,7 +8,7 @@
               <h5 class="card-title color-titulo"><%= fixer.name.upcase %></h5>
               <% if fixer.photo.attached? %>
               <div class="d-flex justify-content-center">
-                <%= image_tag fixer.photo, class: "filtro card-imagen img-fluid", crop: :fill %>
+                <%= image_tag fixer.photo, class: "card-imagen", crop: :fill %>
               </div>
 
                 <% end %>
