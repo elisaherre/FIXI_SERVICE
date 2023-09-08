@@ -1,40 +1,71 @@
 <div class="fondo-page" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)),
-url(<%= asset_path 'fondo.jpg' %>);">
+url(<%= asset_path 'fondo5.png' %>);">
 
+  <!--banner-->
 
+  <div class="banner mx-4 mt-3 mb-3 rounded-5 cajita-banner"
+  style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)),
+  url(<%= asset_path 'banner2.jpg' %>);">
+    <div class="container text-right titulo-banner">
+      <h1> <strong>DEJA EN MANOS DE EXPERTOS</strong></h1>
+      <h1> <strong>EL CUIDADO DE TU HOGAR</strong></h1>
+      <p>Encuentra al tuyo a solo un clic.</p>
+      <!-- <a class="btn mt-3 pr-5 btn-fixi" href="#">Contactanos</a> -->
+    </div>
 
-<div class="banner mx-4 mt-3 mb-3 rounded-5"
-style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)),
-url(<%= asset_path 'banner2.jpg' %>);">
-  <div class="container text-right">
-    <h1> <strong>DEJA EN MANOS DE EXPERTOS</strong></h1>
-    <h1> <strong>EL CUIDADO DE TU HOGAR</strong></h1>
-    <p>Encuentra al tuyo a solo un clic.</p>
-    <!-- <a class="btn mt-3 pr-5 btn-fixi" href="#">Contactanos</a> -->
+    <form class="banner-search">
+      <select name="categoria" class="banner-search-category">
+        <!-- Añade las opciones de categoría aquí, por ejemplo: -->
+        <option value="Categoria1">Categoria 1</option>
+        <option value="Categoria2">Categoria 2</option>
+      </select>
+      <select name="avaluacion" class="banner-search-avaluacion">
+        <!-- Añade las opciones de avaluación aquí, por ejemplo: -->
+        <option value="5">5 estrellas</option>
+        <option value="4">4 estrellas</option>
+      </select>
+      <input type="text" name="query" class="banner-search-input" placeholder="Buscar...">
+      <button type="submit" class=" btn-fixi">Buscar</button>
+    </form>
+
+    <img src="<%= asset_path 'destello.svg' %>" alt="Descripción de la imagen 1" class="banner-image banner-image1">
+    <img src="<%= asset_path 'arrow.svg' %>" alt="Descripción de la imagen 1" class="banner-image banner-image2">
+    <img src="<%= asset_path 'chips.svg' %>" alt="Descripción de la imagen 1" class="banner-image banner-image3">
+
   </div>
 
-  <form class="banner-search">
-    <select name="categoria" class="banner-search-category">
-      <!-- Añade las opciones de categoría aquí, por ejemplo: -->
-      <option value="Categoria1">Categoria 1</option>
-      <option value="Categoria2">Categoria 2</option>
-    </select>
-    <select name="avaluacion" class="banner-search-avaluacion">
-      <!-- Añade las opciones de avaluación aquí, por ejemplo: -->
-      <option value="5">5 estrellas</option>
-      <option value="4">4 estrellas</option>
-    </select>
-    <input type="text" name="query" class="banner-search-input" placeholder="Buscar...">
-    <button type="submit" class=" btn-fixi">Buscar</button>
-  </form>
+  <!-- Termino banner-->
 
-  <img src="<%= asset_path 'destello.svg' %>" alt="Descripción de la imagen 1" class="banner-image banner-image1">
-  <img src="<%= asset_path 'arrow.svg' %>" alt="Descripción de la imagen 1" class="banner-image banner-image2">
-  <img src="<%= asset_path 'chips.svg' %>" alt="Descripción de la imagen 1" class="banner-image banner-image3">
+
+  <!--Informacion-->
+  <div class="container datos-numeros">
+    <div class="text-center">
+        <h2 class="titulo-informacion">Es sorprendente lo que puedes <strong>ahorrar</strong>, confiando tus arreglos en manos de <strong>nuestros expertos</strong></h2>
+        <hr/>
+        <div class="content info-numero">
+            <div class="left-col">
+                <h2 class="numeros-reales">50%</h2>
+            </div>
+            <div class="right-col">
+                <p class="descripcion-info">Nuestros clientes han reportado un <strong>ahorro de hasta un 50%</strong> en comparación con la contratación de profesionales individuales para cada tarea. Nos enorgullece ofrecer <strong>tarifas competitivas</strong> sin comprometer la calidad del servicio.</p>
+            </div>
+        </div>
+
+        <hr/>
+        <div class="content info-numero">
+          <div class="left-col">
+              <h2 class="numeros-reales">80%</h2>
+          </div>
+          <div class="right-col">
+              <p class="descripcion-info">Nuestros expertos profesionales no solo solucionan problemas, sino que pueden ayudar a aumentar el valor de tu hogar. En promedio, nuestros clientes han visto un aumento en el valor de su propiedad de hasta 80% después de utilizar nuestros servicios de renovación y mantenimiento de hogares</p>
+          </div>
+      </div>
+
+    </div>
+    <img src="<%= asset_path 'rayon_Mesa de trabajo 1.svg' %>" alt="Descripción de la imagen 1" class="banner-image banner-image55">
+    <img src="<%= asset_path 'rayon_Mesa de trabajo 1.svg' %>" alt="Descripción de la imagen 1" class="banner-image banner-image66">
 
 </div>
-
-
 
 
 
@@ -43,7 +74,7 @@ url(<%= asset_path 'banner2.jpg' %>);">
   <div class="container mt-5">
       <div class="row">
         <div class="col-12">
-          <h2 class="text-center mb-4">Categorias</h2>
+          <h2 class="text-center mb-4 titulo-informacion">Categorias</h2>
         </div>
       </div>
       <div class="row">
@@ -51,14 +82,14 @@ url(<%= asset_path 'banner2.jpg' %>);">
             <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
             url(<%= asset_path 'carpinteria.jpg' %>); border-radius: 15px; transition: transform 0.3s, box-shadow 0.3s;">
               <h3 class="card-title">Carpinteria</h3>
-              <button class="btn-fixi">Ver más</button>
+            <%= link_to "Ver más", category_path(4), class:"btn-fixi" %>
             </div>
           </div>
 
           <div class="col-12 col-sm-4">
             <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(<%= asset_path 'plomeria.jpg' %>); border-radius: 15px; transition: transform 0.3s, box-shadow 0.3s;">
               <h3 class="card-title">Plomeria</h3>
-              <button class="btn-fixi">Ver más</button>
+            <%= link_to "Ver más", category_path(5), class:"btn-fixi" %>
             </div>
           </div>
 
@@ -66,7 +97,7 @@ url(<%= asset_path 'banner2.jpg' %>);">
             <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
             url(<%= asset_path 'gasfiteria.jpg' %>); border-radius: 15px; transition: transform 0.3s, box-shadow 0.3s;">
               <h3 class="card-title">Gasfiterìa</h3>
-              <button class="btn-fixi">Ver más</button>
+            <%= link_to "Ver más", category_path(4), class:"btn-fixi" %>
             </div>
           </div>
       </div>
@@ -77,7 +108,7 @@ url(<%= asset_path 'banner2.jpg' %>);">
           <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
           url(<%= asset_path 'electricista.jpg' %>); border-radius: 15px; transition: transform 0.3s, box-shadow 0.3s;">
             <h3 class="card-title">Electricidad</h3>
-            <button class="btn-fixi">Ver más</button>
+            <%= link_to "Ver más", category_path(7), class:"btn-fixi" %>
           </div>
         </div>
 
@@ -85,7 +116,7 @@ url(<%= asset_path 'banner2.jpg' %>);">
           <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
           url(<%= asset_path 'jardineria.jpg' %>); border-radius: 15px; transition: transform 0.3s, box-shadow 0.3s;">
             <h3 class="card-title">Jardinería</h3>
-            <button class="btn-fixi">Ver más</button>
+            <%= link_to "Ver más", category_path(6), class:"btn-fixi" %>
           </div>
         </div>
 
@@ -93,40 +124,43 @@ url(<%= asset_path 'banner2.jpg' %>);">
           <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
           url(<%= asset_path 'mudanza.jpg' %>); border-radius: 15px; transition: transform 0.3s, box-shadow 0.3s;">
             <h3 class="card-title">Mudanza</h3>
-            <button class="btn-fixi">Ver más</button>
+            <%= link_to "Ver más", category_path(4), class:"btn-fixi" %>
           </div>
         </div>
     </div>
   </div>
-<!--Terimino de las card categorias-->
+
+  <!--Terimino de las card categorias-->
 
 
-<section class="reviews-section">
-  <h2>Conoce qué opinan de Fixi Services</h2>
-  <p>Tu satisfacción es nuestra prioridad. Lee las opiniones de nuestros clientes.</p>
 
-  <div class="carousel">
-    <div class="carousel-track">
-      <div class="carousel-item">
-        <div class="stars">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="far fa-star"></i>
+
+
+
+
+  <section class="reviews-section">
+    <h2>Conoce qué opinan de Fixi Services</h2>
+    <p>Tu satisfacción es nuestra prioridad. Lee las opiniones de nuestros clientes.</p>
+
+    <div class="carousel">
+      <div class="carousel-track">
+        <div class="carousel-item">
+          <div class="stars">
+            ★★★★☆
+          </div>
+          <p>¡Gran servicio, muy profesionales!</p>
+          <div class="reviewer-info">
+            <img src="avatar1.jpg" alt="Avatar de John">
+            <span>John Doe</span>
+          </div>
         </div>
-        <p>¡Gran servicio, muy profesionales!</p>
-        <div class="reviewer-info">
-          <img src="path/to/your/avatar1.jpg" alt="Avatar de John" style="width: 50px; height: 50px; border-radius: 50%;">
-          <span style="font-size: 16px; color: #000;">John Doe</span>
-        </div>
+        <!-- Más items de carousel aquí -->
       </div>
-      <!-- Más items de carousel aquí -->
+      <button class="carousel-button carousel-button-left">←</button>
+      <button class="carousel-button carousel-button-right">→</button>
     </div>
-    <button class="carousel-button carousel-button-left">←</button>
-    <button class="carousel-button carousel-button-right">→</button>
-  </div>
-</section>
+  </section>
+
 
 
 
