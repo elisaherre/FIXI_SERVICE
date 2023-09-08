@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
   def new
     @review = Review.new
-    @request = Request.first # actualizar
+    @request = Request.find(params[:request_id])
   end
 
   def create

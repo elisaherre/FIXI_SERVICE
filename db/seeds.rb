@@ -25,7 +25,7 @@ category4 = Category.new(name: "electricidad")
 category4.save!
 
 puts "creando usuario 1..."
-file = URI.open("https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png")
+file = URI.open("https://avatars.githubusercontent.com/u/139592608?v=4")
 user1 = User.new(email: "elisa@gmail.com", password: "123456", address: "calle 123", name: "Elisa")
 user1.photo.attach(io: file, filename: "elisa.png", content_type: "image/png")
 user1.save!
