@@ -58,6 +58,15 @@ puts "creando servicio 4..."
 service4 = Service.new(user_id: user1.id, category_id: category4.id, description: "Especialista en tableros")
 service4.save!
 
+
+puts "creando servicio 5..."
+service4 = Service.new(user_id: user2.id, category_id: category1.id, description: "Especialista en tableros")
+service4.save!
+
+puts "creando servicio 6..."
+service4 = Service.new(user_id: user3.id, category_id: category1.id, description: "Especialista en tableros")
+service4.save!
+
 puts "creando request 1..."
 request1 = Request.new(user_id: user2.id, status: "finalizada", service_id: service1.id, description: "se rompieron mis repisas", start_date: Date.new(2023,9,9), end_date: Date.new(2023,10,10), budget: 0)
 

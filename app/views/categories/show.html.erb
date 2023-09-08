@@ -1,17 +1,30 @@
-<div>
-  <h1><%= @category.name.capitalize %></h1>
-    <div>
-      <% if @fixers.size > 0 %>
+<div class="container">
+  <h1 class="text-center titulo-category">EXPERTOS EN <span class="fondo-category-name"><%= @category.name.upcase %></span></h1>
+  <div class="row">
+    <% if @fixers.size > 0 %>
         <% @fixers.each do |fixer| %>
-          <%= link_to "Ver más", fixer_path(fixer.id) %>
-          <% if fixer.photo.attached? %>
-          <%= image_tag fixer.photo, height: 50, width: 50, crop: :fill %>
-          <% end %>
-        <p><%= fixer.name %></p>
-        <p>Fixer desde: <%= fixer.created_at.strftime('%b/%Y') %></p>
+        <div class="col-3 m-2">
+          <div class="card-fixers">
+              <h5 class="card-title color-titulo"><%= fixer.name.upcase %></h5>
+              <% if fixer.photo.attached? %>
+              <div class="d-flex justify-content-center">
+                <%= image_tag fixer.photo, class: "card-imagen", crop: :fill %>
+              </div>
+
+                <% end %>
+                <p class="card-text textito"><span>Rating:</span> <%= fixer %></p>
+                <p class="card-text textito"><span>Fixer desde:</span> <%= fixer.created_at.strftime('%b/%Y') %></p>
+                <p class="card-text textito"><span>Trabajos realizados:</span> <%= fixer %></p>
+                <%= link_to "Ver perfil",  fixer_path(fixer.id), class: "btn btn-fixi" %>
+          </div>
+
+
+        </div>
         <% end %>
       <% else %>
         <p>No hay fixers en esta categoría</p>
       <% end %>
-    </div>
+  </div>
+
+
 </div>
