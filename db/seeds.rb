@@ -274,6 +274,189 @@ puts "creando servicio 6..."
 service6 = Service.new(user_id: user5.id, category_id: category9.id, description: "Realizo mantenimiento en sistemas de calefacción.")
 service6.save!
 
+# user8
+puts "creando servicio 7..."
+service7 = Service.new(user_id: user8.id, category_id: category8.id, description: "Me especializo en controlar invasiones de roedores.")
+service7.save!
+
+puts "creando servicio 8..."
+service8 = Service.new(user_id: user8.id, category_id: category2.id, description: "Servicios de plomería y gasfitería en general.")
+service8.save!
+
+puts "creando servicio 9..."
+service9 = Service.new(user_id: user8.id, category_id: category3.id, description: "Realizo mantenimiento de jardines.")
+service9.save!
+
+puts "creando servicio 10..."
+service10 = Service.new(user_id: user8.id, category_id: category5.id, description: "Realizo trabajos de albañilería sencillos, no estructurales.")
+service10.save!
+
+# user9
+puts "creando servicio 11..."
+service11 = Service.new(user_id: user9.id, category_id: category5.id, description: "Me especializo en albañilerías de acabados finos de todo tipo.")
+service11.save!
+
+puts "creando servicio 12..."
+service12 = Service.new(user_id: user9.id, category_id: category2.id, description: "Realizo conexiones de equipos hidrosanitarios y de gas.")
+service12.save!
+
+puts "creando servicio 13..."
+service13 = Service.new(user_id: user9.id, category_id: category4.id, description: "Tengo conocimientos básicos de ingeniería eléctrica.")
+service13.save!
+
+puts "creando servicio 14..."
+service14 = Service.new(user_id: user9.id, category_id: category6.id, description: "Realizo copias de llaves, colocación de chapas y herrajes.")
+service14.save!
+
+# user10
+puts "creando servicio 15.."
+service15 = Service.new(user_id: user10.id, category_id: category2.id, description: "Conexión de equipos y mantenimiento de los mismos.")
+service15.save!
+
+puts "creando servicio 16.."
+service16 = Service.new(user_id: user10.id, category_id: category7.id, description: "Instalación y mantenimiento de equipos para climatización.")
+service16.save!
+
+# user11
+puts "creando servicio 17.."
+service17 = Service.new(user_id: user11.id, category_id: category3.id, description: "¡Me encantan las plantas! Puedo ayudarte a mantener y cuidar las plantas de tu hogas, realizo recomendaciones personalizadas.")
+service17.save!
+
+puts "creando servicio 18.."
+service18 = Service.new(user_id: user11.id, category_id: category8.id, description: "Me especializo en tratar plagas del jardín.")
+service18.save!
+
+# user13
+puts "creando servicio 17.."
+service17 = Service.new(user_id: user13.id, category_id: category1.id, description: "Soy fabricante de mobiliario de carpintería a la medida.")
+service17.save!
+
+puts "creando servicio 18.."
+service18 = Service.new(user_id: user13.id, category_id: category9.id, description: "Servicios de mudanzas, ¡yo me encargo que tus muebles lleguen perfectos a su destino!")
+service18.save!
+
+puts "creando servicio 19.."
+service19 = Service.new(user_id: user13.id, category_id: category9.id, description: "Servicios de mudanzas, ¡yo me encargo que tus muebles lleguen perfectos a su destino!")
+service19.save!
+
+puts "creando servicio 20.."
+service20 = Service.new(user_id: user13.id, category_id: category3.id, description: "Diseño e instalación de jardines personalizados.")
+service20.save!
+
+puts "creando servicio 21.."
+service21 = Service.new(user_id: user13.id, category_id: category4.id, description: "Realizo cambios de cableado, salidas eléctricas e instalación de equipos.")
+service21.save!
+
+puts "creando servicio 22.."
+service22 = Service.new(user_id: user13.id, category_id: category7.id, description: "Realizo instalación de equipos de climatización.")
+service22.save!
+
+# user15
+puts "creando servicio 23.."
+service23 = Service.new(user_id: user15.id, category_id: category7.id, description: "Mantenimiento, conexión y recomendación de equipos.")
+service23.save!
+
+puts "creando servicio 24.."
+service24 = Service.new(user_id: user15.id, category_id: category4.id, description: "Servicios de cableado y mantenimiento.")
+service24.save!
+
+puts "creando servicio 25.."
+service25 = Service.new(user_id: user15.id, category_id: category5.id, description: "Realizo trabajos de albañilerías en general.")
+service25.save!
+
+puts "creando servicio 26.."
+service26 = Service.new(user_id: user15.id, category_id: category8.id, description: "Me especializo en fumigaciones con productos ecológicos.")
+service26.save!
+
+# user16
+puts "creando servicio 27.."
+service27 = Service.new(user_id: user16.id, category_id: category8.id, description: "Soluciono tus problemas de plagas con fumigaciones definitivas.")
+service27.save!
+
+puts "creando servicio 28.."
+service28 = Service.new(user_id: user16.id, category_id: category6.id, description: "Realizo copias de todo tipo de llaves, incluyendo eléctricas y automotrices.")
+service28.save!
+
+puts "creando servicio 29.."
+service29 = Service.new(user_id: user16.id, category_id: category2.id, description: "Mantenimiento de tuberías hidráulicas.")
+service29.save!
+
+puts "creando servicio30.."
+service30 = Service.new(user_id: user16.id, category_id: category5.id, description: "Apoyo en construcciones y remodelaciones.")
+service30.save!
+
+puts "creando servicio31.."
+service31 = Service.new(user_id: user16.id, category_id: category5.id, description: "Me especializo en conexiones de equipos especiales de audio.")
+service31.save!
+
+# user19
+puts "creando servicio32.."
+service32 = Service.new(user_id: user19.id, category_id: category3.id, description: "Cuido y mantengo tus plantas con los mejores materiales y mano de obra.")
+service32.save!
+
+puts "creando servicio33.."
+service33 = Service.new(user_id: user19.id, category_id: category1.id, description: "Reparo los muebles y carpinterías de tu hogar.")
+service33.save!
+
+puts "creando servicio34.."
+service34 = Service.new(user_id: user19.id, category_id: category5.id, description: "Realizo trabajos de albañilería en general.")
+service34.save!
+
+puts "creando servicio35.."
+service35 = Service.new(user_id: user19.id, category_id: category5.id, description: "Realizo trabajos de albañilería en general.")
+service35.save!
+
+puts "creando servicio36.."
+service36 = Service.new(user_id: user19.id, category_id: category7.id, description: "Distribuidora e instaladora de equipos de climatización amigables con el ambiente.")
+service36.save!
+
+puts "creando servicio37.."
+service37 = Service.new(user_id: user19.id, category_id: category8.id, description: "Te ayudo a mantener tu jardín y plantas interiores libres de plagas.")
+service37.save!
+
+# user20
+
+puts "creando servicio38.."
+service38 = Service.new(user_id: user20.id, category_id: category1.id, description: "Fabrico mobiliario de alta calidad.")
+service38.save!
+
+puts "creando servicio39.."
+service39 = Service.new(user_id: user20.id, category_id: category6.id, description: "Instalación de herrajes de seguridad.")
+service39.save!
+
+puts "creando servicio40.."
+service40 = Service.new(user_id: user20.id, category_id: category9.id, description: "Servicios de mudanza y emplayado.")
+service40.save!
+
+puts "creando servicio41.."
+service41 = Service.new(user_id: user20.id, category_id: category3.id, description: "Cuidado y mantenimiento de plantas paraa interiores.")
+service41.save!
+
+puts "creando servicio42.."
+service42 = Service.new(user_id: user20.id, category_id: category7.id, description: "Mantenimiento de equipos de enfriamiento.")
+service42.save!
+
+# user21
+puts "creando servicio43.."
+service43 = Service.new(user_id: user21.id, category_id: category5.id, description: "Realizo los mejores trabajos de albañilería, acabados y tejados.")
+service43.save!
+
+puts "creando servicio44.."
+service44 = Service.new(user_id: user21.id, category_id: category7.id, description: "Instalación y mantenimiento de sistemas de calefacción.")
+service44.save!
+
+puts "creando servicio45.."
+service45 = Service.new(user_id: user21.id, category_id: category2.id, description: "Realizo reparaciones en fugas hidráulicas.")
+service45.save!
+
+puts "creando servicio46.."
+service46 = Service.new(user_id: user21.id, category_id: category4.id, description: "Instalación de sistemas de domótica.")
+service46.save!
+
+# user22
+
+# SOLICITUDES
+
 puts "creando request 1..."
 request1 = Request.new(user_id: user2.id, status: "finalizada", service_id: service1.id, description: "se rompieron mis repisas", start_date: Date.new(2023,9,9), end_date: Date.new(2023,10,10), budget: 0)
 
