@@ -1,0 +1,59 @@
+.filtro{
+  filter: grayscale(100%);
+}
+.redondeada{
+  border-radius: 1rem;
+}
+
+.fondo-profile{
+  background-color: #F2F2F2;
+}
+.categoria-texto{
+  width: 100%;
+  background-color: #272727;
+  color: white;
+  padding: .5rem .5rem;
+  font-size: 1.2rem;
+}
+
+.estilo-titulo{
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.separador-reviews{
+  background-color: #D1D700;
+  margin: 2rem 0;
+  padding: 1rem;
+  box-shadow: 0px 5px 5px rgb(180, 180, 180);
+}
+
+.header-review{
+  background-color: #272727;
+  color: white;
+}
+.imagen-fixer{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.textito-card{
+  font-size: 1.5rem;
+}
+.header-review > h5{
+  font-size: 1.6rem;
+}
+
+.header-review > p{
+  font-size: 1.2rem;
+}
+
+
+.card-body > h5 {
+  font-size: 1.2rem;
+}
+.card-body > p {
+  font-size: 1rem;
+}
+
