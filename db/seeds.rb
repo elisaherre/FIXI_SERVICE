@@ -41,9 +41,9 @@ category5.photo.attach(io: file, filename: "albañilería.png", content_type: "i
 category5.save!
 
 puts "creando categoría 6..."
-file = URI.open("https://img.freepik.com/foto-gratis/pintura-mural-concepto-rodillo_23-2148903464.jpg?w=1800&t=st=1694301496~exp=1694302096~hmac=01730430b678b1a38949550bd7c5f57ed9a1f1f0c1df9baf86ffa1ad7e60fdb2")
-category6 = Category.new(name: "acabados")
-category6.photo.attach(io: file, filename: "acabados.png", content_type: "image/png")
+file = URI.open("https://images.unsplash.com/flagged/photo-1564767609342-620cb19b2357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2873&q=80")
+category6 = Category.new(name: "cerrajería")
+category6.photo.attach(io: file, filename: "cerrajería.png", content_type: "image/png")
 category6.save!
 
 puts "creando categoría 7..."
@@ -164,7 +164,7 @@ user16.save!
 
 puts "creando usuario 17..."
 file = URI.open("https://img.freepik.com/foto-gratis/selfie-retrato-videollamada_23-2149186120.jpg?w=1800&t=st=1694303760~exp=1694304360~hmac=4a834bb5d47faf923c3d2ea71a8464916cb6bae118d8b959fb73172a6b260c8b")
-user17 = User.new(email: "lucia@gmail.com", password: "123456", address: "calle 123", name: "Lucia")
+user17 = User.new(email: "lucia@gmail.com", password: "123456", address: "calle 123", name: "Lucía")
 user17.photo.attach(io: file, filename: "lucía.png", content_type: "image/png")
 user17.save!
 
@@ -186,32 +186,93 @@ user20 = User.new(email: "diana@gmail.com", password: "123456", address: "calle 
 user20.photo.attach(io: file, filename: "diana.png", content_type: "image/png")
 user20.save!
 
+puts "creando usuario 21..."
+file = URI.open("https://images.unsplash.com/photo-1544723795-3fb6469f5b39?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2592&q=80")
+user21 = User.new(email: "carlos@gmail.com", password: "123456", address: "calle 123", name: "Carlos")
+user21.photo.attach(io: file, filename: "carlos.png", content_type: "image/png")
+user21.save!
+
+puts "creando usuario 22..."
+file = URI.open("https://images.unsplash.com/photo-1607346256330-dee7af15f7c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3006&q=80")
+user22 = User.new(email: "roberto@gmail.com", password: "123456", address: "calle 123", name: "Roberto")
+user22.photo.attach(io: file, filename: "roberto.png", content_type: "image/png")
+user22.save!
+
+puts "creando usuario 23..."
+file = URI.open("https://images.unsplash.com/photo-1540569014015-19a7be504e3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2835&q=80")
+user23 = User.new(email: "mauro@gmail.com", password: "123456", address: "calle 123", name: "Mauro")
+user23.photo.attach(io: file, filename: "mauro.png", content_type: "image/png")
+user23.save!
+
+puts "creando usuario 24..."
+file = URI.open("https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2952&q=80")
+user24 = User.new(email: "nicolas@gmail.com", password: "123456", address: "calle 123", name: "Nicolas")
+user24.photo.attach(io: file, filename: "nicolas.png", content_type: "image/png")
+user24.save!
+
+puts "creando usuario 25..."
+file = URI.open("https://images.unsplash.com/photo-1530268729831-4b0b9e170218?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80")
+user25 = User.new(email: "guillermo@gmail.com", password: "123456", address: "calle 123", name: "Guillermo")
+user25.photo.attach(io: file, filename: "guillermo.png", content_type: "image/png")
+user25.save!
+
+puts "creando usuario 26..."
+file = URI.open("https://images.unsplash.com/photo-1588701177361-c42359b29f68?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80")
+user26 = User.new(email: "alejandra@gmail.com", password: "123456", address: "calle 123", name: "Alejandra")
+user26.photo.attach(io: file, filename: "alejandra.png", content_type: "image/png")
+user26.save!
+
+puts "creando usuario 27..."
+file = URI.open("https://images.unsplash.com/photo-1535643302794-19c3804b874b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80")
+user27 = User.new(email: "jorge@gmail.com", password: "123456", address: "calle 123", name: "Jorge")
+user27.photo.attach(io: file, filename: "jorge.png", content_type: "image/png")
+user27.save!
+
+puts "creando usuario 28..."
+file = URI.open("https://images.unsplash.com/photo-1588453383063-37ea0b78f30f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80")
+user28 = User.new(email: "lucrecia@gmail.com", password: "123456", address: "calle 123", name: "Lucrecia")
+user28.photo.attach(io: file, filename: "lucrecia.png", content_type: "image/png")
+user28.save!
+
+puts "creando usuario 29..."
+file = URI.open("https://images.unsplash.com/photo-1592155376559-a78736aa31b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80")
+user29 = User.new(email: "brenda@gmail.com", password: "123456", address: "calle 123", name: "Brenda")
+user29.photo.attach(io: file, filename: "brenda.png", content_type: "image/png")
+user29.save!
+
+puts "creando usuario 30..."
+file = URI.open("https://images.unsplash.com/photo-1611987345939-a481cc27367e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2846&q=80")
+user30 = User.new(email: "hernan@gmail.com", password: "123456", address: "calle 123", name: "Hernán")
+user30.photo.attach(io: file, filename: "hernan.png", content_type: "image/png")
+user30.save!
+
 # SERVICIOS
 
+# user4
 puts "creando servicio 1..."
-service1 = Service.new(user_id: user1.id, category_id: category1.id, description: "Especialista en mobiliario de cocina")
+service1 = Service.new(user_id: user4.id, category_id: category1.id, description: "Especialista en restauraciones de muebles antigüos.")
 service1.save!
 
 puts "creando servicio 2..."
-service2 = Service.new(user_id: user1.id, category_id: category2.id, description: "Especialista en fugas")
+service2 = Service.new(user_id: user4.id, category_id: category6.id, description: "Colocación de accesorios de cerrajería.")
 service2.save!
 
 puts "creando servicio 3..."
-service3 = Service.new(user_id: user1.id, category_id: category3.id, description: "Especialista en plantas de interior")
+service3 = Service.new(user_id: user4.id, category_id: category9.id, description: "Realizo mudanzas exprés.")
 service3.save!
 
 puts "creando servicio 4..."
-service4 = Service.new(user_id: user1.id, category_id: category4.id, description: "Especialista en tableros")
+service4 = Service.new(user_id: user4.id, category_id: category4.id, description: "Especialista en solucionar problemas en tableros eléctricos.")
 service4.save!
 
-
+# user5
 puts "creando servicio 5..."
-service4 = Service.new(user_id: user2.id, category_id: category1.id, description: "Especialista en tableros")
-service4.save!
+service5 = Service.new(user_id: user5.id, category_id: category4.id, description: "Atiendo problemas en cableados generales del hogar.")
+service5.save!
 
 puts "creando servicio 6..."
-service4 = Service.new(user_id: user3.id, category_id: category1.id, description: "Especialista en tableros")
-service4.save!
+service6 = Service.new(user_id: user5.id, category_id: category9.id, description: "Realizo mantenimiento en sistemas de calefacción.")
+service6.save!
 
 puts "creando request 1..."
 request1 = Request.new(user_id: user2.id, status: "finalizada", service_id: service1.id, description: "se rompieron mis repisas", start_date: Date.new(2023,9,9), end_date: Date.new(2023,10,10), budget: 0)
