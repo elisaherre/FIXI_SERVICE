@@ -4,11 +4,16 @@
       <h2 class= "text-center pb-2">NUEVA SOLICITUD PARA <%= @fixer.name.upcase %></h2>
       <%= simple_form_for @request do |f| %>
       <p class="mb-2">Elige un rango de fechas:</p>
-      <%= f.input :start_date, data: {
-                                controller: "flatpickr",
-                                flatpickr_min_date: Time.zone.now
-                                } %>
-      <%= f.input :end_date, input_html: { data: { controller: "flatpickr" } }%>
+      <div>
+        <%= f.input :start_date, as: :string,
+                                  input_html: {
+                                    data: { controller: "flatpickr", flatpickr_min_date: Time.zone.now }
+                                  } %>
+        <%= f.input :end_date, as: :string,
+                                  input_html: {
+                                    data: { controller: "flatpickr", flatpickr_min_date: Time.zone.now }
+                                  } %>
+      </div>
       <%= f.select(:service_id, options_for_select(@services.map { |service| [service.category.name.capitalize, service.id] })) %>
       <%= f.input :description, placeholder: '...', label: "Descripción" %>
       <div class="text-end p-2">
