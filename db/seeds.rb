@@ -323,7 +323,7 @@ service17.save!
 
 # user11
 puts "creando servicio 18.."
-service18 = Service.new(user_id: user11.id, category_id: category3.id, description: "¡Me encantan las plantas! Puedo ayudarte a mantener y cuidar las plantas de tu hogas, realizo recomendaciones personalizadas.")
+service18 = Service.new(user_id: user11.id, category_id: category3.id, description: "¡Me encantan las plantas! Puedo ayudarte a mantener y cuidar las plantas de tu hogar, realizo recomendaciones personalizadas.")
 service18.save!
 
 puts "creando servicio 19.."
@@ -511,7 +511,7 @@ service61 = Service.new(user_id: user25.id, category_id: category8.id, descripti
 service61.save!
 
 puts "creando servicio62.."
-service62 = Service.new(user_id: user25.id, category_id: category9.id, description: "Realizo mudanzas con especial atención a cuidad tus muebles.")
+service62 = Service.new(user_id: user25.id, category_id: category9.id, description: "Realizo mudanzas con especial atención al cuidado de tus muebles.")
 service62.save!
 
 puts "creando servicio63.."
@@ -597,35 +597,107 @@ service81.save!
 
 # SOLICITUDES
 
+# para user4
 puts "creando request 1..."
 request1 = Request.new(user_id: user1.id, status: "enviada", service_id: service1.id, description: "Necesito ayuda para reparar un comedor antigüo.", start_date: Date.new(2023,9,16), end_date: Date.new(2023,10,16), budget: 0)
 request1.save!
 
 puts "creando request 2..."
-request2 = Request.new(user_id: user2.id, status: "aceptada", service_id: service2.id, description: "Deseo cambiar la cerrajería de la puerta principal de mi casa y mi garage.", start_date: Date.new(2023,9,20), end_date: Date.new(2023,10,20), budget: 0)
+request2 = Request.new(user_id: user2.id, status: "enviada", service_id: service2.id, description: "Deseo cambiar la cerrajería de la puerta principal de mi casa y mi garage.", start_date: Date.new(2023,9,20), end_date: Date.new(2023,10,20), budget: 0)
 request2.save!
 
 puts "creando request 3..."
-request3 = Request.new(user_id: user3.id, status: "reservada", service_id: service3.id, description: "Necesito ayuda para realizar una mudanza el próximo mes.", start_date: Date.new(2023,10,20), end_date: Date.new(2023,10,30), budget: 0)
+request3 = Request.new(user_id: user3.id, status: "enviada", service_id: service3.id, description: "Necesito ayuda para realizar una mudanza el próximo mes.", start_date: Date.new(2023,10,20), end_date: Date.new(2023,10,30), budget: 0)
 
+# para user5
 puts "creando request 4..."
-request4 = Request.new(user_id: user1.id, status: "por pagar", service_id: service6.id, description: "Requiero realizar el mantenimiento a mi tablero eléctrico.", start_date: Date.new(2023,9,30), end_date: Date.new(2023,10,20), budget: 0)
+request4 = Request.new(user_id: user1.id, status: "enviada", service_id: service6.id, description: "Requiero realizar el mantenimiento a mi tablero eléctrico.", start_date: Date.new(2023,9,30), end_date: Date.new(2023,10,20), budget: 0)
 request4.save!
 
 puts "creando request 5..."
-request5 = Request.new(user_id: user2.id, status: "aceptada", service_id: service6.id, description: "Quiero sustituir algunos cableados en mi casa.", start_date: Date.new(2023,9,20), end_date: Date.new(2023,10,30), budget: 0)
+request5 = Request.new(user_id: user2.id, status: "enviada", service_id: service6.id, description: "Quiero sustituir algunos cableados en mi casa.", start_date: Date.new(2023,9,20), end_date: Date.new(2023,10,30), budget: 0)
 request5.save!
 
 puts "creando request 6..."
 request6 = Request.new(user_id: user3.id, status: "enviada", service_id: service7.id, description: "Quiero realizar el mantenimiento del sistema de calefacción de mi departamento.", start_date: Date.new(2023,9,17), end_date: Date.new(2023,10,17), budget: 0)
 request6.save!
 
-# REVIEWS PARA FIXERS
+# para user8
+puts "creando request 7..."
+request7 = Request.new(user_id: user6.id, status: "enviada", service_id: service8.id, description: "Necesito fumigar.", start_date: Date.new(2023,9,17), end_date: Date.new(2023,10,17), budget: 0)
+request7.save!
 
-puts "creando review 1 para fixer"
-review1 = Review.new(user_id: request1.user_id, request_id: request1.id, content: "epetacular", rating: 4)
-review1.save!
+puts "creando request 8..."
+request8 = Request.new(user_id: user3.id, status: "enviada", service_id: service8.id, description: "Necesito instalar un nuevo calentador de agua en mi departamento.", start_date: Date.new(2023,9,20), end_date: Date.new(2023,10,30), budget: 0)
+request8.save!
 
-puts "creando review 2 para fixer"
-review2 = Review.new(user_id: request1.user_id, request_id: request1.id, rating: 4)
-review2.save!
+puts "creando request 9..."
+request9 = Request.new(user_id: user1.id, status: "enviada", service_id: service10.id, description: "Necesito un jardinero que me apoye en el mantenimiento del jardín.", start_date: Date.new(2023,9,25), end_date: Date.new(2023,10,25), budget: 0)
+request9.save!
+
+# para user9
+puts "creando request 10..."
+request10 = Request.new(user_id: user2.id, status: "enviada", service_id: service12.id, description: "Requiero ayuda para pintar los interiores de mi casa.", start_date: Date.new(2023,10,01), end_date: Date.new(2023,10,31), budget: 0)
+request10.save!
+
+puts "creando request 11..."
+request11 = Request.new(user_id: user6.id, status: "enviada", service_id: service13.id, description: "Necesito que me ayuden a colocar muebles de lavabo y WC en un baño de mi casa.", start_date: Date.new(2023,10,01), end_date: Date.new(2023,10,20), budget: 0)
+request11.save!
+
+puts "creando request 12..."
+request12 = Request.new(user_id: user6.id, status: "enviada", service_id: service15.id, description: "Requiero sacar copias de varios juegos de llaves.", start_date: Date.new(2023,9,20), end_date: Date.new(2023,9,30), budget: 0)
+request12.save!
+
+# para user 10
+puts "creando request 13..."
+request13 = Request.new(user_id: user6.id, status: "enviada", service_id: service16.id, description: "Deseo realizar una revisión de las tuberías hidráulicas de mi casa.", start_date: Date.new(2023,10,03), end_date: Date.new(2023,10,13), budget: 0)
+request13.save!
+
+puts "creando request 14..."
+request14 = Request.new(user_id: user4.id, status: "enviada", service_id: service16.id, description: "Sospecho que hay una fuga en mi baño, necesito asistencia para revisarla.", start_date: Date.new(2023,9,30), end_date: Date.new(2023,10,01), budget: 0)
+request14.save!
+
+puts "creando request 15..."
+request15 = Request.new(user_id: user7.id, status: "enviada", service_id: service16.id, description: "Requiero realizar el mantenimiento de mi sistema de clima.", start_date: Date.new(2023,10,30), end_date: Date.new(2023,11,01), budget: 0)
+request15.save!
+
+# para user11
+puts "creando request 16..."
+request16 = Request.new(user_id: user7.id, status: "enviada", service_id: service18.id, description: "Quiero recomendaciones para las plantas de mi terraza.", start_date: Date.new(2023,10,15), end_date: Date.new(2023,11,15), budget: 0)
+request16.save!
+
+puts "creando request 17..."
+request17 = Request.new(user_id: user12.id, status: "enviada", service_id: service18.id, description: "Necesito mantenimiento de las plantas de mi casa mientras salgo de viaje.", start_date: Date.new(2023,12,15), end_date: Date.new(2023,11,20), budget: 0)
+request17.save!
+
+puts "creando request 18..."
+request18 = Request.new(user_id: user4.id, status: "enviada", service_id: service19.id, description: "Deseo fumigar mi jardín contra plagas en los arbustos.", start_date: Date.new(2023,10,15), end_date: Date.new(2023,11,20), budget: 0)
+request18.save!
+
+# para user13
+puts "creando request 19..."
+request19 = Request.new(user_id: user12.id, status: "enviada", service_id: service20.id, description: "Quiero armar unas repisas para una bodega de guardado en mi casa.", start_date: Date.new(2023,11,15), end_date: Date.new(2023,11,30), budget: 0)
+request19.save!
+
+puts "creando request 20..."
+request20 = Request.new(user_id: user11.id, status: "enviada", service_id: service21.id, description: "Voy a reaalizar la mudanza de mi estudio y necesito un mudancero de confianza.", start_date: Date.new(2023,10,1), end_date: Date.new(2023,10,05), budget: 0)
+request20.save!
+
+puts "creando request 21..."
+request21 = Request.new(user_id: user7.id, status: "enviada", service_id: service20.id, description: "Quiero añadir puertas a los gabinetes de mi cocina.", start_date: Date.new(2023,11,1), end_date: Date.new(2023,11,20), budget: 0)
+request21.save!
+
+# para user15
+puts "creando request 22..."
+request22 = Request.new(user_id: user17.id, status: "enviada", service_id: service28.id, description: "Quiero fumigar mi casa y probar nuevos productos para no dañar el medio ambiente.", start_date: Date.new(2023,10,1), end_date: Date.new(2023,10,30), budget: 0)
+request22.save!
+
+puts "creando request 23..."
+request23 = Request.new(user_id: user14.id, status: "enviada", service_id: service28.id, description: "Requiero fumigar algunas áreas de mi casa.", start_date: Date.new(2023,9,20), end_date: Date.new(2023,9,30), budget: 0)
+request23.save!
+
+puts "creando request 24..."
+request24 = Request.new(user_id: user11.id, status: "enviada", service_id: service27.id, description: "Necesito reparar algunos muros y ventanas antes de mudarme.", start_date: Date.new(2023,9,20), end_date: Date.new(2023,9,30), budget: 0)
+request24.save!
+
+# para user16
