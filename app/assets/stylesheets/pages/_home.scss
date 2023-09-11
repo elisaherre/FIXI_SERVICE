@@ -9,6 +9,7 @@
 
 .titulo-banner{
   margin-top: 45px;
+  margin-left: 5rem;
 }
 
 
@@ -38,18 +39,18 @@
 
 .banner-image1 {
   position: absolute;
-  top: 55px;
-  left: 75px;
-  height: 100px;
+  top: 50px;
+  left: 67px;
+  height: 140px;
   width: auto;
 }
 
 .banner-image2 {
   position: absolute;
   top: 320px;
-  right: 600px;
+  right: 650px;
   animation: fadeInLeft 2s ease-out forwards;
-  height: 100px;
+  height: 140px;
   width: auto;
 }
 
@@ -81,7 +82,6 @@
 .banner p {
   font-size: 20px;
   color: white;
-  opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 
 }
@@ -90,14 +90,14 @@
 
 .banner-search {
   position: absolute;
-  top: 320px;
-  left: 70%;
+  top: 370px;
+  left: 73%;
   transform: translateX(-50%);
   display: flex;
   gap: 10px;
   background-color: rgba(255, 255, 255, 0.7);
-  padding: 8px;
-  border-radius: 25px;
+  padding: 10px;
+  border-radius: 35px;
   max-width: 45%;
   border: 2px solid #ffffff;
 }
@@ -106,25 +106,26 @@
 .banner-search-avaluacion,
 .banner-search-input,
 .banner-search-button {
-  padding: 5px;
+  padding: 6px;
   border-radius: 15px;
   background: none; /* Agregado para quitar el fondo blanco */
   border: none;     /* Agregado para quitar el borde negro */
   color: #424242;
-  font-size: 13px;
+  font-size: 15px;
   font-family: roboto;
+
 }
 
 .banner-search-input {
   flex-grow: 1;
-  max-width: 35%;
+  max-width: 45%;
 }
 
 .btn-fixi {
   border: none;
   font-weight: bold;
   padding: 8px 12px; /* Añadido padding para aumentar el tamaño del botón */
-  font-size: 13px;    /* Ajustado el tamaño de la fuente para que sea un poco más grande */
+  font-size: 14px;    /* Ajustado el tamaño de la fuente para que sea un poco más grande */
 }
 
 
@@ -179,5 +180,3 @@
 .footer ul li a:hover {
   text-decoration: underline;
 }
-
-
