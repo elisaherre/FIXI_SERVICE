@@ -61,7 +61,7 @@ category8.save!
 puts "creando categoría 9..."
 file = URI.open("https://img.freepik.com/foto-gratis/repartidores-cargando-cajas-carton-furgoneta-mientras-preparan-envio_637285-2289.jpg?w=1800&t=st=1694301689~exp=1694302289~hmac=f414073bb8252e21696bc0fab9a1b42898ad23d660c78bc6a41664d1b69b3296")
 category9 = Category.new(name: "mudanzas")
-category8.photo.attach(io: file, filename: "mudanzas.png", content_type: "image/png")
+category9.photo.attach(io: file, filename: "mudanzas.png", content_type: "image/png")
 category9.save!
 
 # USUARIOS

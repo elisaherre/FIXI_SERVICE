@@ -1,4 +1,7 @@
 
+  <!--FONDO-->
+
+
 
   <!--banner-->
 
@@ -38,6 +41,31 @@
 
 
 
+  <!--categorias-->
+
+<div class="">
+  <div class="row">
+    <div class="col-12">
+      <h2 class="text-center titulo-informacion">CATEGORIAS</h2>
+    </div>
+  </div>
+  <div class="row justify-content-center tarjetas-pintura">
+    <% @categories.each_with_index do |category, index|  %>
+    <div class="col tarjetas-informacion mx-0" >
+      <div class="card-category text-category" style="background-color: rgba(216, 245, 0, <%= 0.1 + (index * 0.1) %>);">
+        <%= category.name %>
+        <button type="submit" class="btn-especial">Ver más</button>
+
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
 
   <!--Informacion-->
   <div class="container fondo-principal">
@@ -49,10 +77,11 @@
 
       <!-- Segunda columna -->
       <div class="col align-items-center text-center text-grande">
+            <img src="<%= asset_path 'rayon_Mesa de trabajo 1.svg' %>" alt="Descripción de la imagen 1" class="rayado-informacion">
             <h1 class="display-4">ENCUENTRA EL TUYO</h1>
-            <h5>Busca en tu radar más cercano el profesional que necesitas</h5>
+            <h5 class="texto-informacion">Busca en tu radar más cercano el profesional que necesitas</h5>
           <div>
-            <button type="button" class="btn btn-primary">Botón </button>
+            <button type="button" class="btn-tamaño-xl">Botón </button>
           </div>
 
       </div>
@@ -69,35 +98,11 @@
 
 
 
-  <!--FONDO-->
+
+
 
   <div class="fondo-page" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)),
-url(<%= asset_path 'fondo5.png' %>);">
-
-  <!--categorias-->
-
-<div class="container mt-5">
-  <div class="row">
-    <div class="col-12">
-      <h2 class="text-center mb-4 titulo-informacion color-titulo">CATEGORIAS</h2>
-    </div>
-  </div>
-  <div class="row">
-    <% @categories.each do |category|  %>
-      <div class="col-12 col-sm-4">
-        <div class="card-category card-fixers" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-        url(<%= asset_path 'carpinteria.jpg' %>); border-radius: 15px; transition: transform 0.3s, box-shadow 0.3s;">
-          <div class="titulo-category ">
-            <%= link_to "#{category.name.capitalize}", category_path(category.id), class:"card-title textito" %>
-          </div>
-          <%= link_to "Ver más", category_path(category.id), class:"btn-fixi textito" %> <!-- Ajusté el id de la ruta a category.id para que sea dinámico -->
-        </div>
-      </div>
-    <% end %>
-  </div>
-</div>
-
-
+url(<%= asset_path 'fondo-fixi-new.png' %>);">
 
 
 
