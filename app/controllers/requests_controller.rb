@@ -12,7 +12,7 @@ class RequestsController < ApplicationController
   def new
     @request = Request.new
     @services = Service.where(user_id: params[:fixer_id])
-    @fixer = User.where(id: params[:fixer_id])
+    @fixer = User.find(params[:fixer_id])
   end
 
   def create
