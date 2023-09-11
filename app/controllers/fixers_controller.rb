@@ -1,4 +1,5 @@
 class FixersController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :show ]
   def show
     fixers_id = Service.all.map {|user| user.user_id }.uniq
     user = User.find_by(id: params[:id])

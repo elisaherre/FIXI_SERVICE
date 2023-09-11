@@ -3,7 +3,7 @@
   <div class="row">
     <% if @fixers.size > 0 %>
         <% @fixers.each do |fixer| %>
-        <div class="col-3 m-2">
+        <div class="col-3 m-2 ">
           <div class="card-fixers">
               <h5 class="card-title color-titulo"><%= fixer.name.upcase %></h5>
               <% if fixer.photo.attached? %>
