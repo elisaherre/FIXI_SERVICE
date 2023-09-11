@@ -5,25 +5,39 @@
   </div>
   <div class="col fondo-profile redondeada p-4">
     <div class="row mb-2">
-      <h1 class="estilo-titulo"><%= @fixer.name %></h1>
+      <div class="col-7">
+        <div class="row">
+          <div class="col">
+            <h1 class="estilo-titulo"><%= @fixer.name %></h1>
+          </div>
+          <div class="col">
+            <i class="fa-solid fa-circle-info" data-controller="tooltip" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Fixer desde: <%= @fixer.created_at.strftime('%m/%Y')%> Trabajos realizados: <%= @completed %>"></i>
+          </div>
+        </div>
+      </div>
+      <div class="col-5">
+        <h2><%= @average %> estrellas</h2>
+      </div>
     </div>
-  <div class="row">
-  <% @services.each do |service| %>
-    <div class="col-2 mx-2 p-0">
-      <p class="categoria-texto text-center" data-controller="popover" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="bottom" title="Descripcion" data-bs-content=<%= service.description %>> <%= service.category.name.capitalize %></p>
-    </div>
+  <div class="">
+  <ul class="nav nav-pills">
+    <% id = 0 %>
+    <% @services.each do |service| %>
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="#" id=<%= id += 1 %>><%= service.category.name.capitalize %></a>
+      </li>
+    <% end %>
+  </ul>
+    <% for number in (1..id) %>
+      <div class="tab-content">
+        <div class="tab-pane fade show <% id == number ? "active" : "fade" %>" id=<%= number %>>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam cumque quae deleniti quas dicta reprehenderit, ab odio dolorum itaque repellat, quisquam sunt ipsam fugiat doloribus eos perferendis est aliquid exercitationem.</p>
+        </div>
+      </div>
     <% end %>
   </div>
-  <div class="row mt-4">
-    <p class="m-0 textito-card"><span>Fixer desde: </span><%= @fixer.created_at.strftime('%d/%m/%Y')%></p>
-  </div>
-  <div class="row mt-4">
-    <p class="m-0 textito-card"><span>Rating: </span><%= @average %></p>
-  </div>
-  <div class="row mt-4">
-    <div class="col-12">
-      <p class="m-0 textito-card"><span>Trabajos realizados: </span><%= @completed %></p>
-    </div>
+
+
     <div class="row">
       <div class= "col-12 d-flex justify-content-end">
       <%= link_to "Solicitar",  new_request_path, class: "btn btn-fixi" %>
