@@ -133,36 +133,66 @@ url(<%= asset_path 'fondo5.png' %>);">
   <!--Terimino de las card categorias-->
 
 
+  <div class="reviews-section container mt-5">
+    <h2 class="text-center mb-4">Opiniones de nuestros clientes</h2>
+    <div id="reviewsCarrusel" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
 
-
-
-
-
-  <section class="reviews-section">
-    <h2>Conoce qué opinan de Fixi Services</h2>
-    <p>Tu satisfacción es nuestra prioridad. Lee las opiniones de nuestros clientes.</p>
-
-    <div class="carousel">
-      <div class="carousel-track">
-        <div class="carousel-item">
-          <div class="stars">
-            ★★★★☆
-          </div>
-          <p>¡Gran servicio, muy profesionales!</p>
-          <div class="reviewer-info">
-            <img src="avatar1.jpg" alt="Avatar de John">
-            <span>John Doe</span>
+        <div class="carousel-item active">
+          <div class="review-card text-center">
+            <div class="star-rating">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+              <h4>3.0</h4>
+            </div>
+            <p>"Servicio excepcional, muy profesionales y amables. Definitivamente los recomendaría a mis amigos."</p>
+            <h5>- Cliente Satisfecho 1</h5>
           </div>
         </div>
-        <!-- Más items de carousel aquí -->
+
+        <div class="carousel-item">
+          <div class="review-card text-center">
+            <div class="star-rating">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+            </div>
+            <p>"Rápidos y eficientes. Realizaron un trabajo maravilloso en mi hogar. Gracias."</p>
+            <h5>- Cliente Satisfecho 2</h5>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="review-card text-center">
+            <div class="star-rating">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+            </div>
+            <p>"Muy impresionado con su profesionalidad y calidad de servicio. ¡Los volveré a contratar sin duda!"</p>
+            <h5>- Cliente Satisfecho 3</h5>
+          </div>
+        </div>
+
       </div>
-      <button class="carousel-button carousel-button-left">←</button>
-      <button class="carousel-button carousel-button-right">→</button>
+
+      <a class="carousel-control-prev" href="#reviewsCarrusel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Anterior</span>
+      </a>
+      <a class="carousel-control-next" href="#reviewsCarrusel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Siguiente</span>
+      </a>
     </div>
-  </section>
-
-
-
+  </div>
 
 
 
