@@ -701,3 +701,5 @@ request24 = Request.new(user_id: user11.id, status: "enviada", service_id: servi
 request24.save!
 
 # para user16
+
+# REVIEWS
