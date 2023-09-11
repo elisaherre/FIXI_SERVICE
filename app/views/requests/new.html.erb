@@ -14,7 +14,9 @@
                                     data: { controller: "flatpickr", flatpickr_min_date: Time.zone.now }
                                   } %>
       </div>
-      <%= f.select(:service_id, options_for_select(@services.map { |service| [service.category.name.capitalize, service.id] })) %>
+      <div class="">
+        <%= f.select(:service_id, options_for_select(@services.map { |service| [service.category.name.capitalize, service.id] })) %>
+      </div>
       <%= f.input :description, placeholder: '...', label: "Descripción" %>
       <div class="text-end p-2">
       <%= f.submit "Enviar Solicitud", class: "btn btn-fixi" %>
