@@ -15,3 +15,4 @@ class Request < ApplicationRecord
   STATUS = ["enviada", "aceptada", "reservada", "pendiente", "por pagar", "cancelada", "finalizada"]
   validates :status, inclusion: { in: STATUS }
 end
+
