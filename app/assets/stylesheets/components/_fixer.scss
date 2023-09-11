@@ -3,6 +3,7 @@
 }
 .redondeada{
   border-radius: 1rem;
+  position: relative;
 }
 
 .fondo-profile{
@@ -65,4 +66,21 @@
 }
 .card-body > p {
   font-size: 1rem;
+}
+.tab-pane > p {
+  font-size: 1rem;
+}
+.nav-tabs > .nav-link{
+  background-color: #272727;
+  color: white;
+  margin: 0 .2rem;
+}
+.nav-tabs > .nav-link:hover{
+  background-color: #D1D700;
+  color: black;
+}
+.position-boton{
+  position: relative;
+  bottom: -200px;
+  left: 650px;
 }
