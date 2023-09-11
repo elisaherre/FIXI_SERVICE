@@ -11,12 +11,14 @@ class RequestsController < ApplicationController
 
   def new
     @request = Request.new
+    @services = Service.where(user_id: params[:fixer_id])
+    @fixer = User.where(id: params[:fixer_id])
   end
 
   def create
-    @request = Request.new(params[:id])
+    @request = Request.new(requests_params)
     @request.budget = 0
-    @request.user_id = current_user
+    @request.user_id = current_user.id
     @request.status = "enviada"
 
     if @request.save
@@ -81,5 +83,9 @@ class RequestsController < ApplicationController
 
   def set_request
     @request = Request.find(params[:id])
+  end
+
+  def requests_params
+    params.require(:request).permit(:description, :start_date, :end_date, :service_id)
   end
 end
