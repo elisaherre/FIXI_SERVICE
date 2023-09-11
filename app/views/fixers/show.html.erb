@@ -10,7 +10,7 @@
   <div class="row">
   <% @services.each do |service| %>
     <div class="col-2 mx-2 p-0">
-      <p class="categoria-texto text-center"> <%= service.category.name.capitalize %></p>
+      <p class="categoria-texto text-center" data-controller="popover" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="bottom" title="Descripcion" data-bs-content=<%= service.description %>> <%= service.category.name.capitalize %></p>
     </div>
     <% end %>
   </div>
