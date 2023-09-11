@@ -14,15 +14,15 @@
     </div>
     <% end %>
   </div>
-  <div class="row mt-2">
-    <p class="m-0 textito-card"> Fixer desde: <%= @fixer.created_at.strftime('%d/%m/%Y')%></p>
+  <div class="row mt-4">
+    <p class="m-0 textito-card"><span>Fixer desde: </span><%= @fixer.created_at.strftime('%d/%m/%Y')%></p>
   </div>
-  <div class="row">
-    <p class="m-0 textito-card"> Rating: <%= @average %></p>
+  <div class="row mt-4">
+    <p class="m-0 textito-card"><span>Rating: </span><%= @average %></p>
   </div>
-  <div class="row">
+  <div class="row mt-4">
     <div class="col-12">
-      <p class="m-0 textito-card"> Trabajos realizados: <%= @completed %></p>
+      <p class="m-0 textito-card"><span>Trabajos realizados: </span><%= @completed %></p>
     </div>
     <div class="row">
       <div class= "col-12 d-flex justify-content-end">
@@ -56,6 +56,6 @@
     </div>
     <% end %>
     <% else %>
-    <h3>Sin reviews</h3>
+    <h3 class="my-5">Sin reviews</h3>
   <% end %>
 </div>
