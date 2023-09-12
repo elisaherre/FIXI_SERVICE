@@ -1,13 +1,6 @@
 <div class="container mt-5">
-<div class="row">
-  <div class="col-5">
-  <%= image_tag @fixer.photo, crop: :fill, class: "filtro redondeada imagen-fixer" %>
-  </div>
-  <div class="col fondo-profile redondeada p-4">
-    <div class="row mb-2">
-      <h1 class="estilo-titulo"><%= @fixer.name %></h1>
-    </div>
   <div class="row">
+
   <% @services.each do |service| %>
     <div class="col-2 mx-2 p-0">
       <p class="categoria-texto text-center"> <%= service.category.name.capitalize %></p>
@@ -27,13 +20,64 @@
     <div class="row">
       <div class= "col-12 d-flex justify-content-end">
       <%= link_to "Solicitar",  new_request_path(fixer_id: @fixer.id), class: "btn btn-fixi" %>
+    <div class="col-5">
+      <%= image_tag @fixer.photo, crop: :fill, class: "filtro redondeada imagen-fixer" %>
     </div>
-    </div>
-  </div>
-  </div>
-</div>
-</div>
 
+    <div class="col-7 fondo-profile redondeada p-4">
+      <div class="row mb-2">
+        <div class="col-7">
+          <div class="row">
+            <div class="col">
+              <h1 class="estilo-titulo"><%= @fixer.name %></h1>
+            </div>
+
+            <div class="col">
+              <i class="fa-solid fa-circle-info" data-controller="tooltip" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Fixer desde: <%= @fixer.created_at.strftime('%m/%Y')%> Trabajos realizados: <%= @completed %>"></i>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="col-5">
+          <h2><%= @average %> estrellas</h2>
+        </div>
+
+      </div>
+
+      <div class="container mt-3">
+        <nav>
+          <div class="nav nav-tabs nav-color" id="nav-tab" role="tablist">
+            <% @services.each do |service| %>
+              <button class="nav-link" id="nav-<%= service.category.name %>-tab" data-bs-toggle="tab"
+                data-bs-target="#nav-<%= service.category.name %>" type="button" role="tab" aria-controls="nav-<%= service.category.name %>" aria-selected="true"><%= service.category.name.capitalize %>
+              </button>
+            <% end %>
+          </div>
+
+        </nav>
+
+        <div class="tab-content" id="nav-tabContent">
+          <% @services.each do |service| %>
+            <div class="tab-pane fade show p-3" id="nav-<%= service.category.name %>" role="tabpanel" aria-labelledby="nav-<%= service.category.name %>-tab">
+              <h3><%= service.category.name.capitalize %></h3>
+              <p><%= service.description %></p>
+            </div>
+
+          <% end %>
+        </div>
+
+      </div>
+
+      <%# <div class="position-boton"> %>
+       <%# <%= link_to "Solicitar",  new_request_path, class: "btn btn-fixi" %> %>
+      <%# </div> %>
+
+
+    </div>
+  </div>
+</div>
 <div class="separador-reviews">
   REVIEWS
 </div>
@@ -56,6 +100,6 @@
     </div>
     <% end %>
     <% else %>
-    <h3>Sin reviews</h3>
+    <h3 class="my-5">Sin reviews</h3>
   <% end %>
 </div>
