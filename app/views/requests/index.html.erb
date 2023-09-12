@@ -22,6 +22,7 @@
               <th scope="col">Fixer</th>
               <th scope="col">Categoría</th>
               <th scope="col">Descripción</th>
+              <th scope="col">Presupuesto</th>
               <th scope="col"></th>
               <th scope="col"></th>
             </tr>
@@ -34,13 +35,14 @@
                 <td><%= request.service.user.name %></td>
                 <td><%= request.service.category.name.capitalize %></td>
                 <td><%= request.description %></td>
+                <td><%= request.budget %></td>
                 <!-- Botones de reseña (se muestra al finalizarse la request) -->
                 <td><%= link_to "Crear una reseña", new_request_review_path(request), class: "btn btn-fixi" if request.status == "finalizada" && Review.where(user: current_user, request: request).size == 0 %></td>
                 <!-- Botones de status -->
                 <% if request.status == "enviada" %>
                 <td><%= button_to "Cancelar solicitud", cancel_path(request), method: :patch, class: "btn btn-fixi" %></td>
                 <% elsif request.status == "aceptada" %>
-                <td><%= button_to "Reservar visita", book_path(request), method: :patch, class: "btn btn-fixi" %></td>
+                <td><%= link_to "Reservar visita", request_path(request), class: "btn btn-fixi" %></td>
                 <% elsif request.status == "por pagar" %>
                 <td><%= button_to "Pagar", pay_path(request), method: :patch, class: "btn btn-fixi" %></td>
                 <td><%= button_to "Cancelar", cancel_path(request), method: :patch, class: "btn btn-fixi" %></td>
@@ -62,7 +64,9 @@
               <th scope="col">Cliente</th>
               <th scope="col">Categoría</th>
               <th scope="col">Descripción</th>
+              <th scope="col">Presupuesto</th>
               <th scope="col"></th>
+              <th scope="col">Input</th>
               <th scope="col"></th>
             </tr>
           </thead>
@@ -74,11 +78,12 @@
                 <td><%= request.user.name %></td>
                 <td><%= request.service.category.name.capitalize %></td>
                 <td><%= request.description %></td>
+                <td><%= request.budget %></td>
                 <!-- Botones de reseña (se muestra al finalizarse la request) -->
                 <td><%= link_to "Crear una reseña", new_request_review_path(request, cliente: request.user.id), class: "btn btn-fixi" if request.status == "finalizada" && Review.where(user: current_user, request: request).size == 0 %></td>
                 <!-- Botones de status -->
-                <% if request.status == "enviada" %>
-                <td><%= button_to "Aceptar solicitud", accept_path(request), method: :patch, class: "btn btn-fixi" %></td>
+                <% if request.status == "enviada" && request.budget == 0 %>
+                <td><%= button_to "Enviar presupuesto", accept_path(request), method: :patch, class: "btn btn-fixi" %></td>
                 <td><%= button_to "Declinar solicitud", cancel_path(request), method: :patch, class: "btn btn-fixi" %></td>
                 <% elsif request.status == "reservada" %>
                 <td><%= button_to "Presupuestar servicio", budget_path(request), method: :patch, class: "btn btn-fixi" %></td>
