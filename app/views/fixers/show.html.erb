@@ -5,10 +5,10 @@
       <%= image_tag @fixer.photo, crop: :fill, class: "filtro redondeada imagen-fixer" %>
     </div>
     <div class="col-7 fondo-profile redondeada p-4">
-      <div class="row mb-2">
+      <div class="row mb-4">
         <div class="col-7">
           <div class="row">
-            <div class="col">
+            <div class="col d-flex justify-content-center align-items-center">
               <h1 class="estilo-titulo"><%= @fixer.name %></h1>
             </div>
             <div class="col">
@@ -16,8 +16,8 @@
             </div>
           </div>
         </div>
-        <div class="col-5">
-        <% @rating.times do %>
+        <div class="col-5 d-flex justify-content-center align-items-center">
+        <% 5.times do %>
           <i class="fa-solid fa-star"></i>
         <% end %>
         </div>

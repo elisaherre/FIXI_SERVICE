@@ -28,6 +28,7 @@
   text-transform: uppercase;
   font-weight: bold;
   font-size: 3rem;
+  margin-bottom: 0 ;
 }
 
 .separador-reviews{
@@ -80,3 +81,7 @@
   color: black;
 }
 
+.col-5 > .fa-star{
+  font-size: 2rem;
+  width: 2.5rem;
+}
