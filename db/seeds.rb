@@ -1,12 +1,12 @@
 require "open-uri"
 
-if Rails.env.development?
+# if Rails.env.development?
   Review.destroy_all
   Request.destroy_all
   Service.destroy_all
   Category.destroy_all
   User.destroy_all
-end
+# end
 
 # CATEGORÍAS
 
