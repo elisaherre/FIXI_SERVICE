@@ -61,188 +61,188 @@ category8.save!
 puts "creando categoría 9..."
 file = URI.open("https://img.freepik.com/foto-gratis/repartidores-cargando-cajas-carton-furgoneta-mientras-preparan-envio_637285-2289.jpg?w=1800&t=st=1694301689~exp=1694302289~hmac=f414073bb8252e21696bc0fab9a1b42898ad23d660c78bc6a41664d1b69b3296")
 category9 = Category.new(name: "mudanzas")
-category8.photo.attach(io: file, filename: "mudanzas.png", content_type: "image/png")
+category9.photo.attach(io: file, filename: "mudanzas.png", content_type: "image/png")
 category9.save!
 
 # USUARIOS
 
 puts "creando usuario 1..."
 file = URI.open("https://avatars.githubusercontent.com/u/139592608?v=4")
-user1 = User.new(email: "elisa@gmail.com", password: "123456", address: "calle 123", name: "Elisa")
+user1 = User.new(email: "elisa@gmail.com", password: "123456", address: "Av. Pajaritos 4199, Maipú, Santiago, Chile", name: "Elisa")
 user1.photo.attach(io: file, filename: "elisa.png", content_type: "image/png")
 user1.save!
 
 puts "creando usuario 2..."
 file = URI.open("https://avatars.githubusercontent.com/u/88845568?v=4")
-user2 = User.new(email: "facundo@gmail.com", password: "123456", address: "calle 123", name: "Facundo")
+user2 = User.new(email: "facundo@gmail.com", password: "123456", address: "Av. Vicuña Mackenna 7110, La Florida, Santiago, Chile", name: "Facundo")
 user2.photo.attach(io: file, filename: "facundo.png", content_type: "image/png")
 user2.save!
 
 puts "creando usuario 3..."
 file = URI.open("https://avatars.githubusercontent.com/u/128540417?v=4")
-user3 = User.new(email: "dominique@gmail.com", password: "123456", address: "calle 123", name: "Dominique")
+user3 = User.new(email: "dominique@gmail.com", password: "123456", address: "Av. Francisco Bilbao 875, Providencia, Santiago, Chile", name: "Dominique")
 user3.photo.attach(io: file, filename: "dominique.png", content_type: "image/png")
 user3.save!
 
 puts "creando usuario 4..."
 file = URI.open("https://images.pexels.com/photos/4484071/pexels-photo-4484071.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
-user4 = User.new(email: "santiago@gmail.com", password: "123456", address: "calle 123", name: "Santiago")
+user4 = User.new(email: "santiago@gmail.com", password: "123456", address: "Av. Pedro Montt 2851, Valparaíso, Chile", name: "Santiago")
 user4.photo.attach(io: file, filename: "santiago.png", content_type: "image/png")
 user4.save!
 
 puts "creando usuario 5..."
 file = URI.open("https://images.pexels.com/photos/8459998/pexels-photo-8459998.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
-user5 = User.new(email: "natalia@gmail.com", password: "123456", address: "calle 123", name: "Natalia")
+user5 = User.new(email: "natalia@gmail.com", password: "123456", address: "Av. Libertad 1348, Viña del Mar, Chile", name: "Natalia")
 user5.photo.attach(io: file, filename: "natalia.png", content_type: "image/png")
 user5.save!
 
 puts "creando usuario 6..."
 file = URI.open("https://img.freepik.com/foto-gratis/cerrar-hombre-sonriente-tomando-selfie_23-2149155156.jpg?w=1800&t=st=1694302622~exp=1694303222~hmac=b49457a13f31fe5cbf95cf2fbfcb6733bb6b15932079b47b021f7cf88ddc8425")
-user6 = User.new(email: "sebastian@gmail.com", password: "123456", address: "calle 123", name: "Sebastián")
+user6 = User.new(email: "sebastian@gmail.com", password: "123456", address: "Av. O'Higgins 680, Concepción, Chile", name: "Sebastián")
 user6.photo.attach(io: file, filename: "sebastián.png", content_type: "image/png")
 user6.save!
 
 puts "creando usuario 7..."
 file = URI.open("https://img.freepik.com/foto-gratis/persona-origen-indio-divirtiendose_23-2150285311.jpg?w=826&t=st=1694302689~exp=1694303289~hmac=b2c33dcf6e6944bf98f8821fac33e4447e2759673f6facf4367311441b4b5199")
-user7 = User.new(email: "omar@gmail.com", password: "123456", address: "calle 123", name: "Omar")
+user7 = User.new(email: "omar@gmail.com", password: "123456", address: "Av. Paseo de la Reforma 135, Cuauhtémoc, Ciudad de México, México", name: "Omar")
 user7.photo.attach(io: file, filename: "omar.png", content_type: "image/png")
 user7.save!
 
 puts "creando usuario 8..."
 file = URI.open("https://images.pexels.com/photos/1212984/pexels-photo-1212984.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
-user8 = User.new(email: "mario@gmail.com", password: "123456", address: "calle 123", name: "Mario")
+user8 = User.new(email: "mario@gmail.com", password: "123456", address: "Av. Universidad 3000, Coyoacán, Ciudad de México, México", name: "Mario")
 user8.photo.attach(io: file, filename: "mario.png", content_type: "image/png")
 user8.save!
 
 puts "creando usuario 9..."
 file = URI.open("https://images.pexels.com/photos/3771807/pexels-photo-3771807.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
-user9 = User.new(email: "rodrigo@gmail.com", password: "123456", address: "calle 123", name: "Rodrigo")
+user9 = User.new(email: "rodrigo@gmail.com", password: "123456", address: "Calzada Independencia Sur 800, Centro, Guadalajara, Jalisco, México", name: "Rodrigo")
 user9.photo.attach(io: file, filename: "rodrigo.png", content_type: "image/png")
 user9.save!
 
 puts "creando usuario 10..."
 file = URI.open("https://images.pexels.com/photos/1139743/pexels-photo-1139743.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
-user10 = User.new(email: "javier@gmail.com", password: "123456", address: "calle 123", name: "Javier")
+user10 = User.new(email: "javier@gmail.com", password: "123456", address: "Blvd. Adolfo López Mateos 1001, León, Guanajuato, México", name: "Javier")
 user10.photo.attach(io: file, filename: "javier.png", content_type: "image/png")
 user10.save!
 
 puts "creando usuario 11..."
 file = URI.open("https://img.freepik.com/foto-gratis/chica-mexicana-rizada-gorra-cuero-taza-cafe-plastico-mano-contra-carrusel_627829-9211.jpg?w=1800&t=st=1694405346~exp=1694405946~hmac=bac3ed8adc89af8453bf132d6c6c33e60df5790963c525e471eb52b7ab34c3e0")
-user11 = User.new(email: "tamara@gmail.com", password: "123456", address: "calle 123", name: "Tamara")
+user11 = User.new(email: "tamara@gmail.com", password: "123456", address: "Paseo de los Héroes 9350, Zonaeste, Tijuana, Baja California, México", name: "Tamara")
 user11.photo.attach(io: file, filename: "tamara.png", content_type: "image/png")
 user11.save!
 
 puts "creando usuario 12..."
 file = URI.open("https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80")
-user12 = User.new(email: "carmen@gmail.com", password: "123456", address: "calle 123", name: "Carmen")
+user12 = User.new(email: "carmen@gmail.com", password: "123456", address: "Av. Constituyentes 1000, Loma Bonita, Querétaro, México", name: "Carmen")
 user12.photo.attach(io: file, filename: "carmen.png", content_type: "image/png")
 user12.save!
 
 puts "creando usuario 13..."
 file = URI.open("https://img.freepik.com/foto-gratis/hombre-sonriendo-feria-mercado_23-2150771085.jpg?w=2000&t=st=1694405111~exp=1694405711~hmac=d5b2b53f4b4244268838f2aaaa89fce7a3f9d3b33aebb07a29c823fa4b7bf49c")
-user13 = User.new(email: "antonio@gmail.com", password: "123456", address: "calle 123", name: "Antonio")
+user13 = User.new(email: "antonio@gmail.com", password: "123456", address: "Blvd. Kukulcan Km 12, Zona Hotelera, Cancún, Quintana Roo, México", name: "Antonio")
 user13.photo.attach(io: file, filename: "antonio.png", content_type: "image/png")
 user13.save!
 
 puts "creando usuario 14..."
 file = URI.open("https://img.freepik.com/foto-gratis/mujer-joven-feliz-que-toma-foto-selfie-al-aire-libre_1262-19167.jpg?w=1800&t=st=1694303443~exp=1694304043~hmac=c29fe742b9f09a1a78b555dca6b613b93240c002b6ef9ccfd6d0bb1dc0a0c63b")
-user14 = User.new(email: "maria@gmail.com", password: "123456", address: "calle 123", name: "María")
+user14 = User.new(email: "maria@gmail.com", password: "123456", address: "Av. Francisco I. Madero 1130, Centro, Monterrey, Nuevo León, México", name: "María")
 user14.photo.attach(io: file, filename: "maría.png", content_type: "image/png")
 user14.save!
 
 puts "creando usuario 15..."
 file = URI.open("https://images.pexels.com/photos/567459/pexels-photo-567459.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
-user15 = User.new(email: "julio@gmail.com", password: "123456", address: "calle 123", name: "Julio")
+user15 = User.new(email: "julio@gmail.com", password: "123456", address: "Av. Libertador Bernardo O'Higgins 653, Santiago, Región Metropolitana, Chile", name: "Julio")
 user15.photo.attach(io: file, filename: "julio.png", content_type: "image/png")
 user15.save!
 
 puts "creando usuario 16..."
 file = URI.open("https://images.pexels.com/photos/6791499/pexels-photo-6791499.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
-user16 = User.new(email: "david@gmail.com", password: "123456", address: "calle 123", name: "David")
+user16 = User.new(email: "david@gmail.com", password: "123456", address: "Av. Providencia 1650, Providencia, Región Metropolitana, Chile", name: "David")
 user16.photo.attach(io: file, filename: "david.png", content_type: "image/png")
 user16.save!
 
 puts "creando usuario 17..."
 file = URI.open("https://img.freepik.com/foto-gratis/selfie-retrato-videollamada_23-2149186120.jpg?w=1800&t=st=1694303760~exp=1694304360~hmac=4a834bb5d47faf923c3d2ea71a8464916cb6bae118d8b959fb73172a6b260c8b")
-user17 = User.new(email: "lucia@gmail.com", password: "123456", address: "calle 123", name: "Lucía")
+user17 = User.new(email: "lucia@gmail.com", password: "123456", address: "Av. Vicuña Mackenna 4860, Macul, Región Metropolitana, Chile", name: "Lucía")
 user17.photo.attach(io: file, filename: "lucía.png", content_type: "image/png")
 user17.save!
 
 puts "creando usuario 18..."
 file = URI.open("https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80")
-user18 = User.new(email: "leonel@gmail.com", password: "123456", address: "calle 123", name: "Leonel")
+user18 = User.new(email: "leonel@gmail.com", password: "123456", address: "Av. Pedro de Valdivia 1509, Ñuñoa, Región Metropolitana, Chile", name: "Leonel")
 user18.photo.attach(io: file, filename: "leonel.png", content_type: "image/png")
 user18.save!
 
 puts "creando usuario 19..."
 file = URI.open("https://images.pexels.com/photos/2907131/pexels-photo-2907131.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
-user19 = User.new(email: "sandra@gmail.com", password: "123456", address: "calle 123", name: "Sandra")
+user19 = User.new(email: "sandra@gmail.com", password: "123456", address: "Av. Andrés Bello 2465, Las Condes, Región Metropolitana, Chile", name: "Sandra")
 user19.photo.attach(io: file, filename: "sandra.png", content_type: "image/png")
 user19.save!
 
 puts "creando usuario 20..."
 file = URI.open("https://images.pexels.com/photos/712513/pexels-photo-712513.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
-user20 = User.new(email: "diana@gmail.com", password: "123456", address: "calle 123", name: "Diana")
+user20 = User.new(email: "diana@gmail.com", password: "123456", address: "Av. Apoquindo 4400, Las Condes, Región Metropolitana, Chile", name: "Diana")
 user20.photo.attach(io: file, filename: "diana.png", content_type: "image/png")
 user20.save!
 
 puts "creando usuario 21..."
 file = URI.open("https://images.unsplash.com/photo-1544723795-3fb6469f5b39?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2592&q=80")
-user21 = User.new(email: "carlos@gmail.com", password: "123456", address: "calle 123", name: "Carlos")
+user21 = User.new(email: "carlos@gmail.com", password: "123456", address: "Av. Francisco Bilbao 2799, Providencia, Región Metropolitana, Chile", name: "Carlos")
 user21.photo.attach(io: file, filename: "carlos.png", content_type: "image/png")
 user21.save!
 
 puts "creando usuario 22..."
 file = URI.open("https://images.unsplash.com/photo-1607346256330-dee7af15f7c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3006&q=80")
-user22 = User.new(email: "roberto@gmail.com", password: "123456", address: "calle 123", name: "Roberto")
+user22 = User.new(email: "roberto@gmail.com", password: "123456", address: "Av. Pajaritos 4155, Maipú, Región Metropolitana, Chile", name: "Roberto")
 user22.photo.attach(io: file, filename: "roberto.png", content_type: "image/png")
 user22.save!
 
 puts "creando usuario 23..."
 file = URI.open("https://images.unsplash.com/photo-1540569014015-19a7be504e3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2835&q=80")
-user23 = User.new(email: "mauro@gmail.com", password: "123456", address: "calle 123", name: "Mauro")
+user23 = User.new(email: "mauro@gmail.com", password: "123456", address: "Av. Matta 701, Santiago, Región Metropolitana, Chile", name: "Mauro")
 user23.photo.attach(io: file, filename: "mauro.png", content_type: "image/png")
 user23.save!
 
 puts "creando usuario 24..."
 file = URI.open("https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2952&q=80")
-user24 = User.new(email: "nicolas@gmail.com", password: "123456", address: "calle 123", name: "Nicolas")
+user24 = User.new(email: "nicolas@gmail.com", password: "123456", address: "Av. Recoleta 715, Recoleta, Región Metropolitana, Chile", name: "Nicolas")
 user24.photo.attach(io: file, filename: "nicolas.png", content_type: "image/png")
 user24.save!
 
 puts "creando usuario 25..."
 file = URI.open("https://images.unsplash.com/photo-1530268729831-4b0b9e170218?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80")
-user25 = User.new(email: "guillermo@gmail.com", password: "123456", address: "calle 123", name: "Guillermo")
+user25 = User.new(email: "guillermo@gmail.com", password: "123456", address: "Av. 11 de Septiembre 1881, Providencia, Región Metropolitana, Chile", name: "Guillermo")
 user25.photo.attach(io: file, filename: "guillermo.png", content_type: "image/png")
 user25.save!
 
 puts "creando usuario 26..."
 file = URI.open("https://images.unsplash.com/photo-1588701177361-c42359b29f68?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80")
-user26 = User.new(email: "alejandra@gmail.com", password: "123456", address: "calle 123", name: "Alejandra")
+user26 = User.new(email: "alejandra@gmail.com", password: "123456", address: "Av. Manuel Montt 367, Providencia, Región Metropolitana, Chile", name: "Alejandra")
 user26.photo.attach(io: file, filename: "alejandra.png", content_type: "image/png")
 user26.save!
 
 puts "creando usuario 27..."
 file = URI.open("https://images.pexels.com/photos/15106879/pexels-photo-15106879/free-photo-of-hombre-persona-gafas-de-sol-grafiti.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
-user27 = User.new(email: "jorge@gmail.com", password: "123456", address: "calle 123", name: "Jorge")
+user27 = User.new(email: "jorge@gmail.com", password: "123456", address: "Av. Alonso de Córdova 5870, Las Condes, Región Metropolitana, Chile", name: "Jorge")
 user27.photo.attach(io: file, filename: "jorge.png", content_type: "image/png")
 user27.save!
 
 puts "creando usuario 28..."
 file = URI.open("https://images.unsplash.com/photo-1588453383063-37ea0b78f30f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80")
-user28 = User.new(email: "lucrecia@gmail.com", password: "123456", address: "calle 123", name: "Lucrecia")
+user28 = User.new(email: "lucrecia@gmail.com", password: "123456", address: "Av. José Pedro Alessandri 1166, Ñuñoa, Región Metropolitana, Chile", name: "Lucrecia")
 user28.photo.attach(io: file, filename: "lucrecia.png", content_type: "image/png")
 user28.save!
 
 puts "creando usuario 29..."
 file = URI.open("https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
-user29 = User.new(email: "brenda@gmail.com", password: "123456", address: "calle 123", name: "Brenda")
+user29 = User.new(email: "brenda@gmail.com", password: "123456", address: "Av. La Florida 8985, La Florida, Región Metropolitana, Chile", name: "Brenda")
 user29.photo.attach(io: file, filename: "brenda.png", content_type: "image/png")
 user29.save!
 
 puts "creando usuario 30..."
 file = URI.open("https://images.unsplash.com/photo-1611987345939-a481cc27367e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2846&q=80")
-user30 = User.new(email: "hernan@gmail.com", password: "123456", address: "calle 123", name: "Hernán")
+user30 = User.new(email: "hernan@gmail.com", password: "123456", address: "Av. Americo Vespucio 1737, La Cisterna, Región Metropolitana, Chile", name: "Hernán")
 user30.photo.attach(io: file, filename: "hernan.png", content_type: "image/png")
 user30.save!
 

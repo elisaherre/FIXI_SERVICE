@@ -1,5 +1,7 @@
-<div class="fondo-page" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)),
-url(<%= asset_path 'fondo5.png' %>);">
+
+  <!--FONDO-->
+
+
 
   <!--banner-->
 
@@ -37,98 +39,72 @@ url(<%= asset_path 'fondo5.png' %>);">
   <!-- Termino banner-->
 
 
-  <!--Informacion-->
-  <div class="container datos-numeros">
-    <div class="text-center">
-        <h2 class="titulo-informacion">Es sorprendente lo que puedes <strong>ahorrar</strong>, confiando tus arreglos en manos de <strong>nuestros expertos</strong></h2>
-        <hr/>
-        <div class="content info-numero">
-            <div class="left-col">
-                <h2 class="numeros-reales">50%</h2>
-            </div>
-            <div class="right-col">
-                <p class="descripcion-info">Nuestros clientes han reportado un <strong>ahorro de hasta un 50%</strong> en comparación con la contratación de profesionales individuales para cada tarea. Nos enorgullece ofrecer <strong>tarifas competitivas</strong> sin comprometer la calidad del servicio.</p>
-            </div>
-        </div>
-
-        <hr/>
-        <div class="content info-numero">
-          <div class="left-col">
-              <h2 class="numeros-reales">80%</h2>
-          </div>
-          <div class="right-col">
-              <p class="descripcion-info">Nuestros expertos profesionales no solo solucionan problemas, sino que pueden ayudar a aumentar el valor de tu hogar. En promedio, nuestros clientes han visto un aumento en el valor de su propiedad de hasta 80% después de utilizar nuestros servicios de renovación y mantenimiento de hogares</p>
-          </div>
-      </div>
-
-    </div>
-    <img src="<%= asset_path 'rayon_Mesa de trabajo 1.svg' %>" alt="Descripción de la imagen 1" class="banner-image banner-image55">
-    <img src="<%= asset_path 'rayon_Mesa de trabajo 1.svg' %>" alt="Descripción de la imagen 1" class="banner-image banner-image66">
-
-</div>
-
 
 
   <!--categorias-->
 
-  <div class="container mt-5">
-      <div class="row">
-        <div class="col-12">
-          <h2 class="text-center mb-4 titulo-informacion">Categorias</h2>
-        </div>
-      </div>
-      <div class="row">
-          <div class="col-12 col-sm-4">
-            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-            url(<%= asset_path 'carpinteria.jpg' %>); border-radius: 15px; transition: transform 0.3s, box-shadow 0.3s;">
-              <h3 class="card-title">Carpinteria</h3>
-            <%= link_to "Ver más", category_path(69), class:"btn-fixi" %>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-4">
-            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(<%= asset_path 'plomeria.jpg' %>); border-radius: 15px; transition: transform 0.3s, box-shadow 0.3s;">
-              <h3 class="card-title">Plomeria</h3>
-            <%= link_to "Ver más", category_path(70), class:"btn-fixi" %>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-4">
-            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-            url(<%= asset_path 'gasfiteria.jpg' %>); border-radius: 15px; transition: transform 0.3s, box-shadow 0.3s;">
-              <h3 class="card-title">Gasfiterìa</h3>
-            <%= link_to "Ver más", category_path(4), class:"btn-fixi" %>
-            </div>
-          </div>
-      </div>
-
-
-      <div class="row mt-4">
-        <div class="col-12 col-sm-4">
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-          url(<%= asset_path 'electricista.jpg' %>); border-radius: 15px; transition: transform 0.3s, box-shadow 0.3s;">
-            <h3 class="card-title">Electricidad</h3>
-            <%= link_to "Ver más", category_path(72), class:"btn-fixi" %>
-          </div>
-        </div>
-
-        <div class="col-12 col-sm-4">
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-          url(<%= asset_path 'jardineria.jpg' %>); border-radius: 15px; transition: transform 0.3s, box-shadow 0.3s;">
-            <h3 class="card-title">Jardinería</h3>
-            <%= link_to "Ver más", category_path(71), class:"btn-fixi" %>
-          </div>
-        </div>
-
-        <div class="col-12 col-sm-4">
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-          url(<%= asset_path 'mudanza.jpg' %>); border-radius: 15px; transition: transform 0.3s, box-shadow 0.3s;">
-            <h3 class="card-title">Mudanza</h3>
-            <%= link_to "Ver más", category_path(4), class:"btn-fixi" %>
-          </div>
-        </div>
+<div class="">
+  <div class="row">
+    <div class="col-12">
+      <h2 class="text-center titulo-informacion">CATEGORIAS</h2>
     </div>
   </div>
+  <div class="row justify-content-center tarjetas-pintura">
+    <% @categories.each_with_index do |category, index|  %>
+    <div class="col tarjetas-informacion mx-0" >
+      <div class="card-category text-category" style="background-color: rgba(216, 245, 0, <%= 0.1 + (index * 0.1) %>);">
+        <%= category.name %>
+        <button type="submit" class="btn-especial">Ver más</button>
+
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+
+  <!--Informacion-->
+  <div class="container fondo-principal">
+    <div class="row d-flex justify-content-between">
+      <!-- Primera columna -->
+      <div class="col align-items-center">
+          <img src="<%= asset_path 'carpinteria.jpg' %>" alt="Imagen 1" class=" img-capsula">
+      </div>
+
+      <!-- Segunda columna -->
+      <div class="col align-items-center text-center text-grande">
+            <img src="<%= asset_path 'rayon_Mesa de trabajo 1.svg' %>" alt="Descripción de la imagen 1" class="rayado-informacion">
+            <h1 class="display-4">ENCUENTRA EL TUYO</h1>
+            <h5 class="texto-informacion">Busca en tu radar más cercano el profesional que necesitas</h5>
+          <div>
+            <button type="button" class="btn-tamaño-xl">Botón </button>
+          </div>
+
+      </div>
+
+      <!-- Tercera columna -->
+      <div class="col align-items-center">
+          <img src="<%= asset_path 'electricista.jpg' %>" alt="Imagen 5" class=" img-capsula">
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  <div class="fondo-page" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)),
+url(<%= asset_path 'fondo-fixi-new.png' %>);">
+
+
 
   <!--Terimino de las card categorias-->
 

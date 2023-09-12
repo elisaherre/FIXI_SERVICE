@@ -1,0 +1,41 @@
+.tarjetas-informacion{
+  margin: 2rem 0 2rem 0;
+
+}
+
+.text-category{
+  color: #000;
+}
+
+.titulo-informacion{
+border-radius: 50%;
+margin-top: 3rem;
+background-color: #00273d;
+color: white;
+padding-top: 25px;
+padding-bottom: 25px;
+}
+
+.tarjetas-pintura{
+
+}
+
+
+.btn-fixi{
+  font-family: roboto 800;
+  font-size: 1.5rem;;
+  background-color: #D8F500;
+  border-radius: 2rem;
+  color: #000;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    background-color: darken(#D8F500, 10%);
+    transform: scale(1.05);
+  }
+
+  &:active {
+    background-color: darken(#D8F500, 15%);
+    transform: scale(1);
+  }
+}

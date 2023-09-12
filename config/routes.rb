@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
 
   get "categories/:id", to: "categories#show", as: :category
+  get "categories", to: "categories#index", as: :categories
 
   resources :services
 

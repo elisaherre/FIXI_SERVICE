@@ -1,89 +1,65 @@
-.container.datos-numeros {
-  max-width: 900px; /* Ajusta el ancho máximo a un valor menor */
-  margin-top: 80px;
-  margin-bottom: 100px;
+.fondo-principal {
   position: relative;
-  z-index: 2;
-  padding: 0 20px; /* Añade un poco de relleno a los lados */
+  margin-top: 8rem;
+  margin-bottom: 5rem;
+  border-radius: 30px;
 }
 
-.text-center {
+.img-capsula {
+  width: 90%; /* O especifica un ancho fijo, por ejemplo, 200px */
+  height: 90%;
+  align-self: center;
+  border-radius: 300px;
+  border: #00273d solid 1px;
+  padding: 10px;
+}
+
+.text-grande {
+  margin-top: 8rem;
+}
+
+.texto-informacion{
+  margin-bottom: 1.8rem;
+}
+
+.text-grande h1 {
+  font-size: 5rem;
+  font-weight: 800;
+  color: #262626;
   text-align: center;
-  z-index: 2;
+  margin-bottom: 2rem;
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: -0.05em;
+
 }
 
-.text-center h2 {
-  padding: 20px;
-  z-index: 2;
-}
-
-.text-center hr {
-  margin-top: 30px;
-  margin-bottom: 10px;
-  width: 90%; /* Ajusta el ancho a un valor menor */
-  border-width: 1.8px;
-  color: rgb(39, 39, 39);
-  z-index: 2;
-}
-
-.content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 2;
-  max-width: 90%; /* Ajusta el ancho máximo a un valor menor */
-  margin: 0 auto; /* Centra el contenido */
-}
-
-.left-col {
-  flex: 1;
-  max-width: 40%; /* Ajusta el ancho máximo a un valor menor */
-  text-align: right;
-  margin-right: 20px;
-  z-index: 2;
-}
-
-.right-col {
-  flex: 2;
-  max-width: 60%; /* Ajusta el ancho máximo a un valor menor */
-  text-align: left;
-  z-index: 2;
-}
-
-.numeros-reales{
-  font-size: 80px;
-  font-weight: 800;
-  color: #2d2d2d;
-  z-index: 2;
-}
-
-.banner-image55{
+.rayado-informacion{
   position: absolute;
-  top: 180px;
-  left: 50px;
-  height: 90px;
-  width: auto;
-  z-index: 1;
+  z-index:-1;
+  right: 6rem;
+  top: 1rem;
+  opacity: 0.4;
 }
 
-.banner-image66{
-  position: absolute;
-  top: 365px;
-  left: 50px;
-  height: 90px;
-  width: auto;
-  z-index: 1;
-}
+.btn-tamaño-xl{
+  border-radius: 30px;
+  font-family: roboto 800;
+  font-size: 1.5rem;;
+  background-color: #D8F500;
+  color: #000;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border: none;
+  padding: 8px 12px 8px 12px;
+  font-weight: 700;
 
-.info-numero{
-  margin: 0;
-}
 
-.titulo-informacion{
-  font-size: 36px;
-  font-weight: 800;
-}
+  &:hover {
+    background-color: darken(#D8F500, 10%);
+    transform: scale(1.05);
+  }
 
-.descripcion-info{
-  margin-right: 40px;
+  &:active {
+    background-color: darken(#D8F500, 15%);
+    transform: scale(1);
+  }
 }
