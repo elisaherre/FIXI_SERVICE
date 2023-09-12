@@ -14,7 +14,18 @@
               </div>
 
                 <% end %>
-                <p class="card-text textito"><span>Rating:</span> <%= fixer %></p>
+
+                <% sum = 0 %>
+                <% fixer.reviews.each do |review| %>
+                <% sum += review.rating  %>
+                <% end %>
+                <% if sum > 0 %>
+                <% average = sum / fixer.reviews.size %>
+                <% else %>
+                <% average = 0 %>
+                <% end %>
+
+                <p class="card-text textito"><span>Rating:</span> <%= average %></p>
                 <p class="card-text textito"><span>Fixer desde:</span> <%= fixer.created_at.strftime('%b/%Y') %></p>
                 <p class="card-text textito"><span>Trabajos realizados:</span> <%= fixer %></p>
                 <%= link_to "Ver perfil",  fixer_path(fixer.id), class: "btn btn-fixi" %>
@@ -30,7 +41,16 @@
               </div>
 
                 <% end %>
-                <p class="card-text textito"><span>Rating:</span> <%= fixer %></p>
+                <% sum = 0 %>
+                <% fixer.reviews.each do |review| %>
+                <% sum += review.rating  %>
+                <% end %>
+                <% if sum > 0 %>
+                <% average = sum / fixer.reviews.size %>
+                <% else %>
+                <% average = 0 %>
+                <% end %>
+                <p class="card-text textito"><span>Rating: </span><%= average %></p>
                 <p class="card-text textito"><span>Fixer desde:</span> <%= fixer.created_at.strftime('%b/%Y') %></p>
                 <p class="card-text textito"><span>Trabajos realizados:</span> <%= fixer %></p>
                 <%= link_to "Ver perfil",  fixer_path(fixer.id), class: "btn btn-fixi" %>
