@@ -24,7 +24,7 @@ class FixersController < ApplicationController
     if suma > 0
       @average = suma / @reviews.size
     else
-      @average = "Aun no tiene reviews"
+      @average = 0
     end
 
 
