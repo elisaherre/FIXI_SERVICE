@@ -50,7 +50,9 @@
                 <% else %>
                 <% average = 0 %>
                 <% end %>
+
                 <p class="card-text textito"><span>Rating:</span> <%= average %></p>
+
                 <p class="card-text textito"><span>Fixer desde:</span> <%= fixer.created_at.strftime('%b/%Y') %></p>
                 <p class="card-text textito"><span>Trabajos realizados:</span> <%= fixer %></p>
                 <%= link_to "Ver perfil",  fixer_path(fixer.id), class: "btn btn-fixi" %>
