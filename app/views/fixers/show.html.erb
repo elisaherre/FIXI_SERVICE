@@ -22,7 +22,9 @@
         <% end %>
         </div>
       </div>
-      <div class="container mt-3">
+      <div class="container mt-3 d-flex flex-column">
+        <div class="flex-grow-1">
+
         <nav>
           <div class="nav nav-tabs nav-color position-relative" id="nav-tab" role="tablist">
             <% @services.each do |service| %>
@@ -40,14 +42,18 @@
             </div>
           <% end %>
         </div>
+        </div>
         <div class="d-flex justify-content-end">
           <div class="col-3 mt-5">
-            <%= link_to "Solicitar",  new_request_path(fixer_id: @fixer.id), class: "btn btn-fixi button-position" %>
+            <%= link_to "Solicitar",  new_request_path(fixer_id: @fixer.id), class: "btn btn-fixi" %>
           </div>
         </div>
 
       </div>
     </div>
+
+
+
   </div>
 </div>
 <div class="separador-reviews">
@@ -56,7 +62,7 @@
 <div class="container mt-5">
   <% if @reviews.size > 0 %>
     <% @reviews.each do |review|  %>
-      <div class="card card-review mt-4">
+      <div class="card card-review my-4">
         <div class="card-header header-review d-flex">
           <h5 class="m-2"><%= review.user.name %></h5>
           <p class="m-2 "><%= review.request.service.category.name.capitalize %></p>

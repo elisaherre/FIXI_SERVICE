@@ -7,7 +7,7 @@ class FixersController < ApplicationController
 
     suma_rating = @fixer.reviews.map { |review| review.rating }.sum
     @rating = suma_rating > 0 ? suma_rating / @fixer.reviews.count : 0
-
+    
     @trabajos = @fixer.requests.map { |request| request.status == "finalizada" }.count
 
     @services = Service.where(user_id: @fixer.id)

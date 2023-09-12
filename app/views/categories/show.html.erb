@@ -15,9 +15,16 @@
               <% end %>
 
               <% sum = 0 %>
-              <% fixer.reviews.each do |review| %>
-                <% sum += review.rating  %>
+              <% cantidad = 0 %>
+              <% fixer.services.each do |service| %>
+                <% service.requests.each do |request| %>
+                  <% request.reviews.each do |review| %>
+                    <% sum += review.rating  %>
+                    <% cantidad += 1 %>
+                  <% end %>
+                <% end %>
               <% end %>
+
               <% if sum > 0 %>
                 <% average = sum / fixer.reviews.size %>
               <% else %>
@@ -31,7 +38,15 @@
                 <% end %>
               <% end %>
 
-              <p class="card-text textito"><span>Rating:</span> <%= average %></p>
+              <% if average > 0 %>
+              <div class="rating-box">
+                <% average.times do %>
+                  <i class="fa-solid fa-star"></i>
+                <% end %>
+              </div>
+              <% else %>
+              <p class="card-text textito">Sin calificar</p>
+              <% end %>
               <p class="card-text textito"><span>Fixer desde:</span> <%= fixer.created_at.strftime('%b/%Y') %></p>
               <p class="card-text textito"><span>Trabajos realizados:</span> <%= completed %></p>
               <%= link_to "Ver perfil",  fixer_path(fixer.id), class: "btn btn-fixi" %>
@@ -48,11 +63,18 @@
               <% end %>
 
               <% sum = 0 %>
-              <% fixer.reviews.each do |review| %>
-                <% sum += review.rating  %>
+              <% cantidad = 0 %>
+              <% fixer.services.each do |service| %>
+                <% service.requests.each do |request| %>
+                  <% request.reviews.each do |review| %>
+                    <% sum += review.rating  %>
+                    <% cantidad += 1 %>
+                  <% end %>
+                <% end %>
               <% end %>
+
               <% if sum > 0 %>
-                <% average = sum / fixer.reviews.size %>
+                <% average = sum / cantidad %>
               <% else %>
                 <% average = 0 %>
               <% end %>
@@ -64,7 +86,15 @@
                 <% end %>
               <% end %>
 
-              <p class="card-text textito"><span>Rating:</span> <%= average %></p>
+              <% if average > 0 %>
+              <div class="rating-box">
+                <% average.times do %>
+                  <i class="fa-solid fa-star"></i>
+                <% end %>
+              </div>
+              <% else %>
+              <p class="card-text textito">Sin calificar</p>
+              <% end %>
               <p class="card-text textito"><span>Fixer desde:</span> <%= fixer.created_at.strftime('%b/%Y') %></p>
               <p class="card-text textito"><span>Trabajos realizados:</span> <%= completed %></p>
               <%= link_to "Ver perfil",  fixer_path(fixer.id), class: "btn btn-fixi" %>
