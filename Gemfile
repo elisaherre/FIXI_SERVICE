@@ -80,3 +80,4 @@ end
 
 gem "cloudinary"
 gem "geocoder"
+gem "mercadopago-sdk"
