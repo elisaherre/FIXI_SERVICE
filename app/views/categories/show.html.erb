@@ -3,66 +3,61 @@
   <div class="row justify-content-center">
     <% if @fixers.size > 0 %>
       <% index = 0 %>
-        <% @fixers.each do |fixer| %>
+      <% @fixers.each do |fixer| %>
         <% if index.even?  %>
-        <div class="col-3 m-2 ">
-          <div class="card-fixers">
-              <h5 class="card-title color-titulo"><%= fixer.name.upcase %></h5>
-              <% if fixer.photo.attached? %>
-              <div class="d-flex justify-content-center">
-                <%= image_tag fixer.photo, class: "card-imagen", crop: :fill %>
-              </div>
-
-                <% end %>
-
-                <% sum = 0 %>
-                <% fixer.reviews.each do |review| %>
-                <% sum += review.rating  %>
-                <% end %>
-                <% if sum > 0 %>
-                <% average = sum / fixer.reviews.size %>
-                <% else %>
-                <% average = 0 %>
-                <% end %>
-
-                <p class="card-text textito"><span>Rating:</span> <%= average %></p>
-                <p class="card-text textito"><span>Fixer desde:</span> <%= fixer.created_at.strftime('%b/%Y') %></p>
-                <p class="card-text textito"><span>Trabajos realizados:</span> <%= fixer %></p>
-                <%= link_to "Ver perfil",  fixer_path(fixer.id), class: "btn btn-fixi" %>
-          </div>
-         </div>
-         <% else %>
           <div class="col-3 m-2 ">
-          <div class="card-fixers odd">
+            <div class="card-fixers">
               <h5 class="card-title color-titulo"><%= fixer.name.upcase %></h5>
               <% if fixer.photo.attached? %>
-              <div class="d-flex justify-content-center">
-                <%= image_tag fixer.photo, class: "card-imagen", crop: :fill %>
-              </div>
-
-                <% end %>
-                <% sum = 0 %>
-                <% fixer.reviews.each do |review| %>
+                <div class="d-flex justify-content-center">
+                  <%= image_tag fixer.photo, class: "card-imagen", crop: :fill %>
+                </div>
+              <% end %>
+              <% sum = 0 %>
+              <% fixer.reviews.each do |review| %>
                 <% sum += review.rating  %>
-                <% end %>
-                <% if sum > 0 %>
+              <% end %>
+              <% if sum > 0 %>
                 <% average = sum / fixer.reviews.size %>
-                <% else %>
+              <% else %>
                 <% average = 0 %>
-                <% end %>
-                <p class="card-text textito"><span>Rating: </span><%= average %></p>
-                <p class="card-text textito"><span>Fixer desde:</span> <%= fixer.created_at.strftime('%b/%Y') %></p>
-                <p class="card-text textito"><span>Trabajos realizados:</span> <%= fixer %></p>
-                <%= link_to "Ver perfil",  fixer_path(fixer.id), class: "btn btn-fixi" %>
+              <% end %>
+              <p class="card-text textito"><span>Rating:</span> <%= average %></p>
+              <p class="card-text textito"><span>Fixer desde:</span> <%= fixer.created_at.strftime('%b/%Y') %></p>
+              <p class="card-text textito"><span>Trabajos realizados:</span> <%= fixer %></p>
+              <%= link_to "Ver perfil",  fixer_path(fixer.id), class: "btn btn-fixi" %>
+            </div>
           </div>
-         </div>
-         <% end %>
-         <% index += 1 %>
+        <% else %>
+          <div class="col-3 m-2 ">
+            <div class="card-fixers odd">
+              <h5 class="card-title color-titulo"><%= fixer.name.upcase %></h5>
+              <% if fixer.photo.attached? %>
+                <div class="d-flex justify-content-center">
+                  <%= image_tag fixer.photo, class: "card-imagen", crop: :fill %>
+                </div>
+              <% end %>
+              <% sum = 0 %>
+              <% fixer.reviews.each do |review| %>
+                <% sum += review.rating  %>
+              <% end %>
+              <% if sum > 0 %>
+                <% average = sum / fixer.reviews.size %>
+              <% else %>
+                <% average = 0 %>
+              <% end %>
+              <p class="card-text textito"><span>Rating:</span> <%= average %></p>
+              <p class="card-text textito"><span>Fixer desde:</span> <%= fixer.created_at.strftime('%b/%Y') %></p>
+              <p class="card-text textito"><span>Trabajos realizados:</span> <%= fixer %></p>
+              <%= link_to "Ver perfil",  fixer_path(fixer.id), class: "btn btn-fixi" %>
+            </div>
+          </div>
         <% end %>
-      <% else %>
-        <p>No hay fixers en esta categoría</p>
+        <% index += 1 %>
       <% end %>
+    <% else %>
+      <p>No hay fixers en esta categoría</p>
+    <% end %>
   </div>
-
-
 </div>
+<%# modified file %>
