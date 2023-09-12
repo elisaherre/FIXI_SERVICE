@@ -13,6 +13,7 @@
                   <%= image_tag fixer.photo, class: "card-imagen", crop: :fill %>
                 </div>
               <% end %>
+
               <% sum = 0 %>
               <% fixer.reviews.each do |review| %>
                 <% sum += review.rating  %>
@@ -22,9 +23,17 @@
               <% else %>
                 <% average = 0 %>
               <% end %>
+
+              <% completed = 0 %>
+              <% fixer.services.each do |service| %>
+                <% service.requests.each do |request| %>
+                  <% completed += 1 if request.status == "finalizada" %>
+                <% end %>
+              <% end %>
+
               <p class="card-text textito"><span>Rating:</span> <%= average %></p>
               <p class="card-text textito"><span>Fixer desde:</span> <%= fixer.created_at.strftime('%b/%Y') %></p>
-              <p class="card-text textito"><span>Trabajos realizados:</span> <%= fixer %></p>
+              <p class="card-text textito"><span>Trabajos realizados:</span> <%= completed %></p>
               <%= link_to "Ver perfil",  fixer_path(fixer.id), class: "btn btn-fixi" %>
             </div>
           </div>
@@ -37,6 +46,7 @@
                   <%= image_tag fixer.photo, class: "card-imagen", crop: :fill %>
                 </div>
               <% end %>
+
               <% sum = 0 %>
               <% fixer.reviews.each do |review| %>
                 <% sum += review.rating  %>
@@ -46,9 +56,17 @@
               <% else %>
                 <% average = 0 %>
               <% end %>
+
+              <% completed = 0 %>
+              <% fixer.services.each do |service| %>
+                <% service.requests.each do |request| %>
+                  <% completed += 1 if request.status == "finalizada" %>
+                <% end %>
+              <% end %>
+
               <p class="card-text textito"><span>Rating:</span> <%= average %></p>
               <p class="card-text textito"><span>Fixer desde:</span> <%= fixer.created_at.strftime('%b/%Y') %></p>
-              <p class="card-text textito"><span>Trabajos realizados:</span> <%= fixer %></p>
+              <p class="card-text textito"><span>Trabajos realizados:</span> <%= completed %></p>
               <%= link_to "Ver perfil",  fixer_path(fixer.id), class: "btn btn-fixi" %>
             </div>
           </div>
