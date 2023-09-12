@@ -1,5 +1,5 @@
 class RequestsController < ApplicationController
-  before_action :set_request, only: [:accept, :cancel, :book, :budget, :pay]
+  before_action :set_request, only: [:show, :accept, :cancel, :book, :budget, :pay]
 
   def index
     @sent_requests = Request.where(user_id: current_user)
@@ -9,14 +9,19 @@ class RequestsController < ApplicationController
     end
   end
 
+  def show
+  end
+
   def new
     @request = Request.new
+    @services = Service.where(user_id: params[:fixer_id])
+    @fixer = User.find(params[:fixer_id])
   end
 
   def create
-    @request = Request.new(params[:id])
+    @request = Request.new(requests_params)
     @request.budget = 0
-    @request.user_id = current_user
+    @request.user_id = current_user.id
     @request.status = "enviada"
 
     if @request.save
@@ -29,6 +34,7 @@ class RequestsController < ApplicationController
 
   def accept
     @request.status = "aceptada"
+    @request.budget = 20
 
     if @request.save
       redirect_to requests_path
@@ -81,5 +87,9 @@ class RequestsController < ApplicationController
 
   def set_request
     @request = Request.find(params[:id])
+  end
+
+  def requests_params
+    params.require(:request).permit(:description, :start_date, :end_date, :service_id, :budget)
   end
 end

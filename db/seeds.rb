@@ -54,7 +54,7 @@ category7.save!
 
 puts "creando categoría 8..."
 file = URI.open("https://img.freepik.com/foto-gratis/personas-desinfectando-area-riesgo-biologico_23-2148848551.jpg?w=2000&t=st=1694301630~exp=1694302230~hmac=70091a85999e165b6844a3492e00524087d04156ec1e3f79feb6fe9f5d2cf1db")
-category8 = Category.new(name: "control de plagas")
+category8 = Category.new(name: "fumigación")
 category8.photo.attach(io: file, filename: "control de plagas.png", content_type: "image/png")
 category8.save!
 

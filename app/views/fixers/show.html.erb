@@ -1,5 +1,25 @@
 <div class="container mt-5">
   <div class="row">
+
+  <% @services.each do |service| %>
+    <div class="col-2 mx-2 p-0">
+      <p class="categoria-texto text-center"> <%= service.category.name.capitalize %></p>
+    </div>
+    <% end %>
+  </div>
+  <div class="row mt-2">
+    <p class="m-0 textito-card"> Fixer desde: <%= @fixer.created_at.strftime('%d/%m/%Y')%></p>
+  </div>
+  <div class="row">
+    <p class="m-0 textito-card"> Rating: <%= @average %></p>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <p class="m-0 textito-card"> Trabajos realizados: <%= @completed %></p>
+    </div>
+    <div class="row">
+      <div class= "col-12 d-flex justify-content-end">
+      <%= link_to "Solicitar",  new_request_path(fixer_id: @fixer.id), class: "btn btn-fixi" %>
     <div class="col-5">
       <%= image_tag @fixer.photo, crop: :fill, class: "filtro redondeada imagen-fixer" %>
     </div>

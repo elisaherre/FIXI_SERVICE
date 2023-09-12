@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   patch 'requests/budget/:id', to: "requests#budget", as: :budget
   patch 'requests/pay/:id', to: "requests#pay", as: :pay
 
+  post "process_payment", to: "payments#process_payment"
+  resources :payments
+
   devise_for :users, controllers: { registrations: "registrations" }
   root to: "pages#home"
 
@@ -20,7 +23,7 @@ Rails.application.routes.draw do
 
   resources :services
 
-  resources :requests, only: [:index, :new, :create] do
+  resources :requests, only: [:index, :new, :create, :show] do
     resources :reviews, only: [:new, :create]
   end
 end
