@@ -11,12 +11,12 @@
       </div>
     </nav>
 
-    <div class="tab-content" id="nav-tabContent">
+    <div class="d-flex justify-content-center tab-content" id="nav-tabContent">
 
       <div class="tab-pane fade show active" id="nav-sent" role="tabpanel" aria-labelledby="nav-sent-tab" tabindex="0">
         <!-- Solicitudes enviadas -->
         <% if @sent_requests.size > 0 %>
-          <table class="table my-requests-card">
+          <table class="table table-borderless my-requests-card">
             <thead>
               <tr>
                 <th scope="col">Status</th>
@@ -39,12 +39,12 @@
                   <td><%= request.description %></td>
                   <td><%=  %></td> <!-- presupuesto -->
                   <!-- Botones de reseña (se muestra al finalizarse la request) -->
-                  <td><%= link_to "Crear una reseña", new_request_review_path(request), class: "btn btn-fixi" if request.status == "finalizada" && Review.where(user: current_user, request: request).size == 0 %></td>
+                  <td><%= link_to "Calificar", new_request_review_path(request), class: "btn btn-fixi" if request.status == "finalizada" && Review.where(user: current_user, request: request).size == 0 %></td>
                   <!-- Botones de status -->
                   <% if request.status == "enviada" %>
-                  <td><%= button_to "Cancelar solicitud", cancel_path(request), method: :patch, class: "btn btn-fixi" %></td>
+                  <td><%= button_to "Cancelar", cancel_path(request), method: :patch, class: "btn btn-fixi" %></td>
                   <% elsif request.status == "aceptada" %>
-                  <td><%= link_to "Reservar visita", request_path(request), class: "btn btn-fixi" %></td>
+                  <td><%= link_to "Reservar", request_path(request), class: "btn btn-fixi" %></td>
                   <% elsif request.status == "por pagar" %>
                   <td><%= button_to "Pagar", pay_path(request), method: :patch, class: "btn btn-fixi" %></td>
                   <td><%= button_to "Cancelar", cancel_path(request), method: :patch, class: "btn btn-fixi" %></td>
@@ -59,7 +59,7 @@
       <div class="tab-pane fade" id="nav-received" role="tabpanel" aria-labelledby="nav-received-tab" tabindex="0">
         <!-- Solicitudes recibidas -->
         <% if @received_requests.size > 0 %>
-          <table class="table table my-requests-card">
+          <table class="table table-borderless my-requests-card">
             <thead>
               <tr>
                 <th scope="col">Status</th>
@@ -85,10 +85,10 @@
                   <td><%= link_to "Crear una reseña", new_request_review_path(request, cliente: request.user.id), class: "btn btn-fixi" if request.status == "finalizada" && Review.where(user: current_user, request: request).size == 0 %></td>
                   <!-- Botones de status -->
                   <% if request.status == "enviada" && request.budget == 0 %>
-                  <td><%= button_to "Enviar presupuesto", accept_path(request), method: :patch, class: "btn btn-fixi" %></td>
-                  <td><%= button_to "Declinar solicitud", cancel_path(request), method: :patch, class: "btn btn-fixi" %></td>
+                  <td><%= button_to "Aceptar", accept_path(request), method: :patch, class: "btn btn-fixi" %></td>
+                  <td><%= button_to "Declinar", cancel_path(request), method: :patch, class: "btn btn-fixi" %></td>
                   <% elsif request.status == "reservada" %>
-                  <td><%= button_to "Presupuestar servicio", budget_path(request), method: :patch, class: "btn btn-fixi" %></td>
+                  <td><%= button_to "Presupuestar", budget_path(request), method: :patch, class: "btn btn-fixi" %></td>
                   <% end %>
                 </tr>
               <% end %>
