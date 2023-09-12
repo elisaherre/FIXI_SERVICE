@@ -1,6 +1,6 @@
 <div class="fondo-page" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= asset_path 'tools-background.jpg' %>);">
   <div class = "container w-60 m-5 p-0">
-    <div class="d-flex justify-content-center m-3 pt-3">
+    <div class="d-flex justify-content-center m-3 pt-5">
       <h1>MIS SOLICITUDES</h1>
     </div>
 
@@ -19,6 +19,7 @@
           <table class="table table-borderless my-requests-card">
             <thead>
               <tr>
+                <th scope="col"></th> <!-- espacio -->
                 <th scope="col">Status</th>
                 <th scope="col">Fixer</th>
                 <th scope="col">Categoría</th>
@@ -33,6 +34,7 @@
             <tbody>
               <% @sent_requests.each do |request| %>
                 <tr>
+                  <th scope="col"></th> <!-- espacio -->
                   <td><%= request.status.capitalize %></td>
                   <td><%= request.service.user.name %></td>
                   <td><%= request.service.category.name.capitalize %></td>
@@ -44,7 +46,7 @@
                   <% if request.status == "enviada" %>
                   <td><%= button_to "Cancelar", cancel_path(request), method: :patch, class: "btn btn-fixi" %></td>
                   <% elsif request.status == "aceptada" %>
-                  <td><%= link_to "Reservar", request_path(request), class: "btn btn-fixi" %></td>
+                  <td><%= button_to "Reservar", book_path(request), method: :patch, class: "btn btn-fixi" %></td>
                   <% elsif request.status == "por pagar" %>
                   <td><%= button_to "Pagar", pay_path(request), method: :patch, class: "btn btn-fixi" %></td>
                   <td><%= button_to "Cancelar", cancel_path(request), method: :patch, class: "btn btn-fixi" %></td>
@@ -62,6 +64,7 @@
           <table class="table table-borderless my-requests-card">
             <thead>
               <tr>
+                <th scope="col"></th> <!-- espacio -->
                 <th scope="col">Status</th>
                 <th scope="col">Cliente</th>
                 <th scope="col">Categoría</th>
@@ -76,6 +79,7 @@
             <tbody>
               <% @received_requests.each do |request| %>
                 <tr>
+                  <th scope="col"></th> <!-- espacio -->
                   <td><%= request.status.capitalize %></td>
                   <td><%= request.user.name %></td>
                   <td><%= request.service.category.name.capitalize %></td>
