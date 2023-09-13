@@ -1,41 +1,106 @@
-.tarjetas-informacion{
-  margin: 2rem 0 2rem 0;
-
+.caja-principal-cards{
+  margin: 5rem 0;
+  border-bottom: 2px solid rgb(192, 192, 192);
+}
+.cada-category{
+  margin-bottom: 2rem;
 }
 
-.text-category{
-  color: #000;
+.card-category {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+  padding: 20px;
+  margin: 5px;
+  color: #D8F500;
+  height: 200%;
+  width: 200%;
+  object-fit: cover;
+  min-height: 200px; /* Añadido min-height */
+  min-width: 300px;
+
+
+
+  /*  efecto de blanco y negro */
+  filter: grayscale(100%);
+}
+
+.card-category:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Sombra más profunda al pasar el ratón */
+
+  /* Cambia el filtro a 0% para que la imagen regrese a su color original al pasar el ratón */
+  filter: grayscale(0%);
+}
+
+
+.info-card-category{
+  border-bottom: 2px solid rgb(192, 192, 192);
+  margin-bottom: 3rem;
+  margin-top: 3rem;
 }
 
 .titulo-informacion{
-border-radius: 50%;
-margin-top: 3rem;
-background-color: #00273d;
-color: white;
-padding-top: 25px;
-padding-bottom: 25px;
+  margin-bottom: 35px;
 }
 
-.tarjetas-pintura{
+.card-category:hover {
 
+  transform: translateY(-10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Sombra más profunda al pasar el ratón */
+}
+
+.imagen-prueba{
+  width: 100%;
+  height: auto;
+  border-radius: 10px 10px 0 0; /* Redondear esquinas superiores de la imagen */
 }
 
 
-.btn-fixi{
-  font-family: roboto 800;
-  font-size: 1.5rem;;
-  background-color: #D8F500;
-  border-radius: 2rem;
-  color: #000;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+.card-category {
 
-  &:hover {
-    background-color: darken(#D8F500, 10%);
-    transform: scale(1.05);
-  }
+  color: #D8F500;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
 
-  &:active {
-    background-color: darken(#D8F500, 15%);
-    transform: scale(1);
-  }
+.profesionales-expertos{
+  font-family: roboto, sans-serif;
+  font-weight: 100;
+}
+
+.category-nombre{
+  font-size: 25px;
+  color: #D8F500;
+}
+
+
+.boton-para-card{
+  
+}
+
+.boton-cards-nuevo{
+
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700; /* Ligera reducción en el peso de la fuente */
+    font-size: 1.4rem; /* Ligeramente más pequeño */
+    background-color: #D0E400; /* Un tono verde un poco diferente */
+    border-radius: 50%; /* Hace el botón completamente redondo */
+    color: #000;
+    padding: 10px 20px; /* Ajuste en el padding para mantener la proporción */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+      background-color: darken(#D0E400, 10%); /* Oscurecimiento similar al hover */
+      transform: scale(1.08); /* Un poco más de aumento al hacer hover */
+    }
+
+    &:active {
+      background-color: darken(#D0E400, 20%); /* Oscurecimiento un poco más pronunciado en el estado active */
+      transform: scale(0.98); /* Ligeramente más pequeño al hacer click para un efecto pulsante */
+    }
+
+
 }

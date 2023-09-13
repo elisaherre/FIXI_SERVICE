@@ -121,17 +121,63 @@
   max-width: 45%;
 }
 
-.btn-fixi {
+
+.btn-fixi{
   border: none;
   font-weight: bold;
   padding: 8px 12px; /* Añadido padding para aumentar el tamaño del botón */
-  font-size: 14px;    /* Ajustado el tamaño de la fuente para que sea un poco más grande */
+  font-family: roboto 800;
+  font-size: 1rem;;
+  background-color: #D8F500;
+  border-radius: 2rem;
+  color: #000;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    background-color: darken(#D8F500, 10%);
+    transform: scale(1.05);
+  }
+
+  &:active {
+    background-color: darken(#D8F500, 15%);
+    transform: scale(1);
+  }
 }
 
 
 
 
+.custom-button {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  border: 2px solid #D8F500;
+  background-color: transparent;
+  color: #D8F500;
+  padding: 10px 30px ;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  max-height: 40px;
+
+  align-items: center;
+  border-radius: 40px;
+}
+
+.custom-button:hover {
+  background-color: #D8F500;
+  color: #2b2b2b;
+  transform: scale(1.05);
+}
+
+.custom-button:active {
+  background-color: #D8F500;
+  color: #282828;
+}
+
+
 .fondo-page{
+
+  background-color: #fcf8ee;
   padding-bottom: 40px;
 
   background-size: cover;
