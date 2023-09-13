@@ -10,7 +10,11 @@
               <h5 class="card-title color-titulo"><%= fixer.name.upcase %></h5>
               <% if fixer.photo.attached? %>
                 <div class="d-flex justify-content-center">
-                  <%= image_tag fixer.photo, class: "card-imagen", crop: :fill %>
+                  <%= cl_image_tag(fixer.photo.key, :transformation=>[
+                    {:width=>150, :crop=>"scale"},
+                    {:radius=> 10},
+                    {:fetch_format=>:auto}
+                    ]) %>
                 </div>
               <% end %>
 
@@ -26,7 +30,7 @@
               <% end %>
 
               <% if sum > 0 %>
-                <% average = sum / fixer.reviews.size %>
+                <% average = sum / cantidad %>
               <% else %>
                 <% average = 0 %>
               <% end %>
@@ -42,6 +46,9 @@
               <div class="rating-box">
                 <% average.times do %>
                   <i class="fa-solid fa-star"></i>
+                <% end %>
+                <% if sum / cantidad % average >= 0.5 %>
+                  <i class="fa-solid fa-star-half"></i>
                 <% end %>
               </div>
               <% else %>
@@ -90,6 +97,9 @@
               <div class="rating-box">
                 <% average.times do %>
                   <i class="fa-solid fa-star"></i>
+                <% end %>
+                <% if sum / cantidad % average >= 0.5 %>
+                  <i class="fa-solid fa-star-half"></i>
                 <% end %>
               </div>
               <% else %>
