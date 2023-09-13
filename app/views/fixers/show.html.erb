@@ -2,7 +2,7 @@
 <div class="container mt-5">
   <div class="row">
     <div class="col-5">
-      <%= image_tag @fixer.photo, crop: :fill, class: "filtro redondeada imagen-fixer" %>
+      <%= cl_image_tag(@fixer.photo.key, crop: :fill, :class=>"filtro redondeada imagen-fixer") %>
     </div>
     <div class="col-7 fondo-profile redondeada p-4">
     <div class="container d-flex flex-column">
@@ -18,12 +18,16 @@
           </div>
         </div>
         <div class="col-5 d-flex justify-content-center align-items-center">
-        <% @average.times do %>
-          <i class="fa-solid fa-star"></i>
-        <% end %>
-        <% if @sum/@cantidad % @average >= 0.5 %>
+        <% if @average > 1 %>
+          <% @average.times do %>
+            <i class="fa-solid fa-star"></i>
+          <% end %>
+          <% if @sum/@cantidad % @average >= 0.5 %>
             <i class="fa-solid fa-star-half"></i>
-        <% end %>
+          <% end %>
+        <% else %>
+          <p>Sin calificación</p>
+        <%end %>
 
         </div>
       </div>

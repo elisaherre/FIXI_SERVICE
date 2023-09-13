@@ -10,10 +10,8 @@
               <h5 class="card-title color-titulo"><%= fixer.name.upcase %></h5>
               <% if fixer.photo.attached? %>
                 <div class="d-flex justify-content-center">
-                  <%= cl_image_tag(fixer.photo.key, :transformation=>[
-                    {:width=>150, :crop=>"scale"},
-                    {:radius=> 10},
-                    {:fetch_format=>:auto}
+                  <%= cl_image_tag(fixer.photo.key, :class=>"card-imagen",:transformation=>[
+                    {:gravity=>"face", :width=>0.6, :zoom=>0.7, :crop=>"thumb"}
                     ]) %>
                 </div>
               <% end %>
@@ -52,7 +50,7 @@
                 <% end %>
               </div>
               <% else %>
-              <p class="card-text textito">Sin calificar</p>
+              <p class="card-text textito">Sin calificación</p>
               <% end %>
               <p class="card-text textito"><span>Fixer desde:</span> <%= fixer.created_at.strftime('%b/%Y') %></p>
               <p class="card-text textito"><span>Trabajos realizados:</span> <%= completed %></p>
@@ -65,7 +63,9 @@
               <h5 class="card-title color-titulo"><%= fixer.name.upcase %></h5>
               <% if fixer.photo.attached? %>
                 <div class="d-flex justify-content-center">
-                  <%= image_tag fixer.photo, class: "card-imagen", crop: :fill %>
+                  <%= cl_image_tag(fixer.photo.key, :class=>"card-imagen", :transformation=>[
+                    {:gravity=>"face", :width=>0.6, :zoom=>0.7, :crop=>"thumb"}
+                    ]) %>
                 </div>
               <% end %>
 
@@ -103,7 +103,7 @@
                 <% end %>
               </div>
               <% else %>
-              <p class="card-text textito">Sin calificar</p>
+              <p class="card-text textito">Sin calificación</p>
               <% end %>
               <p class="card-text textito"><span>Fixer desde:</span> <%= fixer.created_at.strftime('%b/%Y') %></p>
               <p class="card-text textito"><span>Trabajos realizados:</span> <%= completed %></p>
