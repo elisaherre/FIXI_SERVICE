@@ -1,6 +1,6 @@
 <div class="fondo-page" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= asset_path 'fondo_requests.jpg' %>);">
   <div class="container d-flex justify-content-center p-5">
-    <div class = "form-card w-50"">
+    <div class = "form-card w-50">
       <h2 class= "text-center pb-2">NUEVA SOLICITUD PARA <%= @fixer.name.upcase %></h2>
       <%= simple_form_for @request do |f| %>
       <p class="mb-2">Elige un rango de fechas:</p>

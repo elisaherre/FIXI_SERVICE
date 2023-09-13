@@ -1,13 +1,13 @@
-<div class = "container mt-5 mb-3">
-  <div class="d-flex justify-content-center mb-3">
-  <h1><%= @request.user.id != current_user.id ? "NUEVA RESEÑA PARA CLIENTE" : "NUEVA RESEÑA PARA FIXER" %></h1>
-  </div>
-  <div>
-    <%= simple_form_for [@request, @review] do |f| %>
+<div class="fondo-page" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= asset_path 'fondo_requests.jpg' %>);">
+  <div class="container d-flex justify-content-center p-5">
+    <div class = "form-card w-50">
+      <h2 class= "text-center pb-2"><%= @request.user.id != current_user.id ? "NUEVA RESEÑA PARA CLIENTE" : "NUEVA RESEÑA PARA FIXER" %></h2>
+      <%= simple_form_for [@request, @review] do |f| %>
       <%= f.input :content, placeholder: '...' unless params[:cliente] %>
       <%= f.input :rating %>
       <%= f.input :user_id, as: :hidden, input_html: {value: params[:cliente]} %>
       <%= f.submit %>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
