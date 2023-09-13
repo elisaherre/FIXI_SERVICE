@@ -14,8 +14,8 @@
                                     data: { controller: "flatpickr", flatpickr_min_date: Time.zone.now }
                                   } %>
       </div>
-      <div class="">
-        <%= f.select(:service_id, options_for_select(@services.map { |service| [service.category.name.capitalize, service.id] })) %>
+      <div>
+        <%= f.input :service_id, collection: @services.map { |service| [service.category.name.capitalize, service.id] } %>
       </div>
       <%= f.input :description, placeholder: '...', label: "Descripción" %>
       <div class="text-end p-2">
