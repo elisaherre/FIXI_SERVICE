@@ -26,8 +26,10 @@
         <% end %>
       </div>
       <%= simple_form_for [@request, @review] do |f| %>
-      <%= f.input :content, label: "Descripción", placeholder: '...' unless params[:cliente] %>
-      <%= f.input :rating, collection: [1, 2, 3, 4, 5], label: "Calificación" %>
+      <div class="d-flex justify-content-center mt-3">
+        <%= f.input :rating, label: false, collection: (1..5).to_a, input_html: {data: {controller: "star-rating"}} %>
+      </div>
+      <%= f.input :content, label: "Añadir comentario", placeholder: '...' unless params[:cliente] %>
       <%= f.input :user_id, as: :hidden, input_html: {value: params[:cliente]} %>
       <div class="text-center">
         <%= f.submit "Enviar", class: "btn btn-fixi"  %>
