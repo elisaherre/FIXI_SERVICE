@@ -40,20 +40,22 @@
                 <% end %>
               <% end %>
 
-              <% if average > 0 %>
-              <div class="rating-box">
-                <% average.times do %>
-                  <i class="fa-solid fa-star"></i>
-                <% end %>
-                <% if sum / cantidad % average >= 0.5 %>
-                  <i class="fa-solid fa-star-half"></i>
-                <% end %>
-              </div>
+              <div class="cuerpo-card my-3">
+                <% if average > 0 %>
+                  <div class="rating-box">
+                    <% average.times do %>
+                      <i class="fa-solid fa-star"></i>
+                    <% end %>
+                  <% if sum / cantidad % average >= 0.5 %>
+                    <i class="fa-solid fa-star-half"></i>
+                  <% end %>
+                  </div>
               <% else %>
-              <p class="card-text textito">Sin calificación</p>
+                <p class="card-text textito">Sin calificación</p>
               <% end %>
               <p class="card-text textito"><span>Fixer desde:</span> <%= fixer.created_at.strftime('%b/%Y') %></p>
               <p class="card-text textito"><span>Trabajos realizados:</span> <%= completed %></p>
+              </div>
               <%= link_to "Ver perfil",  fixer_path(fixer.id), class: "btn btn-fixi" %>
             </div>
           </div>
@@ -92,21 +94,22 @@
                   <% completed += 1 if request.status == "finalizada" %>
                 <% end %>
               <% end %>
-
-              <% if average > 0 %>
-              <div class="rating-box">
-                <% average.times do %>
-                  <i class="fa-solid fa-star"></i>
-                <% end %>
-                <% if sum / cantidad % average >= 0.5 %>
-                  <i class="fa-solid fa-star-half"></i>
-                <% end %>
-              </div>
+              <div class="cuerpo-card my-3">
+                <% if average > 0 %>
+                  <div class="rating-box">
+                    <% average.times do %>
+                      <i class="fa-solid fa-star"></i>
+                    <% end %>
+                  <% if sum / cantidad % average >= 0.5 %>
+                    <i class="fa-solid fa-star-half"></i>
+                  <% end %>
+                  </div>
               <% else %>
-              <p class="card-text textito">Sin calificación</p>
+                <p class="card-text textito">Sin calificación</p>
               <% end %>
               <p class="card-text textito"><span>Fixer desde:</span> <%= fixer.created_at.strftime('%b/%Y') %></p>
               <p class="card-text textito"><span>Trabajos realizados:</span> <%= completed %></p>
+              </div>
               <%= link_to "Ver perfil",  fixer_path(fixer.id), class: "btn btn-fixi" %>
             </div>
           </div>
