@@ -35,7 +35,7 @@
       <div class="container mt-3 d-flex flex-column">
         <div class="flex-grow-1" data-controller="tab">
         <nav>
-          <div class="nav nav-tabs nav-color position-relative" id="nav-tab" role="tablist" >
+          <div class="nav nav-pills nav-tabs nav-color position-relative" id="nav-tab" role="tablist" >
             <% @services.each do |service| %>
               <button class="nav-link" id="nav-<%= service.category.name %>-tab" data-bs-toggle="tab"
                 data-bs-target="#nav-<%= service.category.name %>" type="button" role="tab" aria-controls="nav-<%= service.category.name %>" aria-selected="true" data-tab-target="tab"><%= service.category.name.capitalize %>
