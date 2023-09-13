@@ -1,12 +1,37 @@
-<div class="fondo-page" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= asset_path 'fondo_requests.jpg' %>);">
+<div class="fondo-page" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= asset_path 'fondoreviews.jpg' %>);">
   <div class="container d-flex justify-content-center p-5">
     <div class = "form-card w-50">
-      <h2 class= "text-center pb-2"><%= @request.user.id != current_user.id ? "NUEVA RESEÑA PARA CLIENTE" : "NUEVA RESEÑA PARA FIXER" %></h2>
+      <h2 class= "text-center pb-4"><%= @request.user.id != current_user.id ? "NUEVA RESEÑA PARA CLIENTE" : "NUEVA RESEÑA PARA FIXER" %></h2>
+      <div class="text-center">
+        <% if @request.user.id != current_user.id %>
+          <%= cl_image_tag(@request.user.photo.key,
+                :transformation=>[
+                    {:gravity=>"face", :height=>500, :width=>500, :crop=>"crop"},
+                    {:radius=>"max"},
+                    {:width=>150, :crop=>"scale"},
+                    {:fetch_format=>:auto}
+                    ]) %>
+          <h5 class="pt-3"><%= @request.user.name %></h5>
+          <p>Servicio de <%= @request.service.category.name %> finalizado.</p>
+        <% else %>
+          <%= cl_image_tag(@request.service.user.photo.key,
+                :transformation=>[
+                    {:gravity=>"face", :height=>500, :width=>500, :crop=>"crop"},
+                    {:radius=>"max"},
+                    {:width=>150, :crop=>"scale"},
+                    {:fetch_format=>:auto}
+                    ]) %>
+          <h5 class="pt-3"><%= @request.service.user.name%></h5>
+          <p>Servicio de <%= @request.service.category.name.capitalize %> finalizado.</p>
+        <% end %>
+      </div>
       <%= simple_form_for [@request, @review] do |f| %>
-      <%= f.input :content, placeholder: '...' unless params[:cliente] %>
-      <%= f.input :rating %>
+      <%= f.input :content, label: "Descripción", placeholder: '...' unless params[:cliente] %>
+      <%= f.input :rating, collection: [1, 2, 3, 4, 5], label: "Calificación" %>
       <%= f.input :user_id, as: :hidden, input_html: {value: params[:cliente]} %>
-      <%= f.submit %>
+      <div class="text-center">
+        <%= f.submit "Enviar", class: "btn btn-fixi"  %>
+      </div>
       <% end %>
     </div>
   </div>
