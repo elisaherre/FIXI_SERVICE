@@ -1,19 +1,34 @@
-<div class="fondo-page" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= asset_path 'tools-background.jpg' %>);">
-  <div class = "container w-60 m-5 p-0">
+<div class="fondo-page" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(
+        <% if @sent_requests.size == 0 %>
+          <%= asset_path 'fixer_requests.jpg' %>
+        <% else %>
+          <%= asset_path 'requests_user.jpg' %>
+        <% end %>
+        );">
+  <div class = "container fondo-my-requests w-60 m-5 p-0">
     <div class="d-flex justify-content-center m-3 pt-5">
       <h1>MIS SOLICITUDES</h1>
     </div>
 
     <nav>
       <div class="nav nav-pills justify-content-center m-3" id="nav-tab" role="tablist">
-        <button class="nav-link active" id="nav-sent-tab" data-bs-toggle="tab" data-bs-target="#nav-sent" type="button" role="tab" aria-controls="nav-sent" aria-selected="true">Enviadas</button>
-        <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-received" type="button" role="tab" aria-controls="nav-received" aria-selected="false">Recibidas</button>
+        <% if @received_requests.size == 0 %>
+          <% enviadas = 1 %>
+          <button class="nav-link active" id="nav-sent-tab" data-bs-toggle="tab" data-bs-target="#nav-sent" type="button" role="tab" aria-controls="nav-sent" aria-selected="true">Enviadas</button>
+        <% elsif @sent_requests.size == 0 %>
+          <% enviadas = 0 %>
+          <button class="nav-link active" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-received" type="button" role="tab" aria-controls="nav-received" aria-selected="true">Recibidas</button>
+        <% else %>
+          <% enviadas = 1 %>
+          <button class="nav-link active" id="nav-sent-tab" data-bs-toggle="tab" data-bs-target="#nav-sent" type="button" role="tab" aria-controls="nav-sent" aria-selected="true">Enviadas</button>
+          <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-received" type="button" role="tab" aria-controls="nav-received" aria-selected="false">Recibidas</button>
+        <% end %>
       </div>
     </nav>
 
     <div class="d-flex justify-content-center tab-content" id="nav-tabContent">
 
-      <div class="tab-pane fade show active" id="nav-sent" role="tabpanel" aria-labelledby="nav-sent-tab" tabindex="0">
+      <div class="tab-pane fade <%= "show active" if enviadas==1 %>" id="nav-sent" role="tabpanel" aria-labelledby="nav-sent-tab" tabindex="0">
         <!-- Solicitudes enviadas -->
         <% if @sent_requests.size > 0 %>
           <table class="table table-borderless my-requests-card">
@@ -25,24 +40,21 @@
                 <th scope="col">Categoría</th>
                 <th scope="col">Descripción</th>
                 <th scope="col"></th> <!-- presupuesto -->
-                <th scope="col"></th> <!-- botón review -->
-                <th scope="col"></th> <!-- botón de acción -->
-                <th scope="col"></th> <!-- botón de acción -->
+                <th scope="col"></th> <!-- botón -->
+                <th scope="col"></th> <!-- espacio -->
               </tr>
             </thead>
 
             <tbody>
               <% @sent_requests.each do |request| %>
-                <tr>
-                  <th scope="col"></th> <!-- espacio -->
+                <tr  class="border-top border-white">
+                  <td><%=  %></td> <!-- espacio -->
                   <td><%= request.status.capitalize %></td>
                   <td><%= request.service.user.name %></td>
                   <td><%= request.service.category.name.capitalize %></td>
                   <td><%= request.description %></td>
                   <td><%=  %></td> <!-- presupuesto -->
-                  <!-- Botones de reseña (se muestra al finalizarse la request) -->
-                  <td><%= link_to "Calificar", new_request_review_path(request), class: "btn btn-fixi" if request.status == "finalizada" && Review.where(user: current_user, request: request).size == 0 %></td>
-                  <!-- Botones de status -->
+                  <!-- Botones -->
                   <% if request.status == "enviada" %>
                   <td><%= button_to "Cancelar", cancel_path(request), method: :patch, class: "btn btn-fixi" %></td>
                   <% elsif request.status == "aceptada" %>
@@ -50,7 +62,10 @@
                   <% elsif request.status == "por pagar" %>
                   <td><%= button_to "Pagar", pay_path(request), method: :patch, class: "btn btn-fixi" %></td>
                   <td><%= button_to "Cancelar", cancel_path(request), method: :patch, class: "btn btn-fixi" %></td>
+                  <% elsif request.status == "finalizada" && Review.where(user: current_user, request: request).size == 0 %>
+                  <td><%= link_to "Calificar", new_request_review_path(request), class: "btn btn-fixi" %></td>
                   <% end %>
+                  <td><%=  %></td> <!-- espacio -->
                 </tr>
               <% end %>
             </tbody>
@@ -58,7 +73,7 @@
         <% end %>
       </div>
 
-      <div class="tab-pane fade" id="nav-received" role="tabpanel" aria-labelledby="nav-received-tab" tabindex="0">
+      <div class="tab-pane fade <%= "show active" if enviadas==0 %>" id="nav-received" role="tabpanel" aria-labelledby="nav-received-tab" tabindex="0">
         <!-- Solicitudes recibidas -->
         <% if @received_requests.size > 0 %>
           <table class="table table-borderless my-requests-card">
@@ -70,30 +85,30 @@
                 <th scope="col">Categoría</th>
                 <th scope="col">Descripción</th>
                 <th scope="col"></th> <!-- presupuesto -->
-                <th scope="col"></th> <!-- botón review -->
-                <th scope="col"></th> <!-- botón de acción -->
-                <th scope="col"></th> <!-- botón de acción -->
+                <th scope="col"></th> <!-- botón -->
+                <th scope="col"></th> <!-- espacio -->
               </tr>
             </thead>
 
             <tbody>
               <% @received_requests.each do |request| %>
                 <tr>
-                  <th scope="col"></th> <!-- espacio -->
+                  <td><%=  %></td> <!-- espacio -->
                   <td><%= request.status.capitalize %></td>
                   <td><%= request.user.name %></td>
                   <td><%= request.service.category.name.capitalize %></td>
                   <td><%= request.description %></td>
                   <td><%= %></td> <!-- presupuesto -->
-                  <!-- Botones de reseña (se muestra al finalizarse la request) -->
-                  <td><%= link_to "Crear una reseña", new_request_review_path(request, cliente: request.user.id), class: "btn btn-fixi" if request.status == "finalizada" && Review.where(user: current_user, request: request).size == 0 %></td>
-                  <!-- Botones de status -->
+                  <!-- Botones -->
                   <% if request.status == "enviada" && request.budget == 0 %>
                   <td><%= button_to "Aceptar", accept_path(request), method: :patch, class: "btn btn-fixi" %></td>
                   <td><%= button_to "Declinar", cancel_path(request), method: :patch, class: "btn btn-fixi" %></td>
                   <% elsif request.status == "reservada" %>
-                  <td><%= button_to "Presupuestar", budget_path(request), method: :patch, class: "btn btn-fixi" %></td>
+                  <td><%= button_to "Finalizar", budget_path(request), method: :patch, class: "btn btn-fixi" %></td>
+                  <% elsif request.status == "finalizada" && Review.where(user: current_user, request: request).size == 0 %>
+                  <td><%= link_to "Calificar", new_request_review_path(request, cliente: request.user.id), class: "btn btn-fixi" %></td>
                   <% end %>
+                  <td><%=  %></td> <!-- espacio -->
                 </tr>
               <% end %>
             </tbody>
