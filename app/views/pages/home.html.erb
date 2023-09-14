@@ -3,7 +3,7 @@
 
   <!--banner-->
 
-  <div class="banner mx-4 mt-3 mb-3 rounded-5 cajita-banner"
+<div class="banner mx-4 mt-3 rounded-5 cajita-banner"
   style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)),
   url(<%= asset_path 'banner2.jpg' %>);">
     <div class="container text-right titulo-banner">
@@ -13,89 +13,131 @@
       <!-- <a class="btn mt-3 pr-5 btn-fixi" href="#">Contactanos</a> -->
     </div>
 
-    <form class="banner-search">
-      <select name="categoria" class="banner-search-category">
-        <!-- Añade las opciones de categoría aquí, por ejemplo: -->
-        <option value="Categoria1">Categoria 1</option>
-        <option value="Categoria2">Categoria 2</option>
-      </select>
-      <select name="avaluacion" class="banner-search-avaluacion">
-        <!-- Añade las opciones de avaluación aquí, por ejemplo: -->
-        <option value="5">5 estrellas</option>
-        <option value="4">4 estrellas</option>
-      </select>
-      <input type="text" name="query" class="banner-search-input" placeholder="Buscar...">
-      <button type="submit" class=" btn-fixi">Buscar</button>
-    </form>
+
+    <%= link_to "CONOCE LOS MÁS CERCANOS A TU UBICACIÓN <i class='fas fa-map-marker-alt'></i>".html_safe, categories_path, class: "boton-cercano" %>
 
     <img src="<%= asset_path 'destello.svg' %>" alt="Descripción de la imagen 1" class="banner-image banner-image1">
     <img src="<%= asset_path 'arrow.svg' %>" alt="Descripción de la imagen 1" class="banner-image banner-image2">
     <img src="<%= asset_path 'chips.svg' %>" alt="Descripción de la imagen 1" class="banner-image banner-image3">
-
-  </div>
+</div>
 
   <!-- Termino banner-->
 
 
 
-
-  <!--categorias-->
-
-<div class="caja-principal-cards px-4">
-  <div class="row">
-    <div class="col-12 d-flex justify-content-between info-card-category">
-      <h1 class="text-start titulo-informacion"><strong>CATEGORIAS</strong> / <span class="profesionales-expertos">Profesionales Expertos</span></h1>
-      <button class="custom-button">Ver todos</button>
-    </div>
-  </div>
-  <div class="row justify-content-center">
-    <% @categories.each do |category|  %>
-      <div class="col-md-4 cada-category">
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= rails_blob_url(category.photo) %>);">
-          <span class="category-nombre"> <%= category.name %> </span>
-
-
-        </div>
-        <div class="boton-para-card"><%= button_to 'Ver más', category_path(category), method: :get, class: 'btn-fixi boton-cards-nuevo' %></div>
-      </div>
-    <% end %>
-  </div>
-</div>
-
-
-
   <!--FONDO-->
 
-  <div class="fondo-page" style="background-image: linear-gradient(rgba(0,0,0,0.0),rgba(0,0,0,0.0)),
-  url(<%= asset_path 'happy-customer.png' %>);">
+<div class="fondo-page" style="background-image: linear-gradient(rgba(0,0,0,0.0),rgba(0,0,0,0.0)),
+  url(<%= asset_path 'bg5.jpg' %>);">
 
 
 
-  <!--Informacion-->
-  <div class="container fondo-principal">
-    <div class="row d-flex justify-content-between">
-      <!-- Primera columna -->
-      <div class="col align-items-center">
-          <img src="<%= asset_path 'carpinteria.jpg' %>" alt="Imagen 1" class=" img-capsula">
+
+
+     <!--titulo de seccion-->
+      <div class="row titulos-todas-secciones">
+        <div class="col-12 d-flex justify-content-between info-card-category">
+          <h1 class="text-start titulo-informacion"><strong>CATEGORIAS</strong> / <span class="profesionales-expertos">Profesionales Expertos</span></h1>
+          <%# <button class="custom-button">Ver todos</button> %>
+
+        </div>
       </div>
 
-      <!-- Segunda columna -->
-      <div class="col align-items-center text-center text-grande">
-            <img src="<%= asset_path 'rayon_Mesa de trabajo 1.svg' %>" alt="Descripción de la imagen 1" class="rayado-informacion">
-            <h1 class="display-4">ENCUENTRA EL TUYO</h1>
-            <h5 class="texto-informacion">Busca en tu radar más cercano el profesional que necesitas</h5>
-          <div>
-            <button type="button" class="btn-tamaño-xl">Botón </button>
+    <!--categorias-->
+    <div class="container personalizado">
+      <div class="row h-100">
+        <div class="col-2 texto-marketing">
+        </div>
+
+        <div class="col-8 nueva-clase">
+          <div class="row h-100">
+            <% @categories.each do |category|  %>
+              <div class="col-4 p-0 h-100">
+                <%= link_to category_path(category) do %>
+                  <div class="nuevas-tarjetas-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= rails_blob_url(category.photo) %>);">
+                    <span class="tarjetas-nombre"> <%= category.name %> </span>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
           </div>
+        </div>
 
-      </div>
+        <div class="col-2 texto-marketing">
+        </div>
 
-      <!-- Tercera columna -->
-      <div class="col align-items-center">
-          <img src="<%= asset_path 'electricista.jpg' %>" alt="Imagen 5" class=" img-capsula">
       </div>
     </div>
-  </div>
+
+
+
+
+      <!--titulo de seccion-->
+      <div class="row px-5 py-4 titulos-todas-secciones personalizar-por-cards">
+        <div class="col-12 d-flex justify-content-between info-card-category">
+          <h1 class="text-start titulo-informacion"><strong>PASO A PASO</strong> / <span class="profesionales-expertos">Soluciona tus problemas</span></h1>
+        </div>
+      </div>
+
+
+      <!--Paso a Paso-->
+      <div class="container px-5 fondito-cards-paso">
+        <div class="row pasito-pasito">
+          <div class="col card-style">
+            <img src="<%= asset_path 'paso-1.svg' %>" alt="Paso 1" class="card-image" />
+            <div class="descripcion-pasito">
+              <h4>Búsqueda</h4>
+              <p>Elige al Fixer de tu preferencia utilizando nuestros filtros de búsqueda.</p>
+            </div>
+          </div>
+
+          <div class="col card-style">
+            <img src="<%= asset_path 'paso-2.svg' %>" alt="Paso 2" class="card-image" />
+            <div class="descripcion-pasito">
+              <h4>Agendar</h4>
+              <p>Envía la descripción de lo que necesitas y agenda con el Fixer en el horario que más te convenga.</p>
+            </div>
+          </div>
+
+          <div class="col card-style">
+            <img src="<%= asset_path 'paso-3.svg' %>" alt="Paso 3" class="card-image" />
+            <div class="descripcion-pasito">
+              <h4>Pago</h4>
+              <p>Registra el pago para reservar la visita del Fixer a tu hogar.</p>
+            </div>
+          </div>
+
+          <div class="col card-style">
+            <img src="<%= asset_path 'paso-4.svg' %>" alt="Paso 4" class="card-image" />
+            <div class="descripcion-pasito">
+              <h4>Confirmación</h4>
+              <p>Recibe la confirmación de Fixi y relájate,  ¡pronto tu hogar estará en buenas manos!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!--Informacion capsulas-->
+      <div class="container px-5  fondo-principal">
+        <div class="row ">
+          <!-- Primera columna -->
+          <div class="col-6 informacion-estilo">
+          <div class="img-maestro" style="background-image: url(<%= asset_path 'maestro.png' %>)"></div>
+          </div>
+
+          <!-- Segunda columna -->
+          <div class="col-6 text-center text-grande">
+                <h1 class="display-4">ENCUENTRA EL <br> TUYO AQUÍ</h1>
+                <span class="palabra-informacion" >Busca en tu radar más cercano, el profesional que necesitas</span>
+                <div class="casita-fixi" style="background-image: url(<%= asset_path 'logo.svg' %>)"></div>
+          </div>
+
+          <!-- Tercera columna -->
+
+        </div>
+      </div>
 
 
 
@@ -105,91 +147,78 @@
 
 
 
+       <!--titulo de seccion-->
+      <div class="row px-5 titulo-secciones">
+        <div class="col-12 d-flex justify-content-between info-card-category">
+          <h1 class="text-start titulo-informacion"><strong>SE PARTE DE NUESTRA</strong> / <span class="profesionales">Experiencia Fixi</span></h1>
+        </div>
+      </div>
 
 
+      <!--carrusel reviews-->
 
-  <!--Terimino de las card categorias-->
+  <div class="col fondo-reviews">
+    <div class="reviews-section container px-4">
+      <div id="reviewsCarrusel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
 
-   <div class="row px-4">
-    <div class="col-12 d-flex justify-content-between info-card-category">
-      <h1 class="text-start titulo-informacion"><strong>SE PARTE DE NUESTRA</strong> / <span class="profesionales-expertos">Experiencia Fixi</span></h1>
-      
-  </div>
-
-
-
-
-  <div class="col">
-      <div class="reviews-section container px-5">
-        <div id="reviewsCarrusel" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-
-            <div class="carousel-item active">
-              <div class="review-card text-center">
-                <div class="star-rating">
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star"></span>
-                  <span class="fa fa-star"></span>
-                  <h4>3.0</h4>
-                </div>
+          <div class="carousel-item active">
+            <div class="review-card text-center cuadro-blanco">
+              <div class="star-rating">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <h4>3.0</h4>
+              </div> <!-- Esta es la etiqueta de cierre que agregué -->
+              <div>
                 <p>"Servicio excepcional, muy profesionales y amables. Definitivamente los recomendaría a mis amigos."</p>
                 <h5>- Cliente Satisfecho 1</h5>
               </div>
             </div>
-
-            <div class="carousel-item">
-              <div class="review-card text-center">
-                <div class="star-rating">
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star"></span>
-                </div>
-                <p>"Rápidos y eficientes. Realizaron un trabajo maravilloso en mi hogar. Gracias."</p>
-                <h5>- Cliente Satisfecho 2</h5>
-              </div>
-            </div>
-
-            <div class="carousel-item">
-              <div class="review-card text-center">
-                <div class="star-rating">
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                  <span class="fa fa-star checked"></span>
-                </div>
-                <p>"Muy impresionado con su profesionalidad y calidad de servicio. ¡Los volveré a contratar sin duda!"</p>
-                <h5>- Cliente Satisfecho 3</h5>
-              </div>
-            </div>
-
           </div>
 
-          <a class="carousel-control-prev" href="#reviewsCarrusel" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Anterior</span>
-          </a>
-          <a class="carousel-control-next" href="#reviewsCarrusel" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Siguiente</span>
-          </a>
+          <div class="carousel-item">
+            <div class="review-card text-center">
+              <div class="star-rating">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+              </div>
+              <p>"Rápidos y eficientes. Realizaron un trabajo maravilloso en mi hogar. Gracias."</p>
+              <h5>- Cliente Satisfecho 2</h5>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="review-card text-center">
+              <div class="star-rating">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              </div>
+              <p>"Muy impresionado con su profesionalidad y calidad de servicio. ¡Los volveré a contratar sin duda!"</p>
+              <h5>- Cliente Satisfecho 3</h5>
+            </div>
+          </div>
+
         </div>
+
+        <a class="carousel-control-prev adelante-atras" href="#reviewsCarrusel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#reviewsCarrusel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Siguiente</span>
+        </a>
       </div>
     </div>
-
-
-
-
-</div>
-
-
-
-
-
-
+  </div>
 
 </div>
