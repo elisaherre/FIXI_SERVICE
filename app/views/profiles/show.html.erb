@@ -9,7 +9,7 @@
             <div class="mb-5 text-center">
               <%= cl_image_tag(@user.photo.key,
                   :transformation=>[
-                      {:gravity=>"face", :height=>650, :width=>650, :crop=>"crop"},
+                      {:gravity=>"face", :height=>1100, :width=>1100, :crop=>"crop"},
                       {:radius=>"max"},
                       {:width=>200, :crop=>"scale"},
                       {:fetch_format=>:auto}
