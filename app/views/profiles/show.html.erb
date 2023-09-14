@@ -1,22 +1,50 @@
-<div class="container">
-<div class= "d-flex justify-content-between align-items-center">
-  <h1>Mi perfil</h1>
-    <%= link_to "Editar",  edit_user_registration_path, class: "btn btn-fixi" %>
-</div>
-  <div class="row justify-content-center mt-3">
-    <div class="col-4">
-      <p class="text-profile"><span>Nombre: </span><%= @user.name %> </p>
+<div class="fondo-page" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= asset_path 'gradegrey.jpg' %>);">
+  <div class="container d-flex justify-content-center pt-5">
+
+    <div class="profile-show-card" style="min-width: 75%">
+
+      <div class="row">
+        <h3 class="text-center mb-5 fw-semibold">MI PERFIL</h3>
+        <div class="col-6 d-flex flex-column">
+            <div class="mb-5 text-center">
+              <%= cl_image_tag(@user.photo.key,
+                  :transformation=>[
+                      {:gravity=>"face", :height=>650, :width=>650, :crop=>"crop"},
+                      {:radius=>"max"},
+                      {:width=>200, :crop=>"scale"},
+                      {:fetch_format=>:auto}
+                      ]) %>
+            </div>
+            <div class="text-center">
+              <%= link_to "Editar Perfil",  edit_user_registration_path, class: "btn btn-fixi" %>
+            </div>
+        </div>
+
+        <div class="col-6 d-flex flex-column align-self-end">
+          <p class="fs-6 fw-bold mb-1">Nombre:</p>
+          <p class="fs-6 mb-3"><%= @user.name %> </p>
+          <p class="fs-6 fw-bold mb-1">Dirección:</p>
+          <p class="fs-6 mb-3"><%= @user.address %> </p>
+          <p class="fs-6 fw-bold mb-1">E-mail:</p>
+          <p class="fs-6 mb-3"><%= @user.email %></p>
+          <p class="fs-6 fw-bold mb-1">Usuario desde:</p>
+          <p class="fs-6 mb-3"><%= @user.created_at.strftime('%d/%m/%Y') %></p>
+        </div>
+
+      </div>
+
     </div>
-    <div class="col-4">
-      <p class="text-profile"><span>Dirección: </span><%= @user.address %> </p>
-    </div>
+
   </div>
-  <div class="row justify-content-center my-3">
-    <div class="col-4">
-      <p class="text-profile"><span>E-mail: </span><%= @user.email %></p>
-    </div>
-    <div class="col-4">
-      <p class="text-profile"><span>Usuario desde: </span><%= @user.created_at.strftime('%d/%m/%Y') %></p>
-    </div>
+
+  <% if current_user.services.size == 0 %>
+  <div class="container d-flex justify-content-center p-3">
+    <p class="text-dark fs-6">¿Deseas convertirte en fixer?  <%= link_to "¡Crea un servicio!", new_service_path, class: "text-dark fs-6 fw-bold" %></p>
   </div>
+  <% else %>
+  <div class="container d-flex justify-content-center p-3">
+    <p class="text-dark fs-6">Ir a  <%= link_to "Mis Servicios", services_path, class: "text-dark fs-6 fw-bold" %></p>
+  </div>
+  <% end %>
+
 </div>

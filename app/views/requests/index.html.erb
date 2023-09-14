@@ -47,7 +47,7 @@
 
             <tbody>
               <% @sent_requests.each do |request| %>
-                <tr  class="border-top border-white">
+                <tr class="border-top border-white">
                   <td><%=  %></td> <!-- espacio -->
                   <td><%= request.status.capitalize %></td>
                   <td><%= request.service.user.name %></td>
@@ -92,7 +92,7 @@
 
             <tbody>
               <% @received_requests.each do |request| %>
-                <tr>
+                <tr class="border-top border-white">
                   <td><%=  %></td> <!-- espacio -->
                   <td><%= request.status.capitalize %></td>
                   <td><%= request.user.name %></td>
