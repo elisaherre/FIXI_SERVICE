@@ -1,4 +1,4 @@
-<div class="fondo-page" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= asset_path 'gradegrey.jpg' %>);">
+<div class="fondo-page" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(255,255,255,0.9)), url(<%= asset_path 'gradegrey.jpg' %>);">
   <div class="container d-flex justify-content-center pt-5">
 
     <div class="profile-show-card" style="min-width: 75%">
@@ -38,12 +38,12 @@
   </div>
 
   <% if current_user.services.size == 0 %>
-  <div class="container d-flex justify-content-center p-3">
-    <p class="text-dark fs-6">¿Deseas convertirte en fixer?  <%= link_to "¡Crea un servicio!", new_service_path, class: "text-dark fs-6 fw-bold" %></p>
+  <div class="container d-flex justify-content-center p-4">
+    <p class="text-dark fs-6 pb-3">¿Deseas convertirte en fixer?  <%= link_to "¡Crea un servicio!", new_service_path, class: "text-dark fs-6 fw-bold" %></p>
   </div>
   <% else %>
-  <div class="container d-flex justify-content-center p-3">
-    <p class="text-dark fs-6">Ir a  <%= link_to "Mis Servicios", services_path, class: "text-dark fs-6 fw-bold" %></p>
+  <div class="container d-flex justify-content-center p-4">
+    <p class="text-dark fs-6 pb-3">Ir a  <%= link_to "Mis Servicios", services_path, class: "text-dark fs-6 fw-bold" %></p>
   </div>
   <% end %>
 
