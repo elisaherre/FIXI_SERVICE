@@ -1,7 +1,96 @@
+  .modificar-footer{
+    padding-top: 5rem;
+  }
+
+
+  .footer {
+
+      background-color: #00273D;
+      color: white;
+      border-radius: 40px;
+  }
+
+  .info-izquierda{
+    margin-top: 40px;
+    padding-bottom: 40px;
+  }
+  .info-izquierda img{
+    margin-top: 20px;
+    width: 100px;
+    height: auto;
+    padding-right: 12px;
+  }
+
+  h5{
+    font-size: 19px;
+    color: #D8F500;
+  }
+
+  p{
+    font-size: 13px;
+    margin: 0;
+  }
+
+  a{
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+}
+
+.texto-footer{
+  border-right: 1px solid rgb(169, 169, 169);
+}
+
+.texto-footer h1{
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.palabra-comenzar-verde{
+  color: #D8F500;
+  letter-spacing: 2px;
+}
+
+.fila-footer{
+  border-top: 1px solid #848484; /* Añade una línea en la parte superior */
+  border-bottom: 1px solid #848484; /* Añade una línea en la parte inferior */
+  padding: 50px 0; /* Añade espacio interno arriba y abajo */
+  margin: 50px 0; /* Añade espacio externo arriba y abajo */
+
+}
+.boton-unico{
+  text-align: left;
+  border: solid 2px #D8F500;
+  font-weight: 700;
+  font-size: 1.5rem; /* Ajusta el tamaño del texto */
+  background-color: #D8F500; /* Color de fondo sólido */
+  color: #212121; /* Color del texto */
+  border: none; /* Elimina el borde predeterminado */
+  padding: 20px 40px; /* Añade un espacio interno para hacer el botón más grande */
+  border-radius: 40px; /* Añade esquinas redondeadas */
+  position: relative; /* Establece la posición a relativa para añadir el contorno personalizado */
+  box-shadow: 0px 0px 0px 3px white; /* Añade un contorno blanco con un 'box-shadow' */
+  transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+
+  /* Estilos para el estado hover (cuando el cursor está sobre el botón) */
+  &:hover {
+    background-color: darken(#D8F500, 10%); /* Oscurece el fondo un poco */
+  }
+}
+
+
+
     footer {
-        border-top: 1px solid #dee2e6;
-        background-color: #00273d;
+
+        background-color: #00273D;
         color: white;
+        border-radius: 40px;
     }
 
     .info-izquierda{
@@ -16,7 +105,8 @@
     }
 
     h5{
-      font-size: 18px;
+      font-size: 19px;
+      color: #D8F500;
     }
 
     p{
@@ -33,4 +123,46 @@
     ul {
       list-style: none;
       padding: 0;
+  }
+
+  .texto-footer{
+    border-right: 1px solid rgb(169, 169, 169);
+  }
+
+  .texto-footer h1{
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+  }
+
+  .palabra-comenzar-verde{
+    color: #D8F500;
+    letter-spacing: 2px;
+  }
+
+  .fila-footer{
+    border-top: 1px solid #848484; /* Añade una línea en la parte superior */
+    border-bottom: 1px solid #848484; /* Añade una línea en la parte inferior */
+    padding: 50px 0; /* Añade espacio interno arriba y abajo */
+    margin: 0 0 0 0; /* Añade espacio externo arriba y abajo */
+
+  }
+.boton-unico{
+    text-align: left;
+    border: solid 2px #D8F500;
+    font-weight: 700;
+    font-size: 1.5rem; /* Ajusta el tamaño del texto */
+    background-color: #D8F500; /* Color de fondo sólido */
+    color: #212121; /* Color del texto */
+    border: none; /* Elimina el borde predeterminado */
+    padding: 20px 40px; /* Añade un espacio interno para hacer el botón más grande */
+    border-radius: 40px; /* Añade esquinas redondeadas */
+    position: relative; /* Establece la posición a relativa para añadir el contorno personalizado */
+    box-shadow: 0px 0px 0px 3px white; /* Añade un contorno blanco con un 'box-shadow' */
+    transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+
+    /* Estilos para el estado hover (cuando el cursor está sobre el botón) */
+    &:hover {
+      background-color: darken(#D8F500, 10%); /* Oscurece el fondo un poco */
+    }
   }

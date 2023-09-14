@@ -86,63 +86,96 @@
 
 }
 
-
-
-.banner-search {
+.boton-cercano{
   position: absolute;
   top: 370px;
-  left: 73%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 10px;
-  background-color: rgba(255, 255, 255, 0.7);
-  padding: 10px;
-  border-radius: 35px;
-  max-width: 45%;
-  border: 2px solid #ffffff;
+  left: 56%;
+  border: none;
+  font-weight: bold;
+  padding: 10px 18px; /* Añadido padding para aumentar el tamaño del botón */
+  font-family: 'Roboto', sans-serif; /* Corregido el nombre de la fuente y añadido un tipo de letra de respaldo */
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.719);
+  backdrop-filter: blur(10px); /* Efecto de desenfoque en el fondo */
+  border-radius: 1rem;
+  color: #303030;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 0 0 2px #ffffffc7, 0 0 0 5px #fbfcf5c6; /* Añadido box-shadow para crear un borde exterior */
+
+  &:hover {
+    background-color: darken(#ffffff, 10%);
+    transform: scale(1.05);
+  }
+
+  &:active {
+    background-color: darken(#ffffff, 15%);
+    transform: scale(1);
+  }
 }
 
-.banner-search-category,
-.banner-search-avaluacion,
-.banner-search-input,
-.banner-search-button {
-  padding: 6px;
-  border-radius: 15px;
-  background: none; /* Agregado para quitar el fondo blanco */
-  border: none;     /* Agregado para quitar el borde negro */
-  color: #424242;
-  font-size: 15px;
-  font-family: roboto;
-
+.boton-cercano i{
+  font-size: 1.5em;
+  margin-left: 5px;
 }
 
-.banner-search-input {
-  flex-grow: 1;
-  max-width: 45%;
-}
-
-.btn-fixi {
+.btn-fixi{
   border: none;
   font-weight: bold;
   padding: 8px 12px; /* Añadido padding para aumentar el tamaño del botón */
-  font-size: 14px;    /* Ajustado el tamaño de la fuente para que sea un poco más grande */
+  font-family: roboto 800;
+  font-size: 1rem;;
+  background-color: #D8F500;
+  border-radius: 2rem;
+  color: #000;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    background-color: darken(#D8F500, 10%);
+    transform: scale(1.05);
+  }
+
+  &:active {
+    background-color: darken(#D8F500, 15%);
+    transform: scale(1);
+  }
 }
 
 
+
+
+.custom-button {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  border: 2px solid #D8F500;
+  background-color: transparent;
+  color: #D8F500;
+  padding: 10px 30px ;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  max-height: 40px;
+
+  align-items: center;
+  border-radius: 40px;
+}
+
+.custom-button:hover {
+  background-color: #D8F500;
+  color: #2b2b2b;
+  transform: scale(1.05);
+}
+
+.custom-button:active {
+  background-color: #D8F500;
+  color: #282828;
+}
 
 
 .fondo-page{
-  padding-bottom: 40px;
-
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
 }
-
-
-
-
 
 
 
