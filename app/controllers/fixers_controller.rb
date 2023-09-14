@@ -34,7 +34,7 @@ class FixersController < ApplicationController
     requests = @services.each do |service|
       service.requests.each do |request|
         request.reviews.each do |review|
-          @reviews << review
+          @reviews << review if review.content
         end
       end
     end
