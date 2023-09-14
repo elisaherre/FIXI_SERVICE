@@ -8,14 +8,15 @@ class ServicesController < ApplicationController
     @service = Service.find(params[:id])
   end
 
-  #no lleva vista
-
   def new
     @service = Service.new
+    @categories = Category.all
   end
 
   def create
+    # user_id, category_id, description
     @service = Service.new(service_params)
+    @service.user = current_user
 
     if @service.save
       redirect_to service_path(@service), notice: 'Se ha creado un nuevo servicio.'
@@ -38,8 +39,7 @@ class ServicesController < ApplicationController
   def destroy
     @service = Service.find(params[:id])
     @service.destroy
-    # No need for app/views/restaurants/destroy.html.erb
-     redirect_to service_path, status: :see_other
+      redirect_to service_path, status: :see_other
   end
 
 end
@@ -47,5 +47,5 @@ end
 private
 
 def service_params
-  params.require(:services).permit(:user_id, :category_id, :description)
+  params.require(:services).permit(:category_id, :description)
 end

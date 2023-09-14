@@ -1,10 +1,9 @@
-
-<%= form_with model: @service do |f| %>
-  <%= f.label :user_id %>
-  <%= f.text_field :user_id %>
-  <%= f.label :category_id %>
-  <%= f.text_field :category_id %>
-  <%= f.label :description %>
-  <%= f.number_field :description %>
-  <%= f.submit %>
-<% end %>
+<div class="container d-flex justify-content-center p-5">
+  <div class = "form-card w-50">
+    <%= simple_form_for @service do |f| %>
+      <%= f.input :category_id, collection: @categories.map { |category| [category.name.capitalize, category.id] }, label: 'Categoría' %>
+      <%= f.input :description, placeholder: '...', label: "Describe el servicio que quieres ofrecer" %>
+      <%= f.submit "Crear Servicio", class: "btn btn-fixi" %>
+    <% end %>
+  </div>
+</div>
