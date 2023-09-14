@@ -3,10 +3,12 @@ class CategoriesController < ApplicationController
 
   def index
     @users = User.where.not(id: current_user.id)
+
     @fixers = []
     @users.each do |user|
       @fixers << user if user.services.size > 0
     end
+    
     @c_user = [{
       lat: current_user.latitude,
       lng: current_user.longitude,
