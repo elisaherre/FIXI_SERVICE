@@ -3,34 +3,34 @@
   margin-top: 8rem;
   margin-bottom: 5rem;
   border-radius: 30px;
+  background-color: rgba(216, 245, 0, 0.313); /* Color de fondo blanco con 50% de transparencia */
+  backdrop-filter: blur(10px); /* Efecto de desenfoque en el fondo */
 }
 
-.img-capsula {
-  width: 90%; /* O especifica un ancho fijo, por ejemplo, 200px */
-  height: 90%;
-  align-self: center;
-  border-radius: 300px;
-  border: #00273d solid 1px;
-  padding: 10px;
-}
 
 .text-grande {
-  margin-top: 8rem;
+  margin-top: 5rem;
 }
 
-.texto-informacion{
+.palabra-informacion h5{
   margin-bottom: 1.8rem;
+  color: #262626;
 }
 
 .text-grande h1 {
+
   font-size: 5rem;
   font-weight: 800;
   color: #262626;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   font-family: 'Oswald', sans-serif;
   letter-spacing: -0.05em;
 
+}
+
+.informacion-estilo{
+  border-right: 1px solid #D8F500;
 }
 
 .rayado-informacion{
@@ -62,4 +62,22 @@
     background-color: darken(#D8F500, 15%);
     transform: scale(1);
   }
+}
+
+.casita-fixi{
+  height: 100px;
+  width: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.img-maestro{
+  height: 500px;
+  width: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }
