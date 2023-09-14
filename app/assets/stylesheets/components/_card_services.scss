@@ -6,6 +6,7 @@
   display: flex;
   align-items: center;
   margin: 20px;
+  position: relative;
 }
 
 .card-product-img {
@@ -28,10 +29,10 @@
   margin-top: 8px;
 }
 
-.card-product .card-product-infos {
-  padding: 16px;
-  position: relative;
+.card-product-infos {
+  margin-left: .5rem;
 }
+
 
 .position-icon {
   position: absolute;

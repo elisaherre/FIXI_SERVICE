@@ -19,7 +19,7 @@ class ServicesController < ApplicationController
     @service.user = current_user
 
     if @service.save
-      redirect_to service_path(@service), notice: 'Se ha creado un nuevo servicio.'
+      redirect_to services_path, notice: 'Se ha creado un nuevo servicio.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -47,5 +47,5 @@ end
 private
 
 def service_params
-  params.require(:services).permit(:category_id, :description)
+  params.require(:service).permit(:category_id, :description)
 end
