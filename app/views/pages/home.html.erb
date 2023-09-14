@@ -52,7 +52,7 @@
             <% @categories.each do |category|  %>
               <div class="col-4 ">
                 <%= link_to category_path(category) do %>
-                  <div class="nuevas-tarjetas-category" style="background-image: url('<%= cl_image_tag(category.photo.key) %>');">
+                  <div class="nuevas-tarjetas-category" style="background-image: url('<%= cl_image_tag(category.photo.key) %>')">
                     <p class="tarjetas-nombre"> <%= category.name %> </p>
                   </div>
                 <% end %>
