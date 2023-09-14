@@ -25,6 +25,7 @@
                 <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
                   <p>Esperando confirmación: <%= resource.unconfirmed_email %></p>
                 <% end %>
+                <%= f.input :photo, as: :file, label: 'Foto de perfil' %>
               </div>
 
             </div>
