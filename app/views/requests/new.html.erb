@@ -6,16 +6,18 @@
       <p class="mb-2">Elige un rango de fechas:</p>
       <div>
         <%= f.input :start_date, as: :string,
+                                  label: 'Fecha incial',
                                   input_html: {
                                     data: { controller: "flatpickr", flatpickr_min_date: Time.zone.now }
                                   } %>
         <%= f.input :end_date, as: :string,
+                                  label: 'Fecha final',
                                   input_html: {
                                     data: { controller: "flatpickr", flatpickr_min_date: Time.zone.now }
                                   } %>
       </div>
       <div>
-        <%= f.input :service_id, collection: @services.map { |service| [service.category.name.capitalize, service.id] } %>
+        <%= f.input :service_id, label: 'Categoría', collection: @services.map { |service| [service.category.name.capitalize, service.id] } %>
       </div>
       <%= f.input :description, placeholder: '...', label: "Descripción" %>
       <div class="text-end p-2">

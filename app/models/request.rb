@@ -1,7 +1,7 @@
 class Request < ApplicationRecord
   belongs_to :user
   belongs_to :service
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
   has_many :payments
 
   validates :user, presence: true
@@ -15,4 +15,3 @@ class Request < ApplicationRecord
   STATUS = ["enviada", "aceptada", "reservada", "pendiente", "por pagar", "cancelada", "finalizada"]
   validates :status, inclusion: { in: STATUS }
 end
-

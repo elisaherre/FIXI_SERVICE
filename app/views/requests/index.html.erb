@@ -64,6 +64,11 @@
                   <td><%= button_to "Cancelar", cancel_path(request), method: :patch, class: "btn btn-fixi" %></td>
                   <% elsif request.status == "finalizada" && Review.where(user: current_user, request: request).size == 0 %>
                   <td><%= link_to "Calificar", new_request_review_path(request), class: "btn btn-fixi" %></td>
+                  <% elsif request.status == "finalizada" || "cancelada" && request.reviews.size == 2 || 0 %>
+                  <td class="text-center"><%= link_to 'Eliminar', request_path(request),
+                          class: "text-secondary",
+                          method: "delete",
+                          data: {turbo_method: :delete, turbo_confirm: "¿Seguro que quieres borrar este producto?"} %></td>
                   <% end %>
                   <td><%=  %></td> <!-- espacio -->
                 </tr>
@@ -107,6 +112,10 @@
                   <td><%= button_to "Finalizar", budget_path(request), method: :patch, class: "btn btn-fixi" %></td>
                   <% elsif request.status == "finalizada" && Review.where(user: current_user, request: request).size == 0 %>
                   <td><%= link_to "Calificar", new_request_review_path(request, cliente: request.user.id), class: "btn btn-fixi" %></td>
+                  <% elsif request.status == "finalizada" || "cancelada" && request.reviews.size == 2 || 0 %>
+                  <td><%= link_to 'Eliminar', request_path(request),
+                          method: "delete",
+                          data: {turbo_method: :delete, turbo_confirm: "¿Seguro que quieres borrar este producto?"} %></td>
                   <% end %>
                   <td><%=  %></td> <!-- espacio -->
                 </tr>

@@ -1,5 +1,5 @@
 class RequestsController < ApplicationController
-  before_action :set_request, only: [:show, :accept, :cancel, :book, :budget, :pay]
+  before_action :set_request, only: [:show, :accept, :cancel, :book, :budget, :pay, :destroy]
 
   def index
     @sent_requests = Request.where(user_id: current_user)
@@ -30,6 +30,11 @@ class RequestsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
 
+  end
+
+  def destroy
+    @request.destroy
+      redirect_to requests_path, status: :see_other
   end
 
   def accept
