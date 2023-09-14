@@ -2,8 +2,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 3rem;
+  margin-top: 4rem;
+  padding-top: 2rem;
   padding-bottom: 3rem;
+  border-bottom: 1px solid rgb(155, 155, 155);
 }
 
 .pasito-pasito {
@@ -21,7 +23,7 @@
   background-color: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(10px);
   width: 230px;
-  height: 360px;
+  height: 380px;
   border-radius: 15px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s;
@@ -31,11 +33,11 @@
 
 .card-style:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(222, 255, 104, 0.26);
+  box-shadow: 0 0 15px rgba(222, 255, 104, 0.416);
 }
 
 .personalizar-por-cards{
-  margin-top: 23rem;
+  margin-top: 6rem;
 }
 
 .descripcion-pasito {
@@ -44,7 +46,15 @@
 }
 
 .card-image {
-  width: 100%; /* Esto hace que la imagen ocupe todo el ancho de la tarjeta */
-  max-height: 60%; /* Puedes ajustar esto para cambiar la proporción de imagen a texto */
-  object-fit: cover; /* Esto asegura que la imagen cubra el espacio asignado sin deformarse */
+  width: 100%;
+  max-height: 60%;
+  object-fit: cover;
+}
+
+
+.parrafo-paso-paso >p{
+  padding: 3rem;
+  font-size: 17px;
+  font-weight: 600;
+  text-align: justify;
 }

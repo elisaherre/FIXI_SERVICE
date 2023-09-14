@@ -1,25 +1,25 @@
 .personalizado {
   margin-top: 4rem;
-
 }
 
-
-
 .nuevas-tarjetas-category {
+  color: #D8F500; /* Establece el color del texto */
   display: flex;
   justify-content: center; /* Centra el contenido horizontalmente */
   align-items: center; /* Centra el contenido verticalmente */
   border-radius: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
-  margin: 0px;
-  height: 100%;
-  width: 300%;
+  margin: .5rem;
+  height: 12rem;
+  width: 100%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   text-align: center;
   max-width: 100%; /* Establece un ancho máximo para evitar que se exceda del contenedor */
   background-size: cover;
   filter: grayscale(100%); /* efecto de blanco y negro */
+
 }
+
 
 
 .nuevas-tarjetas-category:hover {
@@ -29,9 +29,11 @@
 }
 
 .tarjetas-nombre {
-  font-size: 1.6em;
+  font-size: 22px;
   font-weight: 400;
   margin: 0; /* Elimina el margen para un centrado más preciso */
   color: #D8F500; /* Establece el color del texto */
   padding: 10px; /* Añade padding alrededor del texto */
 }
+
+

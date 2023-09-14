@@ -21,12 +21,11 @@
     <img src="<%= asset_path 'chips.svg' %>" alt="Descripción de la imagen 1" class="banner-image banner-image3">
 </div>
 
-  <!-- Termino banner-->
 
 
 
-  <!--FONDO-->
 
+<!--FONDO-->
 <div class="fondo-page" style="background-image: linear-gradient(rgba(0,0,0,0.0),rgba(0,0,0,0.0)),
   url(<%= asset_path 'bg5.jpg' %>);">
 
@@ -34,10 +33,10 @@
 
 
 
-     <!--titulo de seccion-->
-      <div class="row titulos-todas-secciones">
-        <div class="col-12 d-flex justify-content-between info-card-category">
-          <h1 class="text-start titulo-informacion"><strong>CATEGORIAS</strong> / <span class="profesionales-expertos">Profesionales Expertos</span></h1>
+     <!--titulo de seccion 1-->
+      <div class="row px-5 titulos-todas-secciones particularidad-titulo1">
+        <div class="col-12 d-flex justify-content-between espaciado-line">
+          <h1 class="text-start titulo-informacion"><strong>CATEGORIAS</strong> / <span class="profesionales">Profesionales Expertos</span></h1>
           <%# <button class="custom-button">Ver todos</button> %>
 
         </div>
@@ -45,17 +44,16 @@
 
     <!--categorias-->
     <div class="container personalizado">
-      <div class="row h-100">
-        <div class="col-2 texto-marketing">
-        </div>
+      <div class="row justify-content-center">
 
-        <div class="col-8 nueva-clase">
-          <div class="row h-100">
+
+        <div class="col-8">
+          <div class="row">
             <% @categories.each do |category|  %>
-              <div class="col-4 p-0 h-100">
+              <div class="col-4 ">
                 <%= link_to category_path(category) do %>
-                  <div class="nuevas-tarjetas-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= rails_blob_url(category.photo) %>);">
-                    <span class="tarjetas-nombre"> <%= category.name %> </span>
+                  <div class="nuevas-tarjetas-category" style="background-image: url(<%= rails_blob_url(category.photo) %>);">
+                    <p class="tarjetas-nombre"> <%= category.name %> </p>
                   </div>
                 <% end %>
               </div>
@@ -63,8 +61,7 @@
           </div>
         </div>
 
-        <div class="col-2 texto-marketing">
-        </div>
+
 
       </div>
     </div>
@@ -72,10 +69,10 @@
 
 
 
-      <!--titulo de seccion-->
+      <!--titulo de seccion 2-->
       <div class="row px-5 py-4 titulos-todas-secciones personalizar-por-cards">
-        <div class="col-12 d-flex justify-content-between info-card-category">
-          <h1 class="text-start titulo-informacion"><strong>PASO A PASO</strong> / <span class="profesionales-expertos">Soluciona tus problemas</span></h1>
+        <div class="col-12 d-flex justify-content-between info-card-category ">
+          <h1 class="text-start titulo-informacion"><strong>PASO A PASO</strong> / <span class="profesionales">Soluciona tus problemas</span></h1>
         </div>
       </div>
 
@@ -114,6 +111,9 @@
               <p>Recibe la confirmación de Fixi y relájate,  ¡pronto tu hogar estará en buenas manos!</p>
             </div>
           </div>
+          <div class="parrafo-paso-paso">
+            <p>Experimenta la revolución en el mantenimiento del hogar. Con nuestra plataforma, hallar profesionales expertos es tan sencillo como un clic. Descubre la comodidad de solucionar tus problemas domésticos con eficiencia y sin complicaciones. Opta por la conveniencia, opta por una vida más sencilla. ¡No esperes más, tu solución ideal para el mantenimiento del hogar te espera aquí, donde la confianza y la calidad se encuentran a solo un clic de distancia!"</p>
+          </div>
         </div>
       </div>
 
@@ -147,78 +147,89 @@
 
 
 
-       <!--titulo de seccion-->
-      <div class="row px-5 titulo-secciones">
-        <div class="col-12 d-flex justify-content-between info-card-category">
-          <h1 class="text-start titulo-informacion"><strong>SE PARTE DE NUESTRA</strong> / <span class="profesionales">Experiencia Fixi</span></h1>
+       <!--titulo de seccion 3-->
+      <div class="row px-5 titulos-todas-secciones">
+        <div class="col-12 d-flex justify-content-between espaciado-line">
+          <h1 class="text-start titulo-informacion"><strong>SE PARTE DE NUESTRA</strong> /
+          <span class="profesionales">Experiencia Fixi</span></h1>
         </div>
       </div>
 
 
       <!--carrusel reviews-->
+      <div class="container my-4">
+        <div id="carouselExampleCaptions" class="carousel slide " data-bs-ride="carousel">
+          <div class="carousel-indicators ">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active fondo-carrusel-nuevo">
+            <img src="<%= asset_path 'carrusel1.jpg' %>" class="d-block w-100 h-50 filtro-img" alt="...">
+              <div class="carousel-caption carousel-caption custom-carousel-caption">
+                  <div class="star-rating d-flex align-items-center justify-content-center">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
 
-  <div class="col fondo-reviews">
-    <div class="reviews-section container px-4">
-      <div id="reviewsCarrusel" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
+                  </div> <!-- Esta es la etiqueta de cierre que agregué -->
+                  <div class="descripcion-reviews">
+                    <p>"Encuentro tranquilidad y confianza al saber que puedo con profesionales en mi hogar, gracias a este servicio. ¡La calidad y rapidez me han dejado sinceramente impresionada!"</p>
+                    <h5>María Elena</h5>
+                  </div>
+              </div>
+            </div>
+            <div class="carousel-item fondo-carrusel-nuevo">
+            <img src="<%= asset_path 'carrusel2.jpg' %>" class="d-block w-100 h-50 filtro-img" alt="...">
+              <div class="carousel-caption carousel-caption custom-carousel-caption">
+                  <div class="star-rating d-flex align-items-center justify-content-center">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
 
-          <div class="carousel-item active">
-            <div class="review-card text-center cuadro-blanco">
-              <div class="star-rating">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-                <h4>3.0</h4>
-              </div> <!-- Esta es la etiqueta de cierre que agregué -->
-              <div>
-                <p>"Servicio excepcional, muy profesionales y amables. Definitivamente los recomendaría a mis amigos."</p>
-                <h5>- Cliente Satisfecho 1</h5>
+                  </div>
+                  <div class="descripcion-reviews">
+                    <p>""Desde el momento que contacté a un profesional a través de esta web, supe que estaba en manos expertas. ¡Mi problema de plomería se solucionó en un abrir y cerrar de ojos, sin ningún contratiempo!""</p>
+                    <h5>Angela Torrealba</h5>
+                  </div>
+              </div>
+            </div>
+            <div class="carousel-item fondo-carrusel-nuevo">
+            <img src="<%= asset_path 'carrusel3.jpg' %>" class="d-block w-100 h-50 filtro-img" alt="...">
+              <div class="carousel-caption carousel-caption custom-carousel-caption">
+                  <div class="star-rating d-flex align-items-center justify-content-center">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+
+                  </div> <!-- Esta es la etiqueta de cierre que agregué -->
+                  <div class="descripcion-reviews">
+                    <p>"La eficiencia y profesionalismo que experimenté al utilizar este servicio fue inigualable. Finalmente he encontrado a alguien confiable para todos mis proyectos de mantenimiento hogareño. ¡Muy recomendado!"</p>
+                    <h5>Daniel Urrutia</h5>
+                  </div>
               </div>
             </div>
           </div>
-
-          <div class="carousel-item">
-            <div class="review-card text-center">
-              <div class="star-rating">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-              </div>
-              <p>"Rápidos y eficientes. Realizaron un trabajo maravilloso en mi hogar. Gracias."</p>
-              <h5>- Cliente Satisfecho 2</h5>
-            </div>
-          </div>
-
-          <div class="carousel-item">
-            <div class="review-card text-center">
-              <div class="star-rating">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-              </div>
-              <p>"Muy impresionado con su profesionalidad y calidad de servicio. ¡Los volveré a contratar sin duda!"</p>
-              <h5>- Cliente Satisfecho 3</h5>
-            </div>
-          </div>
-
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
-
-        <a class="carousel-control-prev adelante-atras" href="#reviewsCarrusel" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Anterior</span>
-        </a>
-        <a class="carousel-control-next" href="#reviewsCarrusel" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Siguiente</span>
-        </a>
       </div>
-    </div>
-  </div>
+
+
+
+
 
 </div>
