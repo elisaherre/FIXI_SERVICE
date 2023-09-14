@@ -1,21 +1,23 @@
-<div class="container">
-  <h2>Log in</h2>
-  <div class="row justify-content-center">
-    <div class="col-6 ">
+<div class="container pt-5 altura-contenedor">
+  <div class="row justify-content-center align-self-center mt-5">
+    <div class="col-6 fondo-login ">
+      <h2 class= "text-center login-title">Log in</h2>
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="form-inputs">
+    <div class="form-inputs text-white">
       <%= f.input :email,
                   required: false,
                   autofocus: true,
-                  input_html: { autocomplete: "email" } %>
+                  input_html: { autocomplete: "email" },
+                  label: "Email" %>
       <%= f.input :password,
                   required: false,
-                  input_html: { autocomplete: "current-password" } %>
-      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+                  input_html: { autocomplete: "current-password" },
+                  label: "Contraseña"%>
+      <%= f.input :remember_me, label: "Recordarme", as: :boolean if devise_mapping.rememberable? %>
     </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Log in", class: "btn btn-fixi" %>
+    <%= f.button :submit, "Log in", class: "btn btn-fixi mb-3" %>
   </div>
     <% end %>
 
