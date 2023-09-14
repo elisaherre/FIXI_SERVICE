@@ -1,4 +1,15 @@
 <!-- app/views/flats/_info_window.html.erb -->
+<div class="popup">
 
-<h2><%= user.name %></h2>
-<p><%= user.address %></p>
+<div class="row">
+    <%= cl_image_tag(user.photo.key,  :transformation=>[
+                    {:gravity=>"face", :height=>1000, :width=>1000, :crop=>"crop"},
+                    {:radius=>"max"},
+                    {:width=>50},
+                    {:fetch_format=>:auto}
+                    ]) %>
+</div>
+<div class="row mt-3">
+    <%= link_to "Perfil", fixer_path(user.id), class: "btn btn-fixi" %>
+</div>
+</div>

@@ -2,13 +2,14 @@
 <div class="container mt-5">
   <div class="row">
     <div class="col-5">
-      <%= image_tag @fixer.photo, crop: :fill, class: "filtro redondeada imagen-fixer" %>
+      <%= cl_image_tag(@fixer.photo.key, crop: :fill, :class=>"filtro redondeada imagen-fixer") %>
     </div>
     <div class="col-7 fondo-profile redondeada p-4">
-      <div class="row mb-2">
+    <div class="container d-flex flex-column">
+      <div class="row mb-4">
         <div class="col-7">
           <div class="row">
-            <div class="col">
+            <div class="col d-flex justify-content-center align-items-center">
               <h1 class="estilo-titulo"><%= @fixer.name %></h1>
             </div>
             <div class="col">
@@ -16,33 +17,52 @@
             </div>
           </div>
         </div>
-        <div class="col-5">
-          <h2><%= @average %> estrellas</h2>
+        <div class="col-5 d-flex justify-content-center align-items-center">
+        <% if @average > 1 %>
+          <% @average.times do %>
+            <i class="fa-solid fa-star"></i>
+          <% end %>
+          <% if @sum/@cantidad % @average >= 0.5 %>
+            <i class="fa-solid fa-star-half"></i>
+          <% end %>
+        <% else %>
+          <p>Sin calificación</p>
+        <%end %>
+
         </div>
       </div>
-      <div class="container mt-3">
+      </div>
+      <div class="container mt-3 d-flex flex-column">
+        <div class="flex-grow-1" data-controller="tab">
         <nav>
-          <div class="nav nav-tabs nav-color" id="nav-tab" role="tablist">
+          <div class="nav nav-pills nav-tabs nav-color position-relative" id="nav-tab" role="tablist" >
             <% @services.each do |service| %>
               <button class="nav-link" id="nav-<%= service.category.name %>-tab" data-bs-toggle="tab"
-                data-bs-target="#nav-<%= service.category.name %>" type="button" role="tab" aria-controls="nav-<%= service.category.name %>" aria-selected="true"><%= service.category.name.capitalize %>
+                data-bs-target="#nav-<%= service.category.name %>" type="button" role="tab" aria-controls="nav-<%= service.category.name %>" aria-selected="true" data-tab-target="tab"><%= service.category.name.capitalize %>
               </button>
             <% end %>
           </div>
         </nav>
-        <div class="tab-content" id="nav-tabContent">
+        <div class="tab-content mt-4 ps-2" id="nav-tabContent">
           <% @services.each do |service| %>
-            <div class="tab-pane fade show p-3" id="nav-<%= service.category.name %>" role="tabpanel" aria-labelledby="nav-<%= service.category.name %>-tab">
+            <div class="tab-pane fade show" id="nav-<%= service.category.name %>" role="tabpanel" aria-labelledby="nav-<%= service.category.name %>-tab" data-tab-target="content">
               <h3><%= service.category.name.capitalize %></h3>
               <p><%= service.description %></p>
             </div>
           <% end %>
         </div>
-      </div>
-      <div class="position-boton">
-        <%= link_to "Solicitar",  new_request_path, class: "btn btn-fixi" %>
+        </div>
+        <div class="d-flex justify-content-end">
+          <div class="col-3 mt-5">
+            <%= link_to "Solicitar",  new_request_path(fixer_id: @fixer.id), class: "btn btn-fixi" %>
+          </div>
+        </div>
+
       </div>
     </div>
+
+
+
   </div>
 </div>
 <div class="separador-reviews">
@@ -51,16 +71,22 @@
 <div class="container mt-5">
   <% if @reviews.size > 0 %>
     <% @reviews.each do |review|  %>
-      <div class="card card-review mt-4">
+      <div class="card card-review my-4">
         <div class="card-header header-review d-flex">
           <h5 class="m-2"><%= review.user.name %></h5>
-          <p class="m-2 "><%= review.request.service.category.name.capitalize %></p>
-          <p class="m-2"><%= review.created_at.strftime('%d/%m/%Y') %></p>
         </div>
         <div class="card-body">
-          <h5 class="card-title align-self-center m-0">Rating <%= review.rating %></h5>
+          <div class="d-flex justify-content-between my-2">
+            <div class="stars">
+              <% review.rating.times do %>
+              <i class="fa-solid fa-star"></i>
+            <% end %>
+            </div>
+            <p class="m-2 fecha"><%= review.created_at.strftime('%d/%m/%Y') %></p>
+          </div>
+            <p class="card-text contrato my-2">Contrató un servicio de <%= review.request.service.category.name %>:</p>
           <% if review.content %>
-            <p class="card-text"><%= review.content %></p>
+            <p class="card-text my-3"><%= review.content %></p>
           <% end %>
         </div>
       </div>
