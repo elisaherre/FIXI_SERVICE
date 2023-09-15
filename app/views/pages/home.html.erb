@@ -43,16 +43,15 @@
       </div>
 
     <!--categorias-->
-    <div class="container personalizado">
+    <div class="container">
       <div class="row justify-content-center">
-
 
         <div class="col-8">
           <div class="row">
             <% @categories.each do |category|  %>
               <div class="col-4 ">
                 <%= link_to category_path(category) do %>
-                  <div class="nuevas-tarjetas-category" style="background-image: url('<%= cl_image_tag(category.photo.key) %>')">
+                  <div class="nuevas-tarjetas-category" style="background-image: url(<%= url_for category.photo %>)">
                     <p class="tarjetas-nombre"> <%= category.name %> </p>
                   </div>
                 <% end %>
@@ -60,7 +59,6 @@
             <% end %>
           </div>
         </div>
-
 
 
       </div>
