@@ -142,6 +142,31 @@
 
 
 
+.btn-fix-blue {
+  border: none;
+  font-weight: bold;
+  padding: 8px 12px;
+  font-family: roboto, sans-serif; /* Asegúrate de tener una fuente de respaldo */
+  font-size: 1rem;
+  background-color: #00273D;
+  border-radius: 2rem;
+  color: #FFF; /* Cambié el color del texto a blanco para que contraste con el fondo oscuro */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    background-color: darken(#00273D, 10%);
+    transform: scale(1.05);
+  }
+
+  &:active {
+    background-color: darken(#00273D, 15%);
+    transform: scale(1);
+  }
+}
+
+
+
+
 
 .custom-button {
   font-family: 'Roboto', sans-serif;
