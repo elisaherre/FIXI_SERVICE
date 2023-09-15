@@ -6,7 +6,7 @@
         <% if @request.user.id != current_user.id %>
           <%= cl_image_tag(@request.user.photo.key,
                 :transformation=>[
-                    {:gravity=>"face", :height=>800, :width=>800, :crop=>"crop"},
+                    {:gravity=>"face", :height=>900, :width=>900, :crop=>"crop"},
                     {:radius=>"max"},
                     {:width=>150, :crop=>"scale"},
                     {:fetch_format=>:auto}
@@ -16,7 +16,7 @@
         <% else %>
           <%= cl_image_tag(@request.service.user.photo.key,
                 :transformation=>[
-                    {:gravity=>"face", :height=>500, :width=>500, :crop=>"crop"},
+                    {:gravity=>"face", :height=>900, :width=>900, :crop=>"crop"},
                     {:radius=>"max"},
                     {:width=>150, :crop=>"scale"},
                     {:fetch_format=>:auto}
