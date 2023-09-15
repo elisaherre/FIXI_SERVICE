@@ -1,13 +1,15 @@
-<!-- app/views/restaurants/new.html.erb -->
-<%= form_with model: @service do |f| %>
-  <%= f.label :user_id %>
-  <%= f.text_field :user_id %>
-  <%= f.label :category_id %>
-  <%= f.text_field :category_id %>
-  <%= f.label :description %>
-  <%= f.number_field :description %>
-  <%= f.submit %>
-<% end %>
-
-
-
+<div class="fondo-page" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(255,255,255,0.9)), url(<%= asset_path 'fondoreviews.jpg' %>);">
+  <div class="container d-flex justify-content-center p-5">
+    <div class = "form-card w-50">
+    <h2 class= "text-center">¡Conviértete en Fixer!</h2>
+    <h4 class= "text-center pb-3 fw-light">Crea un nuevo servicio</h4>
+      <%= simple_form_for @service do |f| %>
+        <%= f.input :category_id, collection: @categories.map { |category| [category.name.capitalize, category.id] }, label: 'Categoría' %>
+        <%= f.input :description, placeholder: '...', label: "Describe el servicio que quieres ofrecer" %>
+        <div class="d-flex justify-content-center pt-3">
+          <%= f.submit "Crear Servicio", class: "btn btn-fixi" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

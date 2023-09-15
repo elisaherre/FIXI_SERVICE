@@ -29,13 +29,22 @@
         <%# condicional %>
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
-            <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <% if current_user.photo.attached? %>
-                <%= image_tag current_user.photo , class: "avatar", alt: "dropdown menu" %>
-              <% else %>
-                <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png", class: "avatar", alt: "dropdown menu" %>
-              <% end %>
-            </a>
+
+          <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <% if current_user.photo.attached? %>
+            <%= cl_image_tag(current_user.photo.key,
+                :alt=>'dropdown menu',
+                :transformation=>[
+                    {:gravity=>"face", :height=>900, :width=>900, :crop=>"crop"},
+                    {:radius=>"max"},
+                    {:width=>40, :crop=>"scale"},
+                    {:fetch_format=>:auto}
+                    ]) %>
+          <% else %>
+            <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png", class: "avatar", alt: "dropdown menu" %>
+          <% end %>
+          </a>
+
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Mi perfil", profile_path, class: "dropdown-item" %>
               <%= link_to "Mis solicitudes", requests_path, class: "dropdown-item" %>

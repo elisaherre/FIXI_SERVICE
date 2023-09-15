@@ -24,7 +24,7 @@ Rails.application.routes.draw do
 
   resources :services
 
-  resources :requests, only: [:index, :new, :create, :show] do
+  resources :requests, only: [:index, :new, :create, :show, :destroy] do
     resources :reviews, only: [:new, :create]
   end
 end

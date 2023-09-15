@@ -3,21 +3,23 @@ class CategoriesController < ApplicationController
 
   def index
     @users = User.where.not(id: current_user.id)
+
     @fixers = []
     @users.each do |user|
       @fixers << user if user.services.size > 0
     end
+
     @c_user = [{
       lat: current_user.latitude,
       lng: current_user.longitude,
       userMarker_html: render_to_string(partial: "userMarker")
     }]
 
-    @markers = @users.geocoded.map do |user|
+    @markers = @fixers.map do |fixer|
       {
-        lat: user.latitude,
-        lng: user.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: {user: user}),
+        lat: fixer.latitude,
+        lng: fixer.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {user: fixer}),
         marker_html: render_to_string(partial: "marker")
       }
     end

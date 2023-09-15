@@ -1,4 +1,4 @@
-<div class="fondo-page" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(
+<div class="fondo-page" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(255,255,255,.9)), url(
         <% if @sent_requests.size == 0 %>
           <%= asset_path 'fixer_requests.jpg' %>
         <% else %>
@@ -47,7 +47,7 @@
 
             <tbody>
               <% @sent_requests.each do |request| %>
-                <tr  class="border-top border-white">
+                <tr class="border-top border-white">
                   <td><%=  %></td> <!-- espacio -->
                   <td><%= request.status.capitalize %></td>
                   <td><%= request.service.user.name %></td>
@@ -64,6 +64,11 @@
                   <td><%= button_to "Cancelar", cancel_path(request), method: :patch, class: "btn btn-fixi" %></td>
                   <% elsif request.status == "finalizada" && Review.where(user: current_user, request: request).size == 0 %>
                   <td><%= link_to "Calificar", new_request_review_path(request), class: "btn btn-fixi" %></td>
+                  <% elsif request.status == "finalizada" || "cancelada" && request.reviews.size == 2 || 0 %>
+                  <td class="text-center"><%= link_to 'Eliminar', request_path(request),
+                          class: "text-secondary",
+                          method: "delete",
+                          data: {turbo_method: :delete, turbo_confirm: "¿Seguro que quieres borrar este producto?"} %></td>
                   <% end %>
                   <td><%=  %></td> <!-- espacio -->
                 </tr>
@@ -92,7 +97,7 @@
 
             <tbody>
               <% @received_requests.each do |request| %>
-                <tr>
+                <tr class="border-top border-white">
                   <td><%=  %></td> <!-- espacio -->
                   <td><%= request.status.capitalize %></td>
                   <td><%= request.user.name %></td>
@@ -107,6 +112,10 @@
                   <td><%= button_to "Finalizar", budget_path(request), method: :patch, class: "btn btn-fixi" %></td>
                   <% elsif request.status == "finalizada" && Review.where(user: current_user, request: request).size == 0 %>
                   <td><%= link_to "Calificar", new_request_review_path(request, cliente: request.user.id), class: "btn btn-fixi" %></td>
+                  <% elsif request.status == "finalizada" || "cancelada" && request.reviews.size == 2 || 0 %>
+                  <td><%= link_to 'Eliminar', request_path(request),
+                          method: "delete",
+                          data: {turbo_method: :delete, turbo_confirm: "¿Seguro que quieres borrar este producto?"} %></td>
                   <% end %>
                   <td><%=  %></td> <!-- espacio -->
                 </tr>
