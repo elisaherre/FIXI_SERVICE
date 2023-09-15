@@ -109,7 +109,7 @@
                   <td><%= button_to "Aceptar", accept_path(request), method: :patch, class: "btn btn-fixi" %></td>
                   <td><%= button_to "Declinar", cancel_path(request), method: :patch, class: "btn btn-fixi" %></td>
                   <% elsif request.status == "reservada" %>
-                  <td><%= button_to "Finalizar", budget_path(request), method: :patch, class: "btn btn-fixi" %></td>
+                  <td><%= button_to "Finalizar", pay_path(request), method: :patch, class: "btn btn-fixi" %></td>
                   <% elsif request.status == "finalizada" && Review.where(user: current_user, request: request).size == 0 %>
                   <td><%= link_to "Calificar", new_request_review_path(request, cliente: request.user.id), class: "btn btn-fixi" %></td>
                   <% elsif request.status == "finalizada" || "cancelada" && request.reviews.size == 2 || 0 %>
